@@ -302,55 +302,6 @@ export const soraMatcha: ProjectInput = {
     {
       type: 'heading',
       marker: 'F',
-      title: 'In the world',
-      note: 'Shelf, street, table',
-    },
-    {
-      type: 'full',
-      image: {
-        src: `${dir}/retail-shelf.jpg`,
-        alt: 'The cream SORA tin on a wooden retail shelf between artisanal coffee bags and chocolate bars',
-        ...P,
-      },
-      caption: 'On shelf, among the category it had to stand apart from',
-    },
-    {
-      type: 'pair',
-      images: [
-        {
-          src: `${dir}/street.jpg`,
-          alt: 'Three people walking a city street carrying SORA takeaway cups',
-          ...P,
-        },
-        {
-          src: `${dir}/cafe.jpg`,
-          alt: 'A SORA tin and matcha bowl on a café table in daylight',
-          ...P,
-        },
-      ],
-      captions: ['Street', 'Café'],
-    },
-    {
-      type: 'pair',
-      images: [
-        {
-          src: `${dir}/desk.jpg`,
-          alt: 'SORA tin, stoneware bowl and gold scoop on a linen-covered desk beside a camera and notebook',
-          width: 896,
-          height: 1200,
-        },
-        {
-          src: `${dir}/outdoors.jpg`,
-          alt: 'Four people sitting on a blanket outdoors with books, a camera and a SORA tin',
-          ...P,
-        },
-      ],
-      captions: ['Desk', 'Outdoors'],
-    },
-
-    {
-      type: 'heading',
-      marker: 'G',
       title: 'The system, together',
       note: 'Two boards',
     },

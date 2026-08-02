@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { IMAGE_QUALITY } from '@/lib/images';
 import type { BlockOfType } from '@/types/content';
 import styles from './CaseGallery.module.css';
 
@@ -37,6 +38,7 @@ export function CaseGallery({ block }: { block: BlockOfType<'gallery'> }) {
               width={image.width}
               height={image.height}
               sizes="(max-width: 700px) 70vw, 380px"
+              quality={IMAGE_QUALITY}
             />
           </div>
         ))}

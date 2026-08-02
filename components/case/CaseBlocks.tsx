@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { IMAGE_QUALITY } from '@/lib/images';
 import { CaseGallery } from '@/components/case/CaseGallery';
 import { Section } from '@/components/ui/Section';
 import { SectionHead } from '@/components/ui/SectionHead';
@@ -36,6 +37,7 @@ function Figure({
         width={image.width}
         height={image.height}
         sizes={sizes}
+        quality={IMAGE_QUALITY}
       />
       {caption && (
         <figcaption className={`${styles.caption} caption mono`}>{caption}</figcaption>
@@ -80,6 +82,7 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
                   height={block.image.height}
                   priority={index === 0}
                   sizes="100vw"
+                  quality={IMAGE_QUALITY}
                 />
                 {block.caption && (
                   <p className={`${styles.bleedCaption} mono`}>{block.caption}</p>

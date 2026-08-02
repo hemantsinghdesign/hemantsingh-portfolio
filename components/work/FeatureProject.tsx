@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { IMAGE_QUALITY } from '@/lib/images';
 import { TransitionLink } from '@/components/ui/TransitionLink';
 import type { Project } from '@/types/content';
 import styles from './FeatureProject.module.css';
@@ -30,6 +31,7 @@ export function FeatureProject({
           height={project.thumbnail.height}
           priority={priority}
           sizes="(max-width: 820px) 100vw, 55vw"
+          quality={IMAGE_QUALITY}
         />
       </div>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { THUMBNAIL_QUALITY } from '@/lib/images';
 import type { ContentImage } from '@/types/content';
 import styles from './ProjectPreview.module.css';
 
@@ -36,6 +37,7 @@ export function ProjectPreview({
         width={image.width}
         height={image.height}
         sizes="230px"
+        quality={THUMBNAIL_QUALITY}
       />
     </div>
   );

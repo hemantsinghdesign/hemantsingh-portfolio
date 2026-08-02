@@ -52,6 +52,9 @@ const nextConfig = {
   images: {
     // AVIF first, WebP fallback. Both are generated at build/request time.
     formats: ['image/avif', 'image/webp'],
+    // Next only permits qualities listed here. 95 is used for case-study
+    // artwork, 85 for thumbnails — see lib/images.ts.
+    qualities: [85, 95],
     deviceSizes: [360, 480, 640, 828, 1080, 1200, 1600, 1920, 2560],
     imageSizes: [96, 160, 240, 320, 420, 560],
     minimumCacheTTL: 60 * 60 * 24 * 365,
