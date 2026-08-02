@@ -45,8 +45,9 @@ const nextConfig = {
   // Pin the workspace root so Turbopack never guesses from a parent lockfile.
   turbopack: { root: import.meta.dirname },
 
-  // Fail the production build on lint or type errors rather than shipping them.
-  eslint: { ignoreDuringBuilds: false },
+  // Fail the production build on type errors rather than shipping them.
+  // ESLint is not part of `next build` in Next 16 — it runs as its own
+  // step via `npm run lint` (and `npm run check` before a release).
   typescript: { ignoreBuildErrors: false },
 
   images: {
