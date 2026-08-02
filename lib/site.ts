@@ -38,9 +38,15 @@ export const nav = [
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
   { href: '/capabilities', label: 'Capabilities' },
-  { href: '/journal', label: 'Journal' },
   { href: '/contact', label: 'Contact' },
 ] as const;
+
+/**
+ * Routes that exist and are crawlable but are deliberately not in the menu.
+ * Journal stays here until the first article is published — an empty section
+ * in the navigation reads as abandoned, not as forthcoming.
+ */
+export const unlistedRoutes = ['/journal', '/resume'] as const;
 
 /** Resolves a path to an absolute URL for canonicals, OG tags and sitemaps. */
 export function absoluteUrl(path = '/'): string {

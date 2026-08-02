@@ -7,6 +7,7 @@ import { CaseSummary } from '@/components/case/CaseSummary';
 import { ProjectJsonLd } from '@/components/seo/JsonLd';
 import { DisplayHeading } from '@/components/ui/DisplayHeading';
 import { Section } from '@/components/ui/Section';
+import { SectionHead } from '@/components/ui/SectionHead';
 import { TextLink } from '@/components/ui/TextLink';
 import {
   getAllProjects,
@@ -74,6 +75,7 @@ export default async function ProjectPage({
       <CaseBlocks blocks={project.blocks} />
 
       <Section>
+        <SectionHead marker="G" title="At a glance" note="Scope, not outcome" />
         <CaseMetrics metrics={project.metrics} />
       </Section>
 

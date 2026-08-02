@@ -32,6 +32,8 @@ export function FeatureProject({
           priority={priority}
           sizes="(max-width: 820px) 100vw, 55vw"
           quality={IMAGE_QUALITY}
+          placeholder={project.thumbnail.blurDataURL ? 'blur' : 'empty'}
+          blurDataURL={project.thumbnail.blurDataURL}
         />
       </div>
 

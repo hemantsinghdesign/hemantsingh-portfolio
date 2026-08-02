@@ -1,0 +1,27 @@
+/* Error boundary. Uses the same opening rhythm as a normal page so a
+   failure still looks like part of the site. */
+.shell {
+  padding: clamp(70px, 12vw, 150px) 0 clamp(60px, 10vw, 120px);
+  min-height: 60vh;
+}
+
+.eyebrow {
+  margin-bottom: clamp(20px, 4vw, 40px);
+}
+
+.note {
+  margin-top: 30px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.digest {
+  margin-top: 40px;
+  color: var(--mute-sm);
+}

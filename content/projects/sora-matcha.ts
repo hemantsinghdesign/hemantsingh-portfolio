@@ -28,6 +28,7 @@ export const soraMatcha: ProjectInput = {
     src: `${dir}/hero-tin-bowl.jpg`,
     alt: 'SORA ceremonial matcha tin beside a stoneware bowl in low winter light',
     ...P,
+    blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgQF/8QAIxAAAgECBAcAAAAAAAAAAAAAAQIDABEEBSExEiIkUWFxkf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AwsT1BQRlbxoqtc21pHDmcKQxqS/KoGi+PdElRd7DerOM9h8o4Sv/2Q==',
   },
 
   meta: {
@@ -59,32 +60,33 @@ export const soraMatcha: ProjectInput = {
   ],
 
   blocks: [
+    // Opens in daylight, not in the dark. The case study argues for
+    // "natural daylight, soft shadows, no artificial colour"; opening on the
+    // dark studio shot contradicted that before a word was read.
     {
       type: 'bleed',
       image: {
-        src: `${dir}/hero-tin-bowl.jpg`,
-        alt: 'Deep green SORA tin with its lid removed, beside a stoneware bowl of matcha powder on a dark wooden floor',
+        src: `${dir}/tin-oak-window.jpg`,
+        alt: 'Open cream SORA tin of matcha powder beside a stoneware bowl of whisked matcha on an oak table in window light',
         ...P,
+        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwX/xAAhEAACAQMEAwEAAAAAAAAAAAACAwEAESEEEhNxFDFRYf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQACEf/aAAwDAQACEQMRAD8AXWs8h3G5gAYDu2Dmbd+qaATaLPx1UnStl+qBbhE8zYpixRf9ir3GuMQoMfRqd1ycL//Z',
       },
-      caption: 'Ceremonial tin, low winter light',
+      caption: 'The morning ritual, in the light the brand specifies',
     },
 
     { type: 'heading', marker: 'A', title: 'The mark', note: 'Sunrise over two leaves' },
+    // The deboss macro is the single clearest statement of the mark.
+    // Pairing it with the guidelines cover halved its scale for an image
+    // that carries almost no information.
     {
-      type: 'pair',
-      images: [
-        {
-          src: `${dir}/mark-deboss.jpg`,
-          alt: 'The SORA sunrise-and-leaves mark blind-debossed into textured uncoated paper',
-          ...P,
-        },
-        {
-          src: `${dir}/guidelines-cover.jpg`,
-          alt: 'Brand identity guidelines cover, debossed mark and wordmark on white stock',
-          ...P,
-        },
-      ],
-      captions: ['Blind deboss on uncoated stock', 'Brand identity guidelines'],
+      type: 'full',
+      image: {
+        src: `${dir}/mark-deboss.jpg`,
+        alt: 'The SORA sunrise-and-leaves mark blind-debossed into textured uncoated paper',
+        ...P,
+        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgMEBv/EABsQAAICAwEAAAAAAAAAAAAAAAABAhEDEjFh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANIsqjKu+JDtiaLYdsC//9k=',
+      },
+      caption: 'Blind deboss on uncoated stock',
     },
     {
       type: 'note',
@@ -97,6 +99,7 @@ export const soraMatcha: ProjectInput = {
         alt: 'Primary SORA lockup with the tagline "Ceremonial grade. Born from the morning ritual." above a green rule',
         width: 1147,
         height: 927,
+        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAKAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EABsQAQACAwEBAAAAAAAAAAAAAAEAAgMRMRIj/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANNht8qKbXsNZBkqqjodRvEvjsD/2Q==',
       },
       caption: 'Primary lockup with the fixed line of copy',
     },
@@ -107,33 +110,35 @@ export const soraMatcha: ProjectInput = {
       title: 'The system',
       note: 'Colour, icons, photography',
     },
+    // Palette, icons and photography rules are reference slides, not
+    // photography. At half and full width they competed with the artwork;
+    // as a triptych the system is stated without breaking the tempo.
     {
-      type: 'pair',
+      type: 'triptych',
       images: [
         {
           src: `${dir}/palette.jpg`,
           alt: 'SORA colour palette: cream and deep green primaries with tan and sage secondaries',
           width: 896,
           height: 1200,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EACEQAAEEAQMFAAAAAAAAAAAAAAEAAgMREgQGMRYhUVOh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AKtRuiNkjDEybBxohwArtyj1fF6ZPiysgyAyJNcWl4DyUH//2Q==',
         },
         {
           src: `${dir}/icon-set.jpg`,
           alt: 'Ten line icons for tea, scoop, leaf, gift, steam, shipping, bowl, journal, whisk and sustainability',
           width: 896,
           height: 1200,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EABwQAAICAgMAAAAAAAAAAAAAAAABAgMSIREiYf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDUUPpD1IJyT6r5rFa0NZsD/9k=',
+        },
+        {
+          src: `${dir}/photography-rules.jpg`,
+          alt: 'Annotated photography guidelines calling out natural daylight, soft shadows, minimal composition and no artificial colour',
+          width: 896,
+          height: 1200,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBf/EAB8QAAICAQQDAAAAAAAAAAAAAAECABESBBMxUQUiof/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAIf/aAAwDAQACEQMRAD8A39X5bZDhEGavj7ggS3ePQ+xrIrVkoNcWOIaHUKX/2Q==',
         },
       ],
-      captions: ['Two primaries, two secondaries', 'Ten icons, one stroke weight'],
-    },
-    {
-      type: 'full',
-      image: {
-        src: `${dir}/photography-rules.jpg`,
-        alt: 'Annotated photography guidelines calling out natural daylight, soft shadows, minimal composition and no artificial colour',
-        width: 896,
-        height: 1200,
-      },
-      caption: 'Photography direction, written as rules rather than references',
+      captions: ['Two primaries, two secondaries', 'Ten icons, one stroke weight', 'Photography written as rules'],
     },
 
     { type: 'heading', marker: 'C', title: 'Packaging', note: 'Split by light' },
@@ -144,12 +149,14 @@ export const soraMatcha: ProjectInput = {
           src: `${dir}/tin-green-foil.jpg`,
           alt: 'Deep green gift tin with the SORA wordmark in gold foil, on dark slate',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwb/xAAeEAACAQMFAAAAAAAAAAAAAAABAgADESESE0Fhof/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCccgUww5bT5Djulxkk5vD2x3A//9k=',
         },
         {
           src: `${dir}/tin-cream.jpg`,
           alt: 'Cream retail tin with a silver lid and the SORA wordmark in charcoal',
           width: 889,
           height: 1101,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQD/xAAdEAACAgIDAQAAAAAAAAAAAAABAgADERITIUFS/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AFwh1rZfbApyPIlrDmvdwA2OjkdS5rPqEn//2Q==',
         },
       ],
       captions: ['Gift tin — deep green, gold foil', 'Retail tin — cream, silver lid'],
@@ -161,16 +168,19 @@ export const soraMatcha: ProjectInput = {
           src: `${dir}/tin-green-deboss.jpg`,
           alt: 'Green tin variant with the wordmark debossed rather than foiled',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgMEBv/EAB4QAAEEAQUAAAAAAAAAAAAAAAEAAgMRIRITUmGh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDOOw0Gsl1Ia6Kskja6tTQaStqPj6iv/9k=',
         },
         {
           src: `${dir}/pouch.jpg`,
           alt: 'Cream 30g resealable matcha pouch in raking daylight',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAMF/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIDIQAEERIxQVFS/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AN5NXI2smheFlRNuLhgQ1XXjGV9DBMNpQwJvvK8j7wE//9k=',
         },
         {
           src: `${dir}/carrier-bag.jpg`,
           alt: 'Cream carrier bag with rope handles and the SORA mark above the wordmark',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIG/8QAGhAAAgMBAQAAAAAAAAAAAAAAAREAAgMhMf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDQ51Z9SKiqRmBQKoXXEcJP/9k=',
         },
       ],
       captions: ['Deboss-only variant', '30g resealable pouch', 'Carrier bag'],
@@ -186,14 +196,26 @@ export const soraMatcha: ProjectInput = {
           src: `${dir}/cup-green.jpg`,
           alt: 'Deep green takeaway cup with a gold SORA wordmark and gold rim line',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwb/xAAdEAACAQQDAAAAAAAAAAAAAAABAgADERIhQVFh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJ5yBTDdtjaFHdbjZJ3fiHgPYH//2Q==',
         },
         {
           src: `${dir}/cup-cream.jpg`,
           alt: 'Cream takeaway cup with the SORA mark and a green rim line',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQH/xAAdEAACAgIDAQAAAAAAAAAAAAABAgARAzEEEyFS/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AGFx2iMNlwtRGoeeQ7KAa8N6k7sn1Cb/2Q==',
         },
       ],
       captions: ['Takeaway cup, gift range', 'Takeaway cup, retail range'],
+    },
+    {
+      type: 'full',
+      image: {
+        src: `${dir}/retail-shelf.jpg`,
+        alt: 'The cream SORA tin on a wooden retail shelf between artisanal coffee bags and chocolate bars',
+        ...P,
+        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAP/xAAfEAACAAYDAQAAAAAAAAAAAAABAgADBBExURIhccH/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AE1iqlBNea7OuuiDn7BlWp4i2LbEMqHMugmsApNjkexBXPEdLjQgix//2Q==',
+      },
+      caption: 'On shelf, among the category it had to stand apart from',
     },
 
     { type: 'heading', marker: 'D', title: 'Gifting', note: 'The ceremonial kit' },
@@ -203,6 +225,7 @@ export const soraMatcha: ProjectInput = {
         src: `${dir}/kit-box.jpg`,
         alt: 'Open cream gift box containing a bamboo whisk, scoop, stoneware bowl and matcha tin',
         ...P,
+        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIEBf/EACAQAAIBAwQDAAAAAAAAAAAAAAECAwAEEQUhMVESE3H/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANi9ktyhPsUP319qZbOQqDmPcUY4lu4nSUZwORzTJptsEUeBOANyTUzf/9k=',
       },
       caption: 'Kit box — whisk, scoop, bowl, tin',
     },
@@ -213,11 +236,13 @@ export const soraMatcha: ProjectInput = {
           src: `${dir}/kit-dark.jpg`,
           alt: 'Overhead flat lay of the ceremonial kit on charcoal linen with a green tin and gold scoop',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQF/8QAHBABAAICAwEAAAAAAAAAAAAAAQIRACEDIlFB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDC5+SQ9wLdV45JKdSSjTjTkpt+VgUeZR//2Q==',
         },
         {
           src: `${dir}/kit-light.jpg`,
           alt: 'Overhead flat lay of the ceremonial kit on cream linen with the retail tin and gold scoop',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIG/8QAHRAAAQQCAwAAAAAAAAAAAAAAAQACEVESIQMiMf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDSN6SXPcQLpXIOwi5jhi4e7TAyJtEn/9k=',
         },
       ],
       captions: ['Kit, dark set', 'Kit, light set'],
@@ -235,18 +260,22 @@ export const soraMatcha: ProjectInput = {
         src: `${dir}/stationery.jpg`,
         alt: 'Business cards, envelope, letterhead, notebook, stickers and gift card in the SORA identity',
         ...P,
+        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAIxAAAgECBQUBAAAAAAAAAAAAAQIDAAQREyExQRIyUWHR8P/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDaivEnOXHIrlB1ajD9xS17Rq23gUBwtvAZo0QOVHHqoW8nKg5mGI2Cj5RJ/9k=',
       },
       caption: 'Cards, letterhead, stickers, notebook',
     },
+    // A dark full-bleed before the black campaign band, so the page
+    // darkens gradually instead of cutting from cream to ink. It also
+    // breaks the pair/full metronome that had run for nine blocks.
     {
-      type: 'full',
+      type: 'bleed',
       image: {
-        src: `${dir}/applications.jpg`,
-        alt: 'The SORA mark applied to a card, carrier bag, ceramic bowl, tin, window vinyl, tote, metal sign and tissue paper',
-        width: 896,
-        height: 1200,
+        src: `${dir}/hero-tin-bowl.jpg`,
+        alt: 'Deep green SORA tin with its lid removed, beside a stoneware bowl of matcha powder on a dark wooden floor',
+        ...P,
+        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgQF/8QAIxAAAgECBAcAAAAAAAAAAAAAAQIDABEEBSExEiIkUWFxkf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AwsT1BQRlbxoqtc21pHDmcKQxqS/KoGi+PdElRd7DerOM9h8o4Sv/2Q==',
       },
-      caption: 'Mark applied from window vinyl to tissue paper',
+      caption: 'The same system, after dark',
     },
 
     {
@@ -260,41 +289,49 @@ export const soraMatcha: ProjectInput = {
           alt: 'SORA typographic poster installed in a street-side billboard beside a bike rack',
           width: 1786,
           height: 2297,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQIG/8QAIxAAAgEDAQkAAAAAAAAAAAAAAQIRAAMSBBMiMVFUYXGh0f/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEQMRAD8Ai+pOnuu4VrktLZETygTQWN7pb/v5WiXRDeXb3ipfKCRxB8UrPYULIX//2Q==',
         },
         {
           src: `${dir}/campaign-bag.jpg`,
           alt: 'Black and white poster of a carrier bag behind repeated SORA lettering',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAkEAACAgEDAgcAAAAAAAAAAAABAgMRAAQSIhMhMUFRgZGxwf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCcySK4URRsVfaGA9QPz6xCPS3GheRwxAsXVH4wvUvJCSEkbnKASavv28axQzdImNVG1OI5N5e+B//Z',
         },
         {
           src: `${dir}/campaign-grid.jpg`,
           alt: 'Poster of stacked SORA wordmarks interleaved with whisk and bowl photography',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgMEBf/EACIQAAIBAwMFAQAAAAAAAAAAAAECAwARIQQGMRIyQWKB4f/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCptyatVIMMIY9hsbfc0abi1DICY0uRfj9rKMCNLKMgRxO4A8nHNIDkADpXHqKD/9k=',
         },
         {
           src: `${dir}/campaign-tiles.jpg`,
           alt: 'Nine-tile campaign grid mixing repeated SORA lettering with product photography',
           ...S,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBP/EACMQAAIBAgQHAAAAAAAAAAAAAAECAwARBBIhcRMxMkFRYeH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AIkjlRiozDqzHvfxtSKAHkJQm7X1a1tqsYw+HhYswbhqzMDYsffysSzyqzgSNbMeZOlB//9k=',
         },
         {
           src: `${dir}/campaign-pouch.jpg`,
           alt: 'Poster of the kraft matcha pouch behind repeated SORA lettering',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQIE/8QAIxAAAgIBAQkBAAAAAAAAAAAAAQIDEQASBBMhIiMxQYGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AhnWKOPUI2kL6AQPB4fPmaIoUaJC05DFRYDj8wva0aNVVZXrfBaNHv6xKlh6SoCqcosm6HvCv/9k=',
         },
         {
           src: `${dir}/campaign-cup.jpg`,
           alt: 'Poster of a steaming takeaway cup behind repeated SORA lettering',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQID/8QAIRAAAgEEAgIDAAAAAAAAAAAAAQIDAAQRIRMUBXESIjH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8APmkaFmMhOQxCFdY1ScHXaCNnu1DFQSOVRg49Vh5VEa3QFQS84jLHOQD+1XDax/Tp2zfHWWj2fdB//9k=',
         },
         {
           src: `${dir}/campaign-box.jpg`,
           alt: 'Poster of the open ceremonial kit box behind repeated SORA lettering',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAMF/8QAIRABAQABBAEFAQAAAAAAAAAAAQIDAAQREjEhIlGBseH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AAXW03tOWS48FL45+DWvi2vbFDWSymRQf5oOaqLFrszSHaR/TVinCGKWmY9pzTz6feg//2Q==',
         },
         {
           src: `${dir}/campaign-tin.jpg`,
           alt: 'Poster of a stacked matcha tin behind repeated SORA lettering',
           ...P,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAfEAADAAICAgMAAAAAAAAAAAABAgMRIQAEElETMZH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8APW7QeK/HFyX8PL0D63xs5TM0L3IYgZAcaP5yX2g0shaMQ1VGCAcb+xrXLbdt5sUCJhTga4F//9k=',
         },
       ],
     },
@@ -306,22 +343,29 @@ export const soraMatcha: ProjectInput = {
       note: 'Two boards',
     },
     {
-      type: 'pair',
-      images: [
-        {
-          src: `${dir}/board-grid.jpg`,
-          alt: 'Nine-tile brand board showing the logo, tins, powder, pouch, whisk and taglines',
-          ...S,
-        },
-        {
-          src: `${dir}/board-collateral.jpg`,
-          alt: 'Collateral board showing the gift box, tote, both tins, stationery suite and whisking photography',
-          ...P,
-        },
-      ],
-      captions: ['Brand grid', 'Full collateral'],
+      type: 'full',
+      image: {
+        src: `${dir}/board-grid.jpg`,
+        alt: 'Nine-tile brand board showing the logo, tins, powder, pouch, whisk and taglines',
+        ...S,
+        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwX/xAAgEAABAwQDAQEAAAAAAAAAAAABAgMRAAQSMQUhQTJh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAWEQEBAQAAAAAAAAAAAAAAAAAhAAH/2gAMAwEAAhEDEQA/ALfJ3Jty0Q3mSTEmNRQOciLQhtSFKJGX1qfO6VJUJxWoYO6B317VLH9JqeLPS//Z',
+      },
+      caption: 'The system on one board',
+    },
+    // Closes on the argument rather than an inventory. This spread states
+    // the light-and-shadow idea the whole range is split on, which is a
+    // stronger last impression than a second contact sheet.
+    {
+      type: 'bleed',
+      image: {
+        src: `${dir}/editorial-spread.jpg`,
+        alt: 'SORA editorial spread pairing a daylight still life with a dark studio still life under the line about light and shadow',
+        ...P,
+        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAIxAAAgECBAcAAAAAAAAAAAAAAQIEAAMFERIhFSMxQVKhwf/EABUBAQEAAAAAAAAAAAAAAAAAAAID/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8ARDsR1w8SLloO2orv33y+0w4XEzPK9msxpbrCFpURU16sgD1qeJSPIVM3/9k=',
+      },
     },
   ],
+
 
   seo: {
     description:

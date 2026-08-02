@@ -39,7 +39,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={siteConfig.lang}>
+    <html lang={siteConfig.lang} data-scroll-behavior="smooth">
       <body>
         <a className="skip-link" href="#main">
           Skip to content

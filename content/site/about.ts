@@ -4,10 +4,11 @@
  */
 
 export const about = {
-  lede: 'I am a graphic and brand designer working independently on identity, packaging and art direction.',
+  lede: 'I design identities, packaging and the art direction that holds them together.',
   paragraphs: [
-    'The work leans structural — grids, type, hierarchy — because that is what still holds when the photography budget disappears and someone in the team has to lay out a new SKU on a Tuesday afternoon.',
-    'I build systems with fewer parts and write the rules down properly, so a brand keeps looking like itself long after the handover.',
+    'Most of what I do is decide what to leave out. A brand with four colours and one typeface is harder to design and far easier to live with than one with twelve of each — and it is the second thing that decides whether a brand still looks like itself two years later.',
+    'The work leans structural: grids, type, hierarchy. That is what still holds when the photography budget disappears and someone on the team has to lay out a new SKU on a Tuesday afternoon.',
+    'I work mostly in food, drink and lifestyle, on identity from naming through to what goes on the shelf. Before that I spent my time on print and packaging, which is where I learned that a specification is part of the design, not paperwork that follows it.',
   ],
   tools: 'Illustrator · Photoshop · Figma · Dimension',
 };

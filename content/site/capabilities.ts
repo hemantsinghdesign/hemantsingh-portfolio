@@ -11,7 +11,7 @@ export const capabilities: Capability[] = [
   {
     marker: 'A',
     title: 'Brand identity',
-    body: 'Marks, wordmarks, colour and type, plus the rules that hold them together — delivered as a system your team can run without me.',
+    body: 'Marks, wordmarks, colour and type, plus the rules that hold them together — documented well enough to be produced from anywhere.',
     items: ['Logo and wordmark', 'Colour and type systems', 'Icon sets', 'Brand guidelines'],
   },
   {

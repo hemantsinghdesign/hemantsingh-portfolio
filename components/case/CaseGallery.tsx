@@ -39,6 +39,8 @@ export function CaseGallery({ block }: { block: BlockOfType<'gallery'> }) {
               height={image.height}
               sizes="(max-width: 700px) 70vw, 380px"
               quality={IMAGE_QUALITY}
+              placeholder={image.blurDataURL ? 'blur' : 'empty'}
+              blurDataURL={image.blurDataURL}
             />
           </div>
         ))}

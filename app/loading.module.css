@@ -1,0 +1,43 @@
+/* Route-level loading state. Deliberately quiet: a bar on the same grid the
+   site is set on, not a spinner. */
+.shell {
+  padding: clamp(48px, 9vw, 120px) var(--pad) 0;
+}
+
+.label {
+  color: var(--signal-sm);
+}
+
+.bar {
+  margin-top: 20px;
+  height: 1px;
+  width: 100%;
+  background: var(--rule);
+  overflow: hidden;
+}
+
+.bar::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 28%;
+  background: var(--signal);
+  animation: sweep 1100ms var(--ease) infinite;
+}
+
+@keyframes sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(400%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar::after {
+    animation: none;
+    width: 100%;
+    opacity: 0.35;
+  }
+}

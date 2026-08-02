@@ -38,6 +38,8 @@ function Figure({
         height={image.height}
         sizes={sizes}
         quality={IMAGE_QUALITY}
+        placeholder={image.blurDataURL ? 'blur' : 'empty'}
+        blurDataURL={image.blurDataURL}
       />
       {caption && (
         <figcaption className={`${styles.caption} caption mono`}>{caption}</figcaption>
@@ -83,6 +85,8 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
                   priority={index === 0}
                   sizes="100vw"
                   quality={IMAGE_QUALITY}
+                  placeholder={block.image.blurDataURL ? 'blur' : 'empty'}
+                  blurDataURL={block.image.blurDataURL}
                 />
                 {block.caption && (
                   <p className={`${styles.bleedCaption} mono`}>{block.caption}</p>

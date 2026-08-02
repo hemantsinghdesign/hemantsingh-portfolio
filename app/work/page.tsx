@@ -3,7 +3,6 @@ import { WorkCollectionJsonLd } from '@/components/seo/JsonLd';
 import { Cta } from '@/components/ui/Cta';
 import { PageIntro } from '@/components/ui/PageIntro';
 import { Section } from '@/components/ui/Section';
-import { FeatureProject } from '@/components/work/FeatureProject';
 import { ProjectRows } from '@/components/work/ProjectRows';
 import { getAllProjects } from '@/lib/content/projects';
 import { pageMetadata } from '@/lib/seo';
@@ -30,12 +29,6 @@ export default function WorkPage() {
       <Section variant="tight" reveal={false}>
         <ProjectRows projects={projects} showPending />
       </Section>
-
-      {projects.map((project) => (
-        <Section key={project.slug}>
-          <FeatureProject project={project} />
-        </Section>
-      ))}
 
       <Cta />
     </>
