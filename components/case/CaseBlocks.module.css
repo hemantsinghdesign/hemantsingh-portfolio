@@ -1,0 +1,69 @@
+/* Layouts for the still blocks: bleed, full, pair, triptych, note.
+   The dark scrolling gallery lives in CaseGallery.module.css. */
+
+.bleed {
+  position: relative;
+  margin: 0 calc(-1 * var(--pad)) clamp(24px, 4vw, 56px);
+  background: var(--surface-dark);
+}
+
+.bleedImage {
+  width: 100%;
+  height: auto;
+  max-height: 84vh;
+  object-fit: cover;
+}
+
+.bleedCaption {
+  position: absolute;
+  left: var(--pad);
+  bottom: 14px;
+  color: var(--paper);
+  opacity: 0.75;
+}
+
+.note {
+  font-size: clamp(17px, 2.2vw, 26px);
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+  max-width: 30ch;
+  border-left: 2px solid var(--signal);
+  padding-left: 20px;
+}
+
+.figure {
+  display: block;
+}
+
+.wide {
+  max-width: min(100%, 1100px);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  margin-top: 10px;
+  display: block;
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(12px, 2vw, 28px);
+}
+
+.triptych {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 2vw, 28px);
+}
+
+@media (max-width: 700px) {
+  .pair,
+  .triptych {
+    grid-template-columns: 1fr;
+  }
+}

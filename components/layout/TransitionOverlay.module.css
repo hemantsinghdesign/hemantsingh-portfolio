@@ -1,0 +1,20 @@
+/* Full-bleed poster sheet that sweeps across during a route change. */
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: var(--signal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.label {
+  font-size: clamp(34px, 9vw, 110px);
+  letter-spacing: -0.04em;
+  color: var(--paper);
+  text-align: center;
+  padding: 0 var(--pad);
+}

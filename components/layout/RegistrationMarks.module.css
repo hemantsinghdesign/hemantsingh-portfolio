@@ -1,0 +1,52 @@
+/* Print-shop crop marks at the four corners. Decorative. */
+.mark {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.mark::before,
+.mark::after {
+  content: '';
+  position: absolute;
+  background: var(--ink);
+}
+
+.mark::before {
+  left: 0;
+  top: 7px;
+  width: 16px;
+  height: 1px;
+}
+
+.mark::after {
+  top: 0;
+  left: 7px;
+  width: 1px;
+  height: 16px;
+}
+
+/* Dimmed so it never competes with the wordmark it sits beside. */
+.topLeft {
+  left: 10px;
+  top: 10px;
+  opacity: 0.4;
+}
+
+.topRight {
+  right: 10px;
+  top: 10px;
+}
+
+.bottomLeft {
+  left: 10px;
+  bottom: calc(var(--spec-h) + 10px);
+}
+
+.bottomRight {
+  right: 10px;
+  bottom: calc(var(--spec-h) + 10px);
+}

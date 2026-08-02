@@ -1,0 +1,25 @@
+# Normalise line endings so Windows checkouts don't churn the diff.
+* text=auto eol=lf
+
+*.ts   text
+*.tsx  text
+*.css  text
+*.json text
+*.md   text
+
+# Binary assets — never diff, never normalise.
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.webp binary
+*.avif binary
+*.gif  binary
+*.ico  binary
+*.mp4  binary
+*.webm binary
+*.woff  binary
+*.woff2 binary
+*.pdf  binary
+
+# Generated files are collapsed in GitHub diffs.
+package-lock.json linguist-generated=true -diff

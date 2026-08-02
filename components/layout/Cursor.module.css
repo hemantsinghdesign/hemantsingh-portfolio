@@ -1,0 +1,43 @@
+/* Custom cursor. Position comes from CSS custom properties written by
+   usePointerGrid inside a rAF — React never re-renders on mouse move. */
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 60;
+  pointer-events: none;
+  transform: translate3d(var(--pointer-x, -100px), var(--pointer-y, -100px), 0);
+  will-change: transform;
+}
+
+.dot {
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  background: var(--signal);
+  border-radius: 50%;
+}
+
+.readout {
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  font-size: 9px;
+  color: var(--mute-sm);
+  white-space: nowrap;
+}
+
+/* No cursor to decorate on touch devices. */
+@media (hover: none), (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    display: none;
+  }
+}

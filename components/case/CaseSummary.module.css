@@ -1,0 +1,73 @@
+/* Facts column plus the problem/approach/outcome narrative. */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(24px, 5vw, 80px);
+}
+
+.facts > div {
+  border-top: 1px solid var(--rule);
+  padding: 12px 0;
+  display: grid;
+  gap: 5px;
+}
+
+.facts > div:first-child {
+  border-top: 1px solid var(--ink);
+}
+
+.factKey {
+  color: var(--mute-sm);
+}
+
+.factValue {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.body {
+  max-width: 64ch;
+}
+
+.label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--signal-sm);
+  margin-bottom: 14px;
+}
+
+.paragraph {
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.65;
+  margin-bottom: 38px;
+}
+
+.steps {
+  margin-bottom: 38px;
+}
+
+.steps > li {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 14px;
+  border-top: 1px solid var(--rule);
+  padding: 14px 0;
+}
+
+.stepIndex {
+  color: var(--mute-sm);
+}
+
+.stepText {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 820px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

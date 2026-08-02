@@ -1,0 +1,33 @@
+/* Endless horizontal marquee of disciplines. Decorative. */
+.ticker {
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  overflow: hidden;
+  padding: 12px 0;
+}
+
+.row {
+  display: flex;
+  white-space: nowrap;
+  font-size: clamp(18px, 2.4vw, 30px);
+  letter-spacing: -0.03em;
+  animation: ticker-slide 26s linear infinite;
+}
+
+@keyframes ticker-slide {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.diamond {
+  font-style: normal;
+  color: var(--signal);
+  padding: 0 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row {
+    animation: none;
+  }
+}

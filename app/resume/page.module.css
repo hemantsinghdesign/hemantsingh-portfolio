@@ -1,0 +1,43 @@
+.list > li {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 16px;
+  border-top: 1px solid var(--rule);
+  padding: 16px 0;
+}
+
+.list > li:first-child {
+  border-top: 1px solid var(--ink);
+}
+
+.year {
+  color: var(--signal-sm);
+}
+
+.title {
+  font-size: clamp(16px, 1.9vw, 21px);
+  letter-spacing: -0.02em;
+}
+
+.detail {
+  font-style: normal;
+  color: var(--mute-sm);
+}
+
+.tools {
+  font-size: clamp(17px, 2.4vw, 28px);
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+  max-width: 34ch;
+}
+
+.actions {
+  margin-top: clamp(28px, 4vw, 48px);
+}
+
+@media (max-width: 560px) {
+  .list > li {
+    grid-template-columns: 60px 1fr;
+    gap: 12px;
+  }
+}

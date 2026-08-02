@@ -1,0 +1,34 @@
+/* Thumbnail that trails the cursor while a project row is hovered.
+   Position comes from the same --pointer-x/y custom properties the cursor
+   uses, so this costs no JavaScript at all. */
+.preview {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  width: 230px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(
+    calc(var(--pointer-x, 0px) + 30px),
+    calc(var(--pointer-y, 0px) - 150px),
+    0
+  );
+  transition: opacity 250ms var(--ease);
+  will-change: transform;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px), (pointer: coarse) {
+  .preview {
+    display: none;
+  }
+}

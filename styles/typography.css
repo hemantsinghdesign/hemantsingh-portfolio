@@ -1,0 +1,91 @@
+/* ============================================================
+   TYPOGRAPHY
+   Design-system type classes. Global on purpose: these are the
+   voice of the site, used across every route and component, so
+   scoping them per-module would mean duplicating the scale.
+   Component-specific type lives in that component's module.
+   ============================================================ */
+
+@layer base {
+  /* ---- utility labels ---- */
+  .mono {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow {
+    color: var(--signal-sm);
+  }
+
+  /* ---- display ---- */
+  .display {
+    font-size: clamp(42px, 10.4vw, 148px);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    font-weight: 500;
+  }
+
+  .display em {
+    font-style: normal;
+    color: var(--signal);
+  }
+
+  .displayPage {
+    font-size: clamp(40px, 8.4vw, 118px);
+  }
+
+  .displayCase {
+    font-size: clamp(56px, 13vw, 190px);
+  }
+
+  .displayCta {
+    font-size: clamp(38px, 8vw, 112px);
+  }
+
+  /* ---- masked line reveal ----
+     Each line is clipped by its own overflow box and rises into place.
+     Stagger is index-based so any number of lines works. */
+  .line {
+    display: block;
+    overflow: hidden;
+  }
+
+  .line > span {
+    display: block;
+    transform: translateY(105%);
+    animation: line-rise var(--dur-reveal) var(--ease) forwards;
+    animation-delay: calc(var(--line-index, 0) * 80ms);
+  }
+
+  @keyframes line-rise {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .line > span {
+      transform: none;
+      animation: none;
+    }
+  }
+
+  /* ---- body ---- */
+  .lede {
+    max-width: 52ch;
+    font-size: clamp(15px, 1.5vw, 18px);
+    line-height: 1.55;
+    color: var(--mute-sm);
+  }
+
+  .prose {
+    font-size: clamp(15px, 1.6vw, 19px);
+    line-height: 1.65;
+  }
+
+  .caption {
+    color: var(--mute-sm);
+  }
+}

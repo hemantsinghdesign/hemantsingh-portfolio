@@ -1,0 +1,20 @@
+.lost {
+  padding: clamp(70px, 14vw, 180px) 0 clamp(60px, 10vw, 140px);
+  min-height: 64vh;
+}
+
+.eyebrow {
+  margin-bottom: clamp(20px, 4vw, 40px);
+}
+
+.note {
+  margin-top: 30px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+}

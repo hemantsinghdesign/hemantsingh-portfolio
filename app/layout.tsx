@@ -1,0 +1,55 @@
+import type { Metadata, Viewport } from 'next';
+import { PageTransition } from '@/components/layout/PageTransition';
+import { SiteChrome } from '@/components/layout/SiteChrome';
+import { PersonJsonLd, WebSiteJsonLd } from '@/components/seo/JsonLd';
+import { absoluteUrl, siteConfig } from '@/lib/site';
+import '@/styles/globals.css';
+
+/**
+ * Root metadata. Every route inherits this and overrides what it needs.
+ * `metadataBase` is what lets child routes use relative OG image paths.
+ */
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s — ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  alternates: { canonical: absoluteUrl('/') },
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  icons: {
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/icon.svg' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#EDEDE8',
+  colorScheme: 'light',
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang={siteConfig.lang}>
+      <body>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <PersonJsonLd />
+        <WebSiteJsonLd />
+        <PageTransition>
+          <SiteChrome>{children}</SiteChrome>
+        </PageTransition>
+      </body>
+    </html>
+  );
+}

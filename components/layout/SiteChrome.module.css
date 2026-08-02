@@ -1,0 +1,13 @@
+/* Wrapper that reserves space for the fixed spec bar and puts page
+   content above the grid overlay. */
+.shell {
+  position: relative;
+  min-height: 100dvh;
+  padding-bottom: var(--spec-h);
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--pad);
+}

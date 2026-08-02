@@ -1,0 +1,56 @@
+/* Solid button with a signal-coloured fill that wipes up on hover. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 20px;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  border: 0;
+}
+
+.button > * {
+  position: relative;
+  z-index: 2;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--signal);
+  transform: translateY(101%);
+  transition: transform var(--dur-hover) var(--ease);
+}
+
+.button:hover::before,
+.button:focus-visible::before {
+  transform: translateY(0);
+}
+
+.arrow {
+  transition: transform var(--dur-hover) var(--ease);
+}
+
+.button:hover .arrow {
+  transform: translateX(5px);
+}
+
+.large {
+  padding: 18px 28px;
+  font-size: 15px;
+}
+
+.button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.button:disabled::before {
+  transform: translateY(101%);
+}

@@ -1,0 +1,17 @@
+/* Home hero only. Everything else on this page uses shared primitives. */
+.hero {
+  padding: clamp(48px, 9vw, 120px) 0 clamp(32px, 5vw, 56px);
+}
+
+.eyebrow {
+  margin-bottom: clamp(24px, 5vw, 52px);
+}
+
+.heroFoot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: clamp(32px, 5vw, 64px);
+}

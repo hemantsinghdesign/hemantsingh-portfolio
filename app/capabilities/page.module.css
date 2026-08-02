@@ -1,0 +1,43 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.card {
+  border-top: 1px solid var(--ink);
+  padding-top: 16px;
+}
+
+.marker {
+  color: var(--signal-sm);
+}
+
+.title {
+  font-size: clamp(24px, 3.2vw, 38px);
+  letter-spacing: -0.035em;
+  margin: 8px 0 12px;
+}
+
+.body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--mute-sm);
+  max-width: 44ch;
+}
+
+.list {
+  margin-top: 20px;
+}
+
+.list > li {
+  border-top: 1px solid var(--rule);
+  padding: 9px 0;
+  color: var(--mute-sm);
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

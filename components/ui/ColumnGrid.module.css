@@ -1,0 +1,50 @@
+/* Three- and four-up column layouts used for steps, capabilities, engagements. */
+.grid {
+  display: grid;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  border-top: 1px solid var(--ink);
+  padding-top: 14px;
+}
+
+.marker {
+  color: var(--signal-sm);
+}
+
+.title {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  margin: 8px 0;
+}
+
+.body {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--mute-sm);
+}
+
+@media (max-width: 900px) {
+  .four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .three {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .four {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,24 @@
+/* Lettered rule that opens each section: marker, title, right-aligned note. */
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 14px;
+  margin-bottom: clamp(28px, 4vw, 52px);
+}
+
+.marker {
+  color: var(--signal-sm);
+}
+
+.title {
+  font-size: clamp(19px, 2.2vw, 26px);
+  letter-spacing: -0.03em;
+  flex: 1;
+}
+
+.note {
+  color: var(--mute-sm);
+}

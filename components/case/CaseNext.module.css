@@ -1,0 +1,36 @@
+/* Large link to the next case, or to contact when there isn't one. */
+.next {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 16px;
+  width: 100%;
+  border-top: 1px solid var(--ink);
+  padding-top: 18px;
+  text-decoration: none;
+  transition: color var(--dur-hover) var(--ease);
+}
+
+.next:hover {
+  color: var(--signal);
+}
+
+.key {
+  grid-column: 1 / -1;
+  color: var(--mute-sm);
+}
+
+.title {
+  font-size: clamp(30px, 6vw, 72px);
+  letter-spacing: -0.045em;
+  margin-top: 8px;
+}
+
+.arrow {
+  font-size: clamp(24px, 4vw, 48px);
+  transition: transform var(--dur-hover) var(--ease);
+}
+
+.next:hover .arrow {
+  transform: translateX(12px);
+}

@@ -1,0 +1,73 @@
+/* Contact form. No <form> element is used because there is no endpoint yet —
+   see the component comment for how to wire one up. */
+.fields {
+  display: grid;
+  gap: 18px;
+  max-width: 560px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.label {
+  color: var(--mute-sm);
+}
+
+.input,
+.textarea {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  padding: 10px 0;
+  transition: border-color var(--dur-hover) var(--ease);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-bottom-color: var(--signal);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--mute-sm);
+  opacity: 0.7;
+}
+
+.sent {
+  max-width: 44ch;
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+}
+
+.sentTitle {
+  font-size: clamp(20px, 2.6vw, 30px);
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.sentBody {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--mute-sm);
+}
+
+.link {
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.link:hover {
+  color: var(--signal-sm);
+  border-color: var(--signal);
+}

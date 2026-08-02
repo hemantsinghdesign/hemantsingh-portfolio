@@ -1,0 +1,12 @@
+/* Standard page opening: eyebrow, display heading, supporting line. */
+.intro {
+  padding: clamp(48px, 8vw, 104px) 0 clamp(28px, 4vw, 48px);
+}
+
+.eyebrow {
+  margin-bottom: clamp(20px, 4vw, 40px);
+}
+
+.lede {
+  margin-top: clamp(24px, 3vw, 40px);
+}

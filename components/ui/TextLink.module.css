@@ -1,0 +1,22 @@
+/* Understated inline link with a rule beneath it. */
+.link {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  font-size: 13px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  margin-top: 34px;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.link:hover {
+  color: var(--signal-sm);
+  border-color: var(--signal);
+}
+
+/* For links that sit inside prose rather than after a block. */
+.flush {
+  margin-top: 0;
+}

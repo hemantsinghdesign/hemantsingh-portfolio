@@ -1,0 +1,88 @@
+/* Index-style list of projects with a cursor-following preview. */
+.list > li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.list > li:first-child {
+  border-top: 1px solid var(--ink);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 44px 1fr auto auto 30px;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  text-decoration: none;
+  transition:
+    padding-left var(--dur-hover) var(--ease),
+    color var(--dur-hover) var(--ease);
+}
+
+.row:hover,
+.row:focus-visible {
+  padding-left: 16px;
+  color: var(--signal);
+}
+
+.index {
+  color: var(--mute-sm);
+}
+
+.row:hover .index {
+  color: var(--signal-sm);
+}
+
+.title {
+  font-size: clamp(22px, 3.4vw, 42px);
+  letter-spacing: -0.035em;
+}
+
+.discipline,
+.year {
+  color: var(--mute-sm);
+}
+
+.row:hover .discipline,
+.row:hover .year {
+  color: var(--signal-sm);
+}
+
+.arrow {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    opacity var(--dur-hover) var(--ease),
+    transform var(--dur-hover) var(--ease);
+}
+
+.row:hover .arrow {
+  opacity: 1;
+  transform: none;
+}
+
+/* Placeholder row for work not yet written up.
+   De-emphasised with colour rather than opacity: opacity multiplies against
+   the background and pushed this text to 2.08:1, well under AA. */
+.pending .index,
+.pending .discipline,
+.pending .year {
+  color: var(--mute-sm);
+}
+
+.pendingTitle {
+  color: var(--mute);
+}
+
+@media (max-width: 720px) {
+  .row {
+    grid-template-columns: 36px 1fr auto;
+    gap: 12px;
+  }
+
+  .discipline,
+  .arrow {
+    display: none;
+  }
+}

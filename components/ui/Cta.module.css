@@ -1,0 +1,10 @@
+/* Closing call to action shared by every page. */
+.cta {
+  padding: clamp(56px, 9vw, 130px) 0;
+  border-top: 1px solid var(--ink);
+}
+
+.button {
+  margin-top: clamp(28px, 4vw, 48px);
+  display: inline-block;
+}

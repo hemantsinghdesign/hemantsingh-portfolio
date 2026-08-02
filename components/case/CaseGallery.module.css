@@ -1,0 +1,74 @@
+/* Full-bleed dark band with a horizontally scrolling row of posters. */
+.band {
+  margin: clamp(40px, 6vw, 90px) calc(-1 * var(--pad));
+  background: var(--surface-dark);
+  color: var(--paper);
+  padding: clamp(44px, 7vw, 96px) 0;
+}
+
+.head {
+  padding: 0 var(--pad);
+  max-width: 760px;
+}
+
+.marker {
+  color: var(--signal-on-dark);
+}
+
+.title {
+  font-size: clamp(34px, 6vw, 80px);
+  letter-spacing: -0.045em;
+  margin: 10px 0 18px;
+  line-height: 0.98;
+}
+
+.text {
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.6;
+  opacity: 0.75;
+  max-width: 48ch;
+}
+
+/* tabindex makes this focusable so keyboard users can scroll it with
+   arrow keys — a horizontally scrolling region is otherwise unreachable. */
+.scroller {
+  display: flex;
+  gap: clamp(12px, 2vw, 26px);
+  overflow-x: auto;
+  padding: clamp(28px, 4vw, 52px) var(--pad) 16px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroller:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: -4px;
+}
+
+.scroller::-webkit-scrollbar {
+  height: 2px;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+  background: var(--signal);
+}
+
+.scroller::-webkit-scrollbar-track {
+  background: rgb(237 237 232 / 18%);
+}
+
+.item {
+  flex: 0 0 clamp(230px, 32vw, 380px);
+  scroll-snap-align: start;
+  background: var(--surface-dark-2);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.hint {
+  padding: 0 var(--pad);
+  opacity: 0.55;
+}

@@ -1,0 +1,63 @@
+/* ============================================================
+   DESIGN TOKENS
+   Ported 1:1 from the approved design. Do not change values
+   here without intending a site-wide visual change.
+   ============================================================ */
+
+:root {
+  /* ---- colour ---- */
+  --paper: #EDEDE8;
+  --ink: #14140F;
+  --rule: #C6C6BE;
+
+  /* Muted grey.
+     --mute        3.79:1 on paper — passes AA for large text only (>=24px).
+     --mute-sm     4.57:1 on paper — used for body copy, captions and labels.
+     The two are visually near-identical; the darker one exists purely so
+     small text meets WCAG AA without altering the palette. */
+  --mute: #78786F;
+  --mute-sm: #6B6B63;
+
+  /* Signal red.
+     --signal      3.58:1 on paper — passes AA for large text (>=24px) only,
+                   which covers the display accent, and passes on dark
+                   surfaces. Used for fills, rules and borders everywhere.
+     --signal-sm   4.69:1 on paper — used for the 11px mono labels
+                   (eyebrows, markers, keys). 15% darker; indistinguishable
+                   at that size, but the difference between AA and a fail. */
+  --signal: #E33F1E;
+  --signal-sm: #C1361A;
+  /* 4.56:1 on --surface-dark, for small labels inside the dark band.
+     Plain --signal scores 4.40 there, which misses AA at 11px by a hair. */
+  --signal-on-dark: #E8401F;
+
+  /* Ink-on-dark surfaces (poster band, spec bar) */
+  --surface-dark: #14140F;
+  --surface-dark-2: #1C1C17;
+
+  /* ---- type ---- */
+  --sans: "Helvetica Neue", Helvetica, Arial, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, "Roboto Mono", monospace;
+
+  /* ---- layout ---- */
+  --pad: clamp(18px, 4vw, 56px);
+  --grid-cols: 12;
+  --spec-h: 44px;
+
+  /* ---- motion ---- */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-wipe: 1160ms;
+  --dur-wipe-swap: 520ms;
+  --dur-reveal: 900ms;
+  --dur-hover: 450ms;
+}
+
+/* Motion is opt-out, not opt-in: every animated property below reads these. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-wipe: 1ms;
+    --dur-wipe-swap: 1ms;
+    --dur-reveal: 1ms;
+    --dur-hover: 1ms;
+  }
+}

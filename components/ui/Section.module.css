@@ -1,0 +1,16 @@
+/* Standard content section: top rule and vertical rhythm. */
+.section {
+  padding: clamp(56px, 9vw, 120px) 0;
+  border-top: 1px solid var(--rule);
+}
+
+/* For a section that follows a page intro rather than another section. */
+.tight {
+  padding-top: clamp(28px, 4vw, 48px);
+}
+
+/* For stacked media blocks that supply their own spacing. */
+.flush {
+  border-top: 0;
+  padding: 0 0 clamp(24px, 4vw, 56px);
+}

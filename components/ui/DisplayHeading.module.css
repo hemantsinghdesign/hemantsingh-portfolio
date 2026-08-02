@@ -1,0 +1,5 @@
+/* Wrapper for the masked multi-line display heading. Line styling itself
+   lives in styles/typography.css, shared with the case-study title. */
+.heading {
+  display: block;
+}

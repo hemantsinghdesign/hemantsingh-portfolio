@@ -1,0 +1,29 @@
+/* Twelve hairline columns, fixed behind everything. Decorative. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 0 var(--pad);
+}
+
+.column {
+  border-left: 1px solid var(--rule);
+  opacity: 0.5;
+}
+
+.column:first-child {
+  border-left: 0;
+}
+
+@media (max-width: 800px) {
+  .overlay {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .column:nth-child(n + 7) {
+    display: none;
+  }
+}
