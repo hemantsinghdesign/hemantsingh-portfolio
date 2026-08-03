@@ -1,6 +1,11 @@
 import Image from 'next/image';
 import { IMAGE_QUALITY } from '@/lib/images';
 import { CaseGallery } from '@/components/case/CaseGallery';
+import { CaseTimeline } from '@/components/case/CaseTimeline';
+import { CaseCompare } from '@/components/case/CaseCompare';
+import { CaseInterlude } from '@/components/case/CaseInterlude';
+import { CaseColumns } from '@/components/case/CaseColumns';
+import { CaseVisualLanguage } from '@/components/case/CaseVisualLanguage';
 import { Section } from '@/components/ui/Section';
 import { SectionHead } from '@/components/ui/SectionHead';
 import type { ContentBlock, ContentImage } from '@/types/content';
@@ -73,6 +78,17 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
               </Section>
             );
 
+          case 'prose':
+            return (
+              <Section key={key} variant="flush">
+                <p
+                  className={`${styles.prose} prose ${block.variant === 'reflection' ? styles.reflection : ''}`}
+                >
+                  {block.text}
+                </p>
+              </Section>
+            );
+
           case 'bleed':
             return (
               <section className={styles.bleed} key={key}>
@@ -140,6 +156,21 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
 
           case 'gallery':
             return <CaseGallery key={key} block={block} />;
+
+          case 'timeline':
+            return <CaseTimeline key={key} block={block} />;
+
+          case 'compare':
+            return <CaseCompare key={key} block={block} />;
+
+          case 'interlude':
+            return <CaseInterlude key={key} block={block} />;
+
+          case 'columns':
+            return <CaseColumns key={key} block={block} />;
+
+          case 'visualLanguage':
+            return <CaseVisualLanguage key={key} block={block} />;
         }
       })}
     </>

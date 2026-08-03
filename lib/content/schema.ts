@@ -51,6 +51,18 @@ const noteBlock = z.object({
   text: z.string().min(1),
 });
 
+/** A normal-width paragraph — for passages too long to read as a pull-quote
+ *  (`note`'s narrow, large-type treatment) but still just prose, no image.
+ *  Reuses the site's existing global `.prose` type class. `variant:
+ *  'reflection'` is for the closing statement only — visually distinct
+ *  from a standard prose paragraph so it reads as the final word, not
+ *  another paragraph in the sequence. */
+const proseBlock = z.object({
+  type: z.literal('prose'),
+  text: z.string().min(1),
+  variant: z.enum(['default', 'reflection']).default('default'),
+});
+
 const fullBlock = z.object({
   type: z.literal('full'),
   image: imageSchema,
@@ -78,14 +90,91 @@ const galleryBlock = z.object({
   images: z.array(imageSchema).min(2),
 });
 
+/** A sequential journey/service-blueprint: stage, emotional temperature,
+ *  and the design response at that stage. Renders as a stepped list —
+ *  horizontal on wide viewports, stacked on narrow ones. Use sparingly:
+ *  one per case study, only when the project's UX/service-design thinking
+ *  needs a structure `note`/`heading` blocks can't carry. */
+const timelineBlock = z.object({
+  type: z.literal('timeline'),
+  marker: z.string().min(1).max(3),
+  title: z.string().min(1),
+  note: z.string().optional(),
+  steps: z
+    .array(
+      z.object({
+        stage: z.string().min(1),
+        feeling: z.string().min(1),
+        text: z.string().min(1),
+        /** Emotional temperature at this stage, 0–100. Plots the line in the
+         *  native SVG diagram above the steps — optional so a timeline can
+         *  be added without immediately having to quantify every stage. */
+        tone: z.number().min(0).max(100).optional(),
+      }),
+    )
+    .min(3),
+});
+
+/** A comparison panel: a short list on one side, a finding on the other.
+ *  Built for a research beat ("what I looked at" / "what I found"), but
+ *  generic enough for any two-position argument. */
+const compareBlock = z.object({
+  type: z.literal('compare'),
+  marker: z.string().min(1).max(3),
+  title: z.string().min(1),
+  left: z.object({ title: z.string().min(1), items: z.array(z.string().min(1)).min(1) }),
+  right: z.object({ title: z.string().min(1), text: z.string().min(1) }),
+});
+
+/** A full-screen, minimal editorial statement — the emotional beat of a
+ *  case study. Use at most twice: once to open (the insight), once to
+ *  close (the reflection). Anything more and it stops feeling rare. */
+const interludeBlock = z.object({
+  type: z.literal('interlude'),
+  lines: z.array(z.string().min(1)).min(1),
+});
+
+/** Wraps the site's existing ColumnGrid (home, capabilities) for a 3-up
+ *  set of titled principles inside a case study. */
+const columnsBlock = z.object({
+  type: z.literal('columns'),
+  marker: z.string().min(1).max(3),
+  title: z.string().min(1),
+  note: z.string().optional(),
+  items: z
+    .array(z.object({ marker: z.string().min(1), title: z.string().min(1), body: z.string().min(1) }))
+    .min(2)
+    .max(4),
+});
+
+/** The visual-language reference board — a source image, a colour palette,
+ *  and a couple of motifs — revealed progressively as the section scrolls
+ *  into view rather than shown flat all at once. One per case study. */
+const visualLanguageBlock = z.object({
+  type: z.literal('visualLanguage'),
+  marker: z.string().min(1).max(3),
+  title: z.string().min(1),
+  note: z.string().optional(),
+  text: z.string().min(1),
+  reference: imageSchema,
+  palette: z.array(z.object({ hex: z.string().min(1), label: z.string().min(1) })).min(1),
+  motifs: z.array(z.object({ src: z.string().min(1), label: z.string().min(1) })).min(1),
+});
+
 export const blockSchema = z.discriminatedUnion('type', [
   bleedBlock,
   headingBlock,
   noteBlock,
+  proseBlock,
   fullBlock,
   pairBlock,
   triptychBlock,
   galleryBlock,
+  timelineBlock,
+  compareBlock,
+  interludeBlock,
+  columnsBlock,
+  visualLanguageBlock,
 ]);
 
 /* ---- project ---------------------------------------------------------- */
@@ -107,12 +196,24 @@ export const projectSchema = z.object({
   summary: z.string().min(1),
   /** Card/preview image. Also the Open Graph image fallback. */
   thumbnail: imageSchema,
+  /** Optional full-screen typographic opening — large display lines, no
+   *  image. Rendered before the facts grid. Omit it and a project falls
+   *  back to the plain text-led opening (SORA's current treatment). */
+  hero: z
+    .object({
+      lines: z.array(z.string().min(1)).min(1),
+    })
+    .optional(),
   meta: z.object({
     client: z.string().min(1),
     role: z.string().min(1),
     timeframe: z.string().min(1),
     scope: z.string().min(1),
     tools: z.string().min(1),
+    /** Short discipline tag(s), e.g. "Service Design · Brand Experience" —
+     *  shown as "Project Type" in the compact overview. Optional so
+     *  existing projects (SORA) don't need to add it. */
+    type: z.string().min(1).optional(),
   }),
   overview: z.string().min(1),
   approach: z.array(z.string().min(1)).min(1),

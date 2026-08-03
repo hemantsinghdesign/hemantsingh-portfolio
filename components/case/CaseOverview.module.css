@@ -1,0 +1,31 @@
+/* Compact facts strip: Role, Duration, Deliverables, Project type. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2.4vw, 28px);
+  padding: clamp(20px, 3vw, 32px) 0 clamp(40px, 6vw, 72px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.item {
+  border-top: 1px solid var(--ink);
+  padding-top: 12px;
+}
+
+.key {
+  color: var(--mute-sm);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.value {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 820px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

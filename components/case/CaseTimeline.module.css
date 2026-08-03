@@ -1,0 +1,110 @@
+/* Journey/service-blueprint stepper: stacked on narrow, row on wide. */
+
+.diagram {
+  width: 100%;
+  height: clamp(80px, 12vw, 140px);
+  margin-bottom: clamp(4px, 1vw, 12px);
+  overflow: visible;
+}
+
+.baseline {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.line {
+  fill: none;
+  stroke: var(--signal);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* pathLength=100 on the element makes dasharray units percent-like,
+     independent of the actual point count or geometry. */
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.node {
+  fill: var(--paper);
+  stroke: var(--signal);
+  stroke-width: 2.5;
+  opacity: 0;
+  transition: opacity var(--dur-hover) var(--ease);
+}
+
+/* Draw-on is keyed off the same class Reveal adds to the ancestor section —
+   no JS animation library, matches docs/routing-and-motion.md. */
+:global(.is-visible) .line {
+  animation: draw-line var(--dur-wipe) var(--ease) forwards;
+}
+
+:global(.is-visible) .node {
+  animation: fade-in var(--dur-hover) var(--ease) forwards;
+  animation-delay: var(--dur-wipe);
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line {
+    stroke-dashoffset: 0;
+  }
+
+  .node {
+    opacity: 1;
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(var(--steps, 4), 1fr);
+  gap: clamp(16px, 2.4vw, 28px);
+}
+
+.step {
+  border-top: 2px solid var(--ink);
+  padding-top: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.index {
+  color: var(--mute-sm);
+}
+
+.feeling {
+  color: var(--signal-sm);
+}
+
+.stage {
+  font-size: clamp(17px, 1.9vw, 22px);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 2px 0 4px;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--mute-sm);
+}
+
+@media (max-width: 820px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    padding-top: 14px;
+  }
+}

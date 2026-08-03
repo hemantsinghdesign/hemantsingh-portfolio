@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CaseBlocks } from '@/components/case/CaseBlocks';
+import { CaseHero } from '@/components/case/CaseHero';
 import { CaseMetrics } from '@/components/case/CaseMetrics';
 import { CaseNext } from '@/components/case/CaseNext';
+import { CaseOverview } from '@/components/case/CaseOverview';
 import { CaseSummary } from '@/components/case/CaseSummary';
 import { ProjectJsonLd } from '@/components/seo/JsonLd';
 import { DisplayHeading } from '@/components/ui/DisplayHeading';
@@ -65,12 +67,21 @@ export default async function ProjectPage({
           Case {project.index} — {project.kicker} — {project.year}
         </p>
         <DisplayHeading lines={[project.title]} variant="case" />
-        <p className={`${styles.summary} lede`}>{project.summary}</p>
+        {/* For hero-led case studies, the hero statement + the first content
+            block already open the story — repeating the same line here as a
+            lede read as filler, not pacing. */}
+        {!project.hero && <p className={`${styles.summary} lede`}>{project.summary}</p>}
       </section>
 
-      <Section>
-        <CaseSummary project={project} />
-      </Section>
+      {project.hero && <CaseHero hero={project.hero} />}
+
+      {project.hero ? (
+        <CaseOverview project={project} />
+      ) : (
+        <Section>
+          <CaseSummary project={project} />
+        </Section>
+      )}
 
       <CaseBlocks blocks={project.blocks} />
 

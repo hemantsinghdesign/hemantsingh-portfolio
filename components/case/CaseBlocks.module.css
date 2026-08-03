@@ -31,6 +31,24 @@
   padding-left: 20px;
 }
 
+.prose {
+  max-width: 64ch;
+}
+
+/* The closing statement — set apart from a standard prose paragraph so it
+   reads as the final word of the case study, not another paragraph in
+   the sequence. */
+.reflection {
+  max-width: 52ch;
+  font-size: clamp(19px, 2.2vw, 25px);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-top: clamp(28px, 4vw, 48px);
+  padding-top: clamp(28px, 4vw, 48px);
+  border-top: 1px solid var(--rule);
+}
+
 .figure {
   display: block;
 }

@@ -53,8 +53,13 @@ describe('project content', () => {
     }
   });
 
-  it('returns no next project while only one exists', () => {
-    expect(getNextProject('sora-matcha')).toBeUndefined();
+  it('wraps to the next project, and back around from the last one', () => {
+    expect(getNextProject('sora-matcha')?.slug).toBe('hsbc-onboarding');
+    expect(getNextProject('hsbc-onboarding')?.slug).toBe('sora-matcha');
+  });
+
+  it('returns undefined for an unknown slug', () => {
+    expect(getNextProject('does-not-exist')).toBeUndefined();
   });
 });
 

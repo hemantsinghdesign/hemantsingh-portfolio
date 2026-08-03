@@ -1,6 +1,7 @@
 import { projectSchema } from '@/lib/content/schema';
 import type { Project } from '@/types/content';
 import { soraMatcha } from '@/content/projects/sora-matcha';
+import { hsbcOnboarding } from '@/content/projects/hsbc-onboarding';
 
 /**
  * Project registry.
@@ -14,7 +15,7 @@ import { soraMatcha } from '@/content/projects/sora-matcha';
  * dependency graph stays readable, and a missing project is a build
  * error instead of a silent omission.
  */
-const sources = [soraMatcha];
+const sources = [soraMatcha, hsbcOnboarding];
 
 /** Parsed once at module load. Invalid content fails `next build`. */
 const projects: Project[] = sources

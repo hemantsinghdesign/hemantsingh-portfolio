@@ -14,6 +14,7 @@ const ROUTES = [
   '/contact',
   '/resume',
   '/projects/sora-matcha',
+  '/projects/hsbc-onboarding',
 ] as const;
 
 for (const route of ROUTES) {
@@ -45,6 +46,14 @@ test('a deep link to a case study works without visiting the index first', async
 }) => {
   await page.goto('/projects/sora-matcha');
   await expect(page.getByRole('heading', { level: 1, name: 'SORA' })).toBeVisible();
+});
+
+test('the HSBC case study deep-links correctly and wraps to the next project', async ({
+  page,
+}) => {
+  await page.goto('/projects/hsbc-onboarding');
+  await expect(page.getByRole('heading', { level: 1, name: 'HSBC' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /SORA/ })).toBeVisible();
 });
 
 test('the back button returns to the previous route', async ({ page }) => {

@@ -1,0 +1,132 @@
+/* Visual-language reference board: reference image + palette + motifs,
+   revealed as a stagger once the section scrolls into view. */
+.section {
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 380px) 1fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: start;
+}
+
+.referenceWrap {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+:global(.is-visible) .referenceWrap {
+  animation: rise var(--dur-reveal) var(--ease) forwards;
+}
+
+.reference {
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border: 1px solid var(--rule);
+}
+
+.text {
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 0 clamp(24px, 3vw, 36px);
+}
+
+.palette {
+  list-style: none;
+  margin: 0 0 clamp(24px, 3vw, 36px);
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.swatch {
+  display: grid;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+:global(.is-visible) .swatch {
+  animation: rise var(--dur-hover) var(--ease) forwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+.chip {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+  display: block;
+}
+
+.swatchLabel {
+  color: var(--ink);
+}
+
+.swatchHex {
+  color: var(--mute-sm);
+}
+
+.motifs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.motif {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  width: 72px;
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+:global(.is-visible) .motif {
+  animation: rise var(--dur-hover) var(--ease) forwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+.motifIcon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.motifLabel {
+  color: var(--mute-sm);
+  text-align: center;
+  font-size: 10px;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .referenceWrap,
+  .swatch,
+  .motif {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
