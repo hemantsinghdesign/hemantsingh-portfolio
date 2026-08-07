@@ -72,3 +72,29 @@
   padding: 0 var(--pad);
   opacity: 0.55;
 }
+
+
+.toneGreen {
+  background: #1E3A24;
+}
+
+.toneMaroon {
+  background: #5A1418;
+}
+
+/* A coloured band is lighter than ink, so the small type needs a warmer
+   signal and a less transparent hint to stay above 4.5:1. */
+.toneGreen .marker,
+.toneMaroon .marker {
+  color: var(--signal-on-tone);
+}
+
+.toneGreen .hint,
+.toneMaroon .hint {
+  opacity: 0.72;
+}
+
+.toneGreen .scroller::-webkit-scrollbar-thumb,
+.toneMaroon .scroller::-webkit-scrollbar-thumb {
+  background: var(--signal-on-tone);
+}

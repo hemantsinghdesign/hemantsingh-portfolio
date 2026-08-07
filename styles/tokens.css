@@ -30,6 +30,10 @@
   /* 4.56:1 on --surface-dark, for small labels inside the dark band.
      Plain --signal scores 4.40 there, which misses AA at 11px by a hair. */
   --signal-on-dark: #E8401F;
+  /* 4.68:1 on the green band, 5.10 on maroon, 6.42 on brown. --signal-on-dark
+     is tuned for ink and drops to 3.08 on green, so a toned band needs its
+     own value. Sits within the project's existing warm range. */
+  --signal-on-tone: #FA7A33;
 
   /* Ink-on-dark surfaces (poster band, spec bar) */
   --surface-dark: #14140F;

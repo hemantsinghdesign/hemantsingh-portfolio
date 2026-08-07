@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import { IMAGE_QUALITY } from '@/lib/images';
 import type { Project } from '@/types/content';
 import styles from './CaseHero.module.css';
 
@@ -11,16 +13,40 @@ import styles from './CaseHero.module.css';
  *   lib/content/schema.ts) — a project that doesn't set `hero` renders
  *   the plain text-led opening exactly as before.
  *
- * Deliberately not an image: three separate attempts to represent this
- * project with a photograph or product shot all read as "an object," not
- * "an experience." The project's own opening line does the job a picture
- * couldn't — this component's only trick is committing to that fully:
- * huge type, nothing else on screen.
+ * Two forms, and which one a project uses is a content decision:
+ *
+ * - `lines` — for HSBC, where three attempts at a photographic hero all read
+ *   as "an object" rather than "an experience," so the opening line does the
+ *   job a picture could not.
+ * - `image` — for Tadka Trail, where the drawing is the concept. It sits
+ *   contained on the site's own paper with nothing in front of it, because
+ *   any words there would explain a thing that explains itself.
+ *
+ * The only trick either form has is committing fully: one element on screen.
  */
 export function CaseHero({ hero }: { hero: NonNullable<Project['hero']> }) {
+  if (hero.image) {
+    return (
+      <section className={styles.plate}>
+        <Image
+          className={styles.drawing}
+          src={hero.image.src}
+          alt={hero.image.alt}
+          width={hero.image.width}
+          height={hero.image.height}
+          priority
+          sizes="(max-width: 700px) 78vw, 40vw"
+          quality={IMAGE_QUALITY}
+          placeholder={hero.image.blurDataURL ? 'blur' : 'empty'}
+          blurDataURL={hero.image.blurDataURL}
+        />
+      </section>
+    );
+  }
+
   return (
     <section className={styles.frame}>
-      {hero.lines.map((line, i) => (
+      {(hero.lines ?? []).map((line, i) => (
         <p className={styles.line} key={line} style={{ '--line-index': i } as React.CSSProperties}>
           <span>{line}</span>
         </p>

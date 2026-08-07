@@ -71,8 +71,10 @@
   color: var(--mute-sm);
 }
 
+/* --mute clears AA only above 24px. This title clamps down to 22px on
+   mobile, so it takes the accessible variant. */
 .pendingTitle {
-  color: var(--mute);
+  color: var(--mute-sm);
 }
 
 @media (max-width: 720px) {

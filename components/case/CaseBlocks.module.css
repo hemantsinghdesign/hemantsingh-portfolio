@@ -39,6 +39,10 @@
    reads as the final word of the case study, not another paragraph in
    the sequence. */
 .reflection {
+  /* A reflection may run to several paragraphs. Without this the block
+     renders as one wall of text. Scoped to the reflection variant so a
+     single-paragraph prose block is unaffected. */
+  white-space: pre-line;
   max-width: 52ch;
   font-size: clamp(19px, 2.2vw, 25px);
   line-height: 1.5;
@@ -84,4 +88,30 @@
   .triptych {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* Project identity tones. A full-bleed band may carry a project's own colour
+   instead of the site's ink — the one sanctioned way a case study introduces
+   colour without leaving the design system. */
+/* Lets an illustration float on the site's own ground rather than sit on a
+   dark card. Only meaningful with `fit: contain`. */
+.tonePaper {
+  background: var(--paper);
+}
+
+.toneGreen {
+  background: #1E3A24;
+}
+
+.toneMaroon {
+  background: #5A1418;
+}
+
+/* Photography fills the band; artwork on paper sits inside it uncropped, so
+   a drawn edge is never cut off by a crop it was not designed for. */
+.bleedContain {
+  max-height: 84vh;
+  object-fit: contain;
+  padding: clamp(24px, 5vw, 72px) var(--pad);
 }

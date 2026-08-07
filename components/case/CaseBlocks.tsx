@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { IMAGE_QUALITY } from '@/lib/images';
+import { CaseAnnotate } from '@/components/case/CaseAnnotate';
 import { CaseGallery } from '@/components/case/CaseGallery';
+import { CaseStory } from '@/components/case/CaseStory';
 import { CaseTimeline } from '@/components/case/CaseTimeline';
 import { CaseCompare } from '@/components/case/CaseCompare';
 import { CaseInterlude } from '@/components/case/CaseInterlude';
@@ -91,9 +93,21 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
 
           case 'bleed':
             return (
-              <section className={styles.bleed} key={key}>
+              <section
+                className={[
+                  styles.bleed,
+                  block.tone === 'paper' ? styles.tonePaper : '',
+                  block.tone === 'green' ? styles.toneGreen : '',
+                  block.tone === 'maroon' ? styles.toneMaroon : '',
+                ]
+                  .filter(Boolean)
+                  .join(' ')}
+                key={key}
+              >
                 <Image
-                  className={styles.bleedImage}
+                  className={`${styles.bleedImage} ${
+                    block.fit === 'contain' ? styles.bleedContain : ''
+                  }`}
                   src={block.image.src}
                   alt={block.image.alt}
                   width={block.image.width}
@@ -153,6 +167,12 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
                 </div>
               </Section>
             );
+
+          case 'annotate':
+            return <CaseAnnotate key={key} block={block} />;
+
+          case 'story':
+            return <CaseStory key={key} block={block} />;
 
           case 'gallery':
             return <CaseGallery key={key} block={block} />;

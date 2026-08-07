@@ -42,3 +42,37 @@
     animation: none;
   }
 }
+
+
+/* Illustrated opening. The drawing floats on the site's own paper — no card,
+   no frame, no crop. It takes roughly 40% of the width so the space around
+   it is doing as much work as the drawing is. */
+.plate {
+  display: flex;
+  justify-content: center;
+  padding: clamp(32px, 7vw, 88px) 0 clamp(40px, 8vw, 104px);
+}
+
+.drawing {
+  width: clamp(200px, 40vw, 420px);
+  height: auto;
+  animation: hero-rise var(--dur-reveal) var(--ease) both;
+}
+
+/* Rises into place once, like a sheet being set down. Nothing loops. */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawing {
+    animation: none;
+  }
+}

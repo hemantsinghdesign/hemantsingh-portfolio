@@ -1,0 +1,147 @@
+/* Sticky annotated figure. One illustration held in place while its reasoning
+   scrolls past it, with a hairline drawn to each named detail. */
+.block {
+  padding: clamp(40px, 6vw, 80px) 0 clamp(56px, 9vw, 120px);
+  border-top: 1px solid var(--rule);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 5vw, 80px);
+  align-items: start;
+  margin-top: clamp(28px, 4vw, 52px);
+}
+
+/* ---- sticky figure ---- */
+.figure {
+  position: sticky;
+  top: clamp(96px, 12vh, 140px);
+  margin: 0;
+}
+
+.stage {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+/* ---- annotations ---- */
+.note {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms var(--ease);
+}
+
+.noteActive {
+  opacity: 1;
+}
+
+.dot {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: 5px;
+  height: 5px;
+  background: var(--signal);
+}
+
+/* Hairline out to the label. Horizontal only — a diagonal would imply a
+   pointer, and this is a print annotation, not a tooltip. */
+.rule {
+  position: absolute;
+  top: 0;
+  height: 1px;
+  width: clamp(28px, 5vw, 64px);
+  background: var(--signal);
+}
+
+.label {
+  position: absolute;
+  top: -0.75em;
+  white-space: nowrap;
+  color: var(--signal-sm);
+}
+
+.noteRight .rule {
+  left: 4px;
+}
+
+.noteRight .label {
+  left: calc(clamp(28px, 5vw, 64px) + 10px);
+}
+
+.noteLeft .rule {
+  right: 4px;
+}
+
+.noteLeft .label {
+  right: calc(clamp(28px, 5vw, 64px) + 10px);
+}
+
+/* ---- reasoning column ---- */
+.reading {
+  display: grid;
+  gap: clamp(40px, 8vh, 96px);
+  padding-block: clamp(20px, 6vh, 80px) 40vh;
+}
+
+.step {
+  max-width: 46ch;
+}
+
+.stepLabel {
+  color: var(--mute-sm);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.stepText {
+  font-size: clamp(16px, 1.7vw, 20px);
+  line-height: 1.6;
+  transition: color 500ms var(--ease);
+  color: var(--mute-sm);
+}
+
+.stepActive .stepText {
+  color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .figure {
+    position: static;
+  }
+
+  .reading {
+    padding-block: 32px 0;
+    gap: 32px;
+  }
+
+  /* Off the sticky layout the annotations have nothing to point at. */
+  .note {
+    display: none;
+  }
+
+  .stepText {
+    color: var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .note {
+    opacity: 1;
+  }
+
+  .stepText {
+    color: var(--ink);
+  }
+}

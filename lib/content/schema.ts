@@ -32,10 +32,18 @@ export const imageSchema = z.object({
    here plus one renderer branch.
    --------------------------------------------------------------------- */
 
+/** Surface a full-bleed band sits on. `ink` is the site default; the others
+ *  are a project's own identity colours. Adding a tone here is the only way a
+ *  case study is allowed to introduce colour. */
+const toneSchema = z.enum(['ink', 'paper', 'green', 'maroon']).default('ink');
+
 const bleedBlock = z.object({
   type: z.literal('bleed'),
   image: imageSchema,
   caption: z.string().optional(),
+  tone: toneSchema,
+  /** Photographs fill the band; artwork on paper sits inside it uncropped. */
+  fit: z.enum(['cover', 'contain']).default('cover'),
 });
 
 const headingBlock = z.object({
@@ -84,6 +92,7 @@ const triptychBlock = z.object({
 /** Full-bleed dark section with a horizontally scrolling row. */
 const galleryBlock = z.object({
   type: z.literal('gallery'),
+  tone: toneSchema,
   title: z.string().min(1),
   note: z.string().optional(),
   text: z.string().optional(),
@@ -161,7 +170,45 @@ const visualLanguageBlock = z.object({
   motifs: z.array(z.object({ src: z.string().min(1), label: z.string().min(1) })).min(1),
 });
 
+const annotateBlock = z.object({
+  type: z.literal('annotate'),
+  marker: z.string().min(1).max(3),
+  title: z.string().min(1),
+  note: z.string().optional(),
+  image: imageSchema,
+  /** Each note reveals as it is read, and draws a hairline to its detail.
+   *  `x`/`y` are percentages of the image box. */
+  notes: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        text: z.string().min(1),
+        x: z.number().min(0).max(100),
+        y: z.number().min(0).max(100),
+      }),
+    )
+    .min(2)
+    .max(6),
+});
+
+/** A single story card given its own viewport and its own ground colour.
+ *  Bilingual by design — the Hindi is not a translation of the English, it is
+ *  half of the artefact. */
+const storyBlock = z.object({
+  type: z.literal('story'),
+  tone: z.enum(['green', 'maroon', 'brown']),
+  /** The line pulled out before the card itself is shown. */
+  pull: z.string().min(1),
+  region: z.string().min(1),
+  dish: z.string().min(1),
+  image: imageSchema,
+  english: z.string().min(1),
+  hindi: z.string().min(1),
+});
+
 export const blockSchema = z.discriminatedUnion('type', [
+  annotateBlock,
+  storyBlock,
   bleedBlock,
   headingBlock,
   noteBlock,
@@ -196,12 +243,21 @@ export const projectSchema = z.object({
   summary: z.string().min(1),
   /** Card/preview image. Also the Open Graph image fallback. */
   thumbnail: imageSchema,
-  /** Optional full-screen typographic opening — large display lines, no
-   *  image. Rendered before the facts grid. Omit it and a project falls
-   *  back to the plain text-led opening (SORA's current treatment). */
+  /** Optional opening statement, rendered before the facts grid. Omit it and
+   *  a project falls back to the plain text-led opening (SORA's treatment).
+   *
+   *  Two forms, because two projects need opposite things. `lines` is a
+   *  typographic opening — used where a photograph read as "an object"
+   *  rather than an experience. `image` is a single contained drawing on
+   *  the site's own paper — used where the drawing *is* the concept and
+   *  any words in front of it would be an explanation nobody asked for. */
   hero: z
     .object({
-      lines: z.array(z.string().min(1)).min(1),
+      lines: z.array(z.string().min(1)).min(1).optional(),
+      image: imageSchema.optional(),
+    })
+    .refine((h) => Boolean(h.lines) !== Boolean(h.image), {
+      message: 'hero takes either lines or an image, not both and not neither',
     })
     .optional(),
   meta: z.object({

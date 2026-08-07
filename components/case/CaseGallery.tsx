@@ -16,7 +16,15 @@ import styles from './CaseGallery.module.css';
  */
 export function CaseGallery({ block }: { block: BlockOfType<'gallery'> }) {
   return (
-    <section className={styles.band}>
+    <section
+      className={[
+        styles.band,
+        block.tone === 'green' ? styles.toneGreen : '',
+        block.tone === 'maroon' ? styles.toneMaroon : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
       <div className={styles.head}>
         {block.note && <span className={`${styles.marker} mono`}>{block.note}</span>}
         <h2 className={styles.title}>{block.title}</h2>

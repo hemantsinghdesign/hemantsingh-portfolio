@@ -1,6 +1,7 @@
 import { projectSchema } from '@/lib/content/schema';
 import type { Project } from '@/types/content';
 import { soraMatcha } from '@/content/projects/sora-matcha';
+import { tadkaTrail } from '@/content/projects/tadka-trail';
 import { hsbcOnboarding } from '@/content/projects/hsbc-onboarding';
 
 /**
@@ -15,7 +16,7 @@ import { hsbcOnboarding } from '@/content/projects/hsbc-onboarding';
  * dependency graph stays readable, and a missing project is a build
  * error instead of a silent omission.
  */
-const sources = [soraMatcha, hsbcOnboarding];
+const sources = [soraMatcha, hsbcOnboarding, tadkaTrail];
 
 /** Parsed once at module load. Invalid content fails `next build`. */
 const projects: Project[] = sources

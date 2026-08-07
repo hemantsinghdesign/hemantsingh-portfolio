@@ -54,8 +54,15 @@ describe('project content', () => {
   });
 
   it('wraps to the next project, and back around from the last one', () => {
-    expect(getNextProject('sora-matcha')?.slug).toBe('hsbc-onboarding');
-    expect(getNextProject('hsbc-onboarding')?.slug).toBe('sora-matcha');
+    // Order-independent: adding a project must not break this test.
+    const order = getAllProjects();
+    order.forEach((project, i) => {
+      const expected = order[(i + 1) % order.length];
+      expect(getNextProject(project.slug)?.slug).toBe(expected?.slug);
+    });
+    // The last one wraps to the first.
+    const last = order[order.length - 1];
+    expect(getNextProject(last!.slug)?.slug).toBe(order[0]?.slug);
   });
 
   it('returns undefined for an unknown slug', () => {
