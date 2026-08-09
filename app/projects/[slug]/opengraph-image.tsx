@@ -8,6 +8,14 @@ import { getAllProjects, getProjectBySlug } from '@/lib/content/projects';
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 
+/**
+ * Describes the card so a shared link is not an unlabelled image. Static
+ * rather than per-project on purpose: deriving it per slug means
+ * `generateImageMetadata`, which moves these off the build-time path and
+ * gives every card a runtime cost for one line of alt text.
+ */
+export const alt = 'Case study — Hemant Singh, graphic & brand designer';
+
 export function generateStaticParams() {
   return getAllProjects().map((project) => ({ slug: project.slug }));
 }

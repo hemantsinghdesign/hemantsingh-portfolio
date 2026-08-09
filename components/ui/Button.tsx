@@ -5,12 +5,15 @@ import styles from './Button.module.css';
  * Purpose: the primary call to action — solid ink block with a signal fill
  *   that wipes up on hover.
  * Props: `children` label; `size` ('default' | 'large'); plus either `href`
- *   (renders a Link) or `onClick`/`disabled` (renders a button).
+ *   (renders a Link) or `onClick`/`disabled`/`type` (renders a button).
  * Used in: home, work, capabilities, about, contact, 404.
  * Reusable: yes — this is the site's only button style.
  *
  * Rendering a Link when `href` is present keeps navigation as a real anchor,
  * so middle-click, open-in-new-tab and prefetch all keep working.
+ *
+ * `type` defaults to 'button' so a stray button inside a form cannot submit
+ * it by accident; the one that is meant to submit says so.
  */
 
 interface CommonProps {
@@ -20,8 +23,13 @@ interface CommonProps {
 
 type ButtonProps = CommonProps &
   (
-    | { href: string; onClick?: never; disabled?: never }
-    | { href?: never; onClick?: () => void; disabled?: boolean }
+    | { href: string; onClick?: never; disabled?: never; type?: never }
+    | {
+        href?: never;
+        onClick?: () => void;
+        disabled?: boolean;
+        type?: 'button' | 'submit';
+      }
   );
 
 export function Button({ children, size = 'default', ...rest }: ButtonProps) {
@@ -46,7 +54,7 @@ export function Button({ children, size = 'default', ...rest }: ButtonProps) {
 
   return (
     <button
-      type="button"
+      type={rest.type ?? 'button'}
       className={className}
       onClick={rest.onClick}
       disabled={rest.disabled}

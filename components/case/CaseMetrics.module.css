@@ -5,19 +5,27 @@
   gap: clamp(16px, 3vw, 40px);
 }
 
+/* Source order is <dt> then <dd>, as a description list requires. The figure
+   reads above its label, so the two are reordered here rather than in the
+   markup. */
 .metric {
+  display: flex;
+  flex-direction: column;
   border-top: 1px solid var(--ink);
   padding-top: 14px;
 }
 
 .value {
+  order: 1;
   display: block;
   font-size: clamp(38px, 6vw, 76px);
   letter-spacing: -0.05em;
   line-height: 1;
+  margin: 0;
 }
 
 .label {
+  order: 2;
   display: block;
   color: var(--mute-sm);
   margin-top: 10px;

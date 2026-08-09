@@ -1,5 +1,5 @@
-/* Contact form. No <form> element is used because there is no endpoint yet —
-   see the component comment for how to wire one up. */
+/* Contact form. It is a real <form> with no endpoint — submission is handled
+   in JS and composes a mailto: link. See the component comment. */
 .fields {
   display: grid;
   gap: 18px;

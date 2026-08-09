@@ -16,8 +16,14 @@ import styles from './ContactForm.module.css';
  * replace the body of `submit` with a fetch to Formspree, Basin or a Next
  * route handler — the markup and styling do not change.
  *
+ * It is a real <form> even with no endpoint: that is what makes Enter submit
+ * from any field, and what makes `required` and `type="email"` produce the
+ * browser's own validation and error messages. `noValidate` is deliberately
+ * not set, and submission is prevented in the handler rather than by
+ * omitting the element.
+ *
  * The confirmation is in an aria-live region so it is announced, not just
- * shown, and required fields carry aria-required.
+ * shown.
  */
 export function ContactForm() {
   const [values, setValues] = useState({
@@ -36,7 +42,9 @@ export function ContactForm() {
   const canSubmit =
     values.name.trim().length > 0 && values.email.trim().length > 0;
 
-  const submit = () => {
+  const submit = (event: React.FormEvent<HTMLFormElement>) => {
+    // There is no endpoint — the browser must not navigate away.
+    event.preventDefault();
     if (!canSubmit) return;
 
     const body = [
@@ -72,15 +80,16 @@ export function ContactForm() {
   }
 
   return (
-    <div className={styles.fields}>
+    <form className={styles.fields} onSubmit={submit}>
       <label className={styles.field}>
         <span className={`${styles.label} mono`}>Name</span>
         <input
           className={styles.input}
+          name="name"
           value={values.name}
           onChange={update('name')}
           placeholder="Who is writing"
-          aria-required="true"
+          required
           autoComplete="name"
         />
       </label>
@@ -90,10 +99,11 @@ export function ContactForm() {
         <input
           className={styles.input}
           type="email"
+          name="email"
           value={values.email}
           onChange={update('email')}
           placeholder="Where I reply"
-          aria-required="true"
+          required
           autoComplete="email"
         />
       </label>
@@ -102,6 +112,7 @@ export function ContactForm() {
         <span className={`${styles.label} mono`}>Budget range</span>
         <input
           className={styles.input}
+          name="budget"
           value={values.budget}
           onChange={update('budget')}
           placeholder="Optional, but it speeds things up"
@@ -112,6 +123,7 @@ export function ContactForm() {
         <span className={`${styles.label} mono`}>The project</span>
         <textarea
           className={styles.textarea}
+          name="note"
           rows={5}
           value={values.note}
           onChange={update('note')}
@@ -119,9 +131,9 @@ export function ContactForm() {
         />
       </label>
 
-      <Button onClick={submit} disabled={!canSubmit}>
+      <Button type="submit" disabled={!canSubmit}>
         Send message
       </Button>
-    </div>
+    </form>
   );
 }

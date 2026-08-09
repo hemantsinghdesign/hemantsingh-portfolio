@@ -28,7 +28,10 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
       <RegistrationMarks />
       <SiteHeader />
 
-      <main id="main" className={styles.main}>
+      {/* tabIndex=-1 makes <main> a valid focus target so the skip link moves
+          focus, not just scroll position. Without it Safari and older WebKit
+          scroll to the landmark but leave focus in the header. */}
+      <main id="main" tabIndex={-1} className={styles.main}>
         {children}
       </main>
 
