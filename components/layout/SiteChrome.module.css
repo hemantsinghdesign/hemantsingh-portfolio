@@ -11,3 +11,10 @@
   z-index: 2;
   padding: 0 var(--pad);
 }
+
+/* Focused only as the skip link's destination, never by tabbing. The arrival
+   is deliberate and the content is its own indicator, so a ring around the
+   entire page body would be noise. */
+.main:focus {
+  outline: none;
+}

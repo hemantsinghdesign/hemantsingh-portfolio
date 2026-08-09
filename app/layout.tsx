@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { PageTransition } from '@/components/layout/PageTransition';
 import { SiteChrome } from '@/components/layout/SiteChrome';
 import { PersonJsonLd, WebSiteJsonLd } from '@/components/seo/JsonLd';
-import { absoluteUrl, siteConfig } from '@/lib/site';
+import { siteConfig } from '@/lib/site';
 import '@/styles/globals.css';
 
 /**
@@ -16,7 +16,10 @@ export const metadata: Metadata = {
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  alternates: { canonical: absoluteUrl('/') },
+  // No canonical here on purpose. Every real route sets its own via
+  // `pageMetadata`; a canonical declared at the root is inherited by
+  // not-found.tsx, which would tell crawlers that every unknown URL is
+  // the home page.
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   icons: {

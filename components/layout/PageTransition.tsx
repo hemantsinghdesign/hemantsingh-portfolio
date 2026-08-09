@@ -28,6 +28,14 @@ import { labelForPath } from '@/lib/routes';
 
 const COVER_MS = 460;
 
+/**
+ * How long the cover half may wait for the route to arrive before the overlay
+ * gives up and clears itself. A push that never changes the pathname — a href
+ * carrying a hash or a query, a redirect back to the same route — would
+ * otherwise leave the sheet covering the viewport for good.
+ */
+const COVER_TIMEOUT_MS = 3000;
+
 type Phase = 'idle' | 'covering' | 'revealing';
 
 interface TransitionApi {
@@ -66,14 +74,27 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   }
 
   const timer = useRef<number | null>(null);
+  const failsafe = useRef<number | null>(null);
   const pendingHref = useRef<string | null>(null);
 
+  /** Drops a queued push and the sheet's stuck-cover guard. */
   const clearTimer = useCallback(() => {
     if (timer.current !== null) {
       window.clearTimeout(timer.current);
       timer.current = null;
     }
+    if (failsafe.current !== null) {
+      window.clearTimeout(failsafe.current);
+      failsafe.current = null;
+    }
+    pendingHref.current = null;
   }, []);
+
+  // A route can arrive without the cover half putting it there — the back
+  // button, a plain anchor, a redirect. Any push still queued is stale by
+  // then, and firing it would pull the visitor to a destination they have
+  // already navigated away from.
+  useEffect(() => clearTimer(), [clearTimer, pathname]);
 
   /** Called by TransitionLink. Returns false to let the browser handle it. */
   const navigate = useCallback(
@@ -98,6 +119,14 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         const target = pendingHref.current;
         pendingHref.current = null;
         if (target) router.push(target);
+
+        // Nothing clears the sheet except the pathname changing, so a push
+        // that resolves to the route we are already on would leave it
+        // covering the viewport. Uncover regardless after a grace period.
+        failsafe.current = window.setTimeout(() => {
+          failsafe.current = null;
+          setPhase('idle');
+        }, COVER_TIMEOUT_MS);
       }, COVER_MS);
 
       return true;
