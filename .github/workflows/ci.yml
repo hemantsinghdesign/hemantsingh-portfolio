@@ -1,0 +1,62 @@
+# Runs the checks that already exist in package.json on every push and pull
+# request. This file only ever runs on GitHub's runners — it is not part of
+# the Next build, is never bundled, and cannot affect the deployed site.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A new push to the same branch supersedes the run in flight.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Typecheck, lint, unit tests, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # Same command a release runs locally, so CI cannot drift from it.
+      - run: npm run check
+
+  e2e:
+    name: End-to-end
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # Both projects in playwright.config.ts: Desktop Chrome and an iPhone 13,
+      # which is WebKit. Installing only one leaves half the matrix failing.
+      - run: npx playwright install --with-deps chromium webkit
+
+      # Builds and boots a production server itself, per the webServer config.
+      - run: npm run test:e2e
+
+      # The CI reporter is 'github', which annotates the run but writes no HTML
+      # report — so this keeps the traces and screenshots instead, which is
+      # what a failure actually needs. `trace: 'on-first-retry'` produces them.
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
