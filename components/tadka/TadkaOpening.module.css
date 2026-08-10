@@ -1,16 +1,19 @@
 /* The opening: the approved hero already in place, covered by a sealed
    surface that the visitor's scroll pulls away.
 
-   Layer order, bottom to top:
-     .hero    the approved jharokha, untouched
-     .seal    the unopened package — pattern ground, mandala seal
-     .strip   the peel strip at the seal's leading edge
+   Everything is contained in a panel the shape of the drawing. The seal
+   covers that panel and nothing else, so the first pixel uncovered is
+   drawing rather than empty ground — a full-bleed wash spends half the
+   scroll revealing blank paper, which reads as a page still loading.
+
+   Layer order inside the panel, bottom to top:
+     .drawing    the approved jharokha, untouched
+     .seal       the unopened package — pattern ground, mandala
+     .stripTrack the peel strip at the seal's leading edge
 
    Progress (--peel, 0 to 1) is written by TadkaOpening inside a rAF. */
 
 .track {
-  /* Scroll distance that drives the peel. Finite on purpose — the visitor
-     is never held longer than this. */
   height: 220vh;
   margin: 0 calc(-1 * var(--pad));
   position: relative;
@@ -21,63 +24,73 @@
   top: 0;
   height: 100vh;
   overflow: hidden;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vh, 34px);
   background: var(--paper);
+  /* Clears the fixed spec bar so nothing is ever cut off by it. */
+  padding: clamp(24px, 5vh, 56px) var(--pad) calc(var(--spec-h) + clamp(16px, 3vh, 32px));
 }
 
-/* ---- the hero, already there ---- */
-.hero {
-  grid-area: 1 / 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: clamp(24px, 6vh, 72px) var(--pad);
+/* ---- the package ---- */
+.panel {
+  position: relative;
+  height: min(72vh, 620px);
+  aspect-ratio: 1104 / 1704;
+  max-width: 86vw;
+  overflow: hidden;
+  /* The jharokha is a die-cut sticker and carries its own cream border,
+     #FFE8CC, baked into the artwork. On the site's cooler paper that border
+     read as an orange halo — two off-whites arguing. Matching the ground to
+     the sticker turns the edge back into what it is: a cut line. */
+  background: #FFE8CC;
+  /* Contact shadow only — the panel sits on the paper, it does not float
+     above it. Two short, low-opacity layers rather than one long blur, which
+     is what separates a printed object from a drop-shadowed rectangle. */
+  box-shadow:
+    0 1px 2px rgb(20 20 15 / 8%),
+    0 8px 24px -8px rgb(20 20 15 / 14%);
 }
 
 .drawing {
-  width: clamp(200px, 38vh, 380px);
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* ---- the sealed surface ---- */
 .seal {
-  position: relative;
-  grid-area: 1 / 1;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   display: grid;
   place-items: center;
   background:
-    linear-gradient(rgb(30 58 36 / 96%), rgb(30 58 36 / 96%)),
+    linear-gradient(rgb(30 58 36 / 97%), rgb(30 58 36 / 97%)),
     url('/projects/tadka-trail/pattern-tile.jpg') repeat;
-  background-size: auto, 300px auto;
-  /* Recedes to the right as the strip is pulled, so the hero is uncovered
-     from the left — the same direction the strip's own arrow points. */
-  clip-path: inset(0 0 0 calc(var(--peel, 0) * 112%));
+  background-size: auto, 220px auto;
+  /* Recedes to the right as the strip is pulled, so the drawing is uncovered
+     from the left — the same direction the strip's own edge travels. */
+  clip-path: inset(0 0 0 calc(var(--peel, 0) * 101%));
 }
 
 .sealMark {
-  width: clamp(90px, 13vw, 150px);
-  /* Fades only in the last third, so the seal is not gone before the
+  width: clamp(72px, 16%, 132px);
+  /* Fades only in the last third, so the mandala is not gone before the
      surface carrying it is. */
   opacity: calc(1 - max(0, (var(--peel, 0) - 0.62)) * 2.7);
 }
 
-/* ---- the strip at the leading edge ---- */
-/* The strip sits exactly on the seal's leading edge: its right edge is the
-   boundary, so everything left of it is opened and everything right is not.
-
-   Thickness is suggested by three bands rather than by 3D — a shadow falling
-   on the revealed hero, the printed orange face, and a darker fold where the
-   material turns. No perspective, no particles. */
-/* Full-width carrier: translating it by a percentage of its own width moves
-   the strip across the stage without touching layout. */
+/* ---- the strip at the leading edge ----
+   The strip sits on the seal's leading edge: everything left of it is
+   opened, everything right is not. Thickness is suggested by banding — a
+   short shadow on the uncovered drawing, the printed face, and a darker
+   fold where the material turns. No perspective, no particles. */
 .stripTrack {
   position: absolute;
   inset: 0;
-  transform: translateX(calc(var(--peel, 0) * 112%));
+  transform: translateX(calc(var(--peel, 0) * 101%));
   pointer-events: none;
 }
 
@@ -86,56 +99,50 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: clamp(22px, 2.8vw, 40px);
+  width: clamp(14px, 2.2%, 26px);
   transform: translateX(-100%);
   background: linear-gradient(
     to right,
-    rgb(20 20 15 / 0%) 0%,
-    rgb(20 20 15 / 16%) 14%,
-    #F0821F 26%,
-    #F79A3E 62%,
-    #C85F12 100%
+    #C85F12 0%,
+    #F0821F 34%,
+    #F79A3E 68%,
+    #D96B14 100%
   );
-  opacity: calc(min(1, var(--peel, 0) * 14));
+  opacity: calc(min(1, var(--peel, 0) * 18));
 }
 
-/* The curl: a narrow highlight along the fold, and a soft shadow thrown
-   back onto the part of the hero just uncovered. */
+/* A narrow highlight along the fold. */
 .strip::after {
   content: '';
   position: absolute;
   inset: 0 0 0 auto;
-  width: 3px;
-  background: rgb(255 255 255 / 28%);
+  width: 2px;
+  background: rgb(255 255 255 / 32%);
 }
 
+/* The shadow the lifted strip throws back onto what it has just uncovered.
+   Short and faint — a long grey gradient reads as a smudge, not as light. */
 .strip::before {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
   right: 100%;
-  width: clamp(14px, 2vw, 26px);
-  background: linear-gradient(to left, rgb(20 20 15 / 12%), rgb(20 20 15 / 0%));
+  width: clamp(8px, 1.1%, 14px);
+  background: linear-gradient(to left, rgb(20 20 15 / 15%), rgb(20 20 15 / 0%));
 }
 
-/* Printed on the package, so it lives inside the sealed layer and is clipped
-   away with it. Cream rather than orange: it sits over the pattern ground,
-   where paper reads at 10.6:1 and the signal would not clear AA. */
+/* Sits under the panel in the flex column, so it can never be clipped by the
+   stage or hidden behind the spec bar. */
 .hint {
-  position: absolute;
-  bottom: clamp(24px, 5vh, 48px);
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--paper);
-  opacity: calc(0.78 - var(--peel, 0) * 2.4);
-  white-space: nowrap;
+  color: var(--mute-sm);
+  opacity: calc(1 - var(--peel, 0) * 3);
 }
 
 /* ---- reduced motion, handled in CSS only ----
    Doing this with a JS class caused the server to render one height and the
-   client another, which moved everything below it. The markup is now
-   identical on both sides and only the styling differs. */
+   client another, which moved everything below it. The markup is identical
+   on both sides; only the styling differs. */
 @media (prefers-reduced-motion: reduce) {
   .track {
     height: auto;
@@ -148,6 +155,13 @@
     padding: clamp(32px, 7vw, 88px) 0 clamp(40px, 8vw, 104px);
   }
 
+  .panel {
+    box-shadow: none;
+    height: auto;
+    width: clamp(200px, 38vh, 380px);
+    aspect-ratio: auto;
+  }
+
   .seal,
   .stripTrack,
   .hint {
@@ -158,5 +172,9 @@
 @media (max-width: 700px) {
   .track {
     height: 180vh;
+  }
+
+  .panel {
+    height: min(62vh, 520px);
   }
 }

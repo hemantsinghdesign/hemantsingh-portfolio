@@ -216,6 +216,47 @@ export const tadkaTrail: ProjectInput = {
       text: 'Every pattern was drawn on grid paper before it was drawn on a screen. The grid is the same one the motifs are built on, so the digitised version inherits the spacing rather than approximating it.',
     },
     {
+      type: 'mosaic',
+      layout: 'even',
+      images: [
+        {
+          src: `${dir}/draw-mandala-studies.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAHxAAAQQABwAAAAAAAAAAAAAAAgABAxESExRBUnGS/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwBxyiTHhGnHalZYcB8rGJ31J9Jdor//2Q==',
+          alt: 'Sketchbook page of mandala rosettes drawn in red ink, testing radial symmetry',
+          width: 1497,
+          height: 2000,
+        },
+        {
+          src: `${dir}/draw-circle-studies.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAABP/EABkQAAMBAQEAAAAAAAAAAAAAAAECEQAhUf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwB7uS470nzJpwUEYwnrXMuC/9k=',
+          alt: 'Sketchbook page of circular pattern studies drawn in blue ballpoint',
+          width: 1497,
+          height: 2000,
+        },
+        {
+          src: `${dir}/draw-pattern-grid.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAMF/8QAHxABAAICAAcAAAAAAAAAAAAAAQIRAAMEExQhMVKR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABURAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIRAxEAPwBO2T1FRQCRZdZflx9T5gNivFeXvIzQvCl//9k=',
+          alt: 'Sketchbook page of folk motifs redrawn as flat black line patterns',
+          width: 1497,
+          height: 2000,
+        },
+        {
+          src: `${dir}/draw-pattern-tiles.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQME/8QAIBAAAgEDBAMAAAAAAAAAAAAAAQIAERIhAwQFQVFhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCu2W9mBDi2mK/ZtsTxDePdtR3JPdMemMTgX//Z',
+          alt: 'Sketchbook page of finished pattern tiles in black and white, ready to digitise',
+          width: 1497,
+          height: 2000,
+        },
+      ],
+      captions: [
+        'Rosettes, in red',
+        'Circles, in ballpoint',
+        'Motifs flattened to line',
+        'Tiles, ready to digitise',
+      ],
+    },
+
+    {
       type: 'pair',
       images: [
         { src: `${dir}/pattern-sheet-a.jpg`,
@@ -240,11 +281,72 @@ export const tadkaTrail: ProjectInput = {
  blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAEF/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIDEQAEEiEiUYGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AK00z6diSVqSl71xXnNL0PmAlhVVVD2DOCdwGPvAv//Z', alt: 'Hand-pulled block prints of the words TARKA TRAILS in heavy black ink', width: 1451, height: 1900 },
         { src: `${dir}/lino-print-b.jpg`,
  blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBP/EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABDESIf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDU0ZdUVZqlQkmmvp5jEQkZnCqwY/DfcE10i2ZXS7f6bOToEjX8+iQrEC8C/9k=', alt: 'A sheet of repeated TARKA TRAILS block prints at varying pressure and rotation', width: 1838, height: 1900 },
+        {
+          src: `${dir}/lino-carving.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgIE/8QAIhAAAQIGAQUAAAAAAAAAAAAAAQACAwQREiExIkJRUpKx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAXEQADAQAAAAAAAAAAAAAAAAAAAREx/9oADAMBAAIRAxEAPwC409K3FjYrATmtpxnWlvsgeDfVEW8ptwJ6j9Sep7qbVFh//9k=',
+          alt: 'Sketchbook page of the jharokha cut into lino, block and pulls side by side',
+          width: 1497,
+          height: 2000,
+        },
+        {
+          src: `${dir}/lino-type-a.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAEF/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIAAxIhERMiU5L/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8ArWu9THELxbwuwNTS66/UnwIF6UGKnyDOG2BHZGBf/9k=',
+          alt: 'Hand-pulled lino prints of the Tadka Trail wordmark, ink breaking on the letterforms',
+          width: 1497,
+          height: 2000,
+        },
+        {
+          src: `${dir}/lino-type-b.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBP/EABwQAAICAwEBAAAAAAAAAAAAAAECAxEABBIhMf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDU0ZcIqzcyIxJpr8J+HKSMOWcAMGawb+4lgSLaldL6f0+4aIK6/PRIViBeBf/Z',
+          alt: 'A sheet of wordmark pulls at different pressures, no two the same',
+          width: 1937,
+          height: 2000,
+        },
       ],
     },
 
     /* 09 — THE SYSTEM ---------------------------------------------------- */
     { type: 'heading', marker: 'F', title: 'The system', note: 'Kept deliberately small' },
+    {
+      type: 'mosaic',
+      layout: 'even',
+      images: [
+        {
+          src: `${dir}/system-sketches-a.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAdEAABBAIDAAAAAAAAAAAAAAABAAIDEQQiEzFh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AKRyHPyXbag9X6l2ECKIczn2bJTbQX//2Q==',
+          alt: 'Sketchbook page of hand-lettered Tadka Trail wordmark attempts',
+          width: 1497,
+          height: 2000,
+        },
+        {
+          src: `${dir}/system-sketches-b.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAABP/EAB0QAAEFAAMBAAAAAAAAAAAAAAEAAgMRIQQiMUH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AHunqRzWk3ZvfElh6N34gRRg8hxs6mjAEUv/2Q==',
+          alt: 'Wordmark drawn out on grid paper in Devanagari and Latin together',
+          width: 1638,
+          height: 2000,
+        },
+        {
+          src: `${dir}/system-wordmark-green.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAP/xAAdEAACAgIDAQAAAAAAAAAAAAABAgADERIEITGR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AhybxVUrlNtmC+4xEKoAxCK5wR18juOu9QLeyEB//2Q==',
+          alt: 'The stacked bilingual wordmark set in black on the brand green',
+          width: 1989,
+          height: 2000,
+        },
+        {
+          src: `${dir}/system-palette.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAgT/xAAgEAACAgEDBQAAAAAAAAAAAAABAgADERITMQQhUaHB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAMAwEAAhEDEQA/AKOnQWHCkLoUKxHJOQfnuV7S+IKakrUFRjVz3i3Gkhkrt//Z',
+          alt: 'Sketchbook page pinning the palette against a printed stamp reference',
+          width: 1497,
+          height: 2000,
+        },
+      ],
+      captions: [
+        'First attempts, by hand',
+        'Both scripts, on grid',
+        'Stacked and set',
+        'Palette against a stamp',
+      ],
+    },
     {
       type: 'full',
       image: {
@@ -318,6 +420,46 @@ export const tadkaTrail: ProjectInput = {
     /* 11 — STRUCTURE ----------------------------------------------------- */
     { type: 'heading', marker: 'H', title: 'Structure', note: 'Board, fold, card' },
     {
+      type: 'mosaic',
+      layout: 'even',
+      images: [
+        {
+          src: `${dir}/structure-dieline-sketch.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAH/xAAbEAACAwEBAQAAAAAAAAAAAAABAgADEQQSQf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8ArVe29CwjTuZE7AcVrvb0h2LBLAF34MjoGR//2Q==',
+          alt: 'Sketchbook page of net sketches with a folded paper model beside them',
+          width: 1497,
+          height: 2000,
+        },
+        {
+          src: `${dir}/structure-dieline-flat.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAcDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECIRESIkFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANu0pSfOuqBIUkvVkAX/2Q==',
+          alt: 'A printed dieline flat with the pattern band positioned across it',
+          width: 1252,
+          height: 2000,
+        },
+        {
+          src: `${dir}/structure-maroon-flat.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAP/xAAgEAABAwQCAwAAAAAAAAAAAAABAhESAAMEBRNRYXGR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIRIf/aAAwDAQACEQMRAD8Atcz8gb1FkLEJhMZBiO/finQHZoqdXYXnDKK7nJySZwz/ACnxoLk1lH//2Q==',
+          alt: 'The maroon pack printed flat before cutting and scoring',
+          width: 1497,
+          height: 2000,
+        },
+        {
+          src: `${dir}/structure-mockup.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAQIF/8QAIhAAAgEDAgcAAAAAAAAAAAAAAQMCAAQhETEVIlJTobHR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAWEQEBAQAAAAAAAAAAAAAAAAABACH/2gAMAwEAAhEDEQA/AFtgm5VGMwMHeMzr6rM4cjvnz8pv5sLbeJawjY85zkVGg6RUwzJqX//Z',
+          alt: 'A white mockup with rope handle and orange band, built to test the grip',
+          width: 1500,
+          height: 2000,
+        },
+      ],
+      captions: [
+        'Nets, on paper',
+        'The flat, positioned',
+        'Printed before cutting',
+        'Handle tested in white',
+      ],
+    },
+    {
       type: 'full',
       image: {
         src: `${dir}/prototype-card.jpg`,
@@ -339,6 +481,38 @@ export const tadkaTrail: ProjectInput = {
         ...PAGE,
       },
       caption: 'Experiments failed — the sketchbook page, unedited',
+    },
+    {
+      type: 'mosaic',
+      layout: 'even',
+      images: [
+        {
+          src: `${dir}/reject-white-mockup.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgME/8QAIxAAAgEDAQkAAAAAAAAAAAAAAQIDAAQREhQVMUFTVIGSof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAYEQADAQEAAAAAAAAAAAAAAAAAAhEBA//aAAwDAQACEQMRAD8Amt0RC7xkhTHqOeOM1g3k3fSexpmVg5jbDqRg6uY8U9ktugn2gnTEyQTJT//Z',
+          alt: 'Two white card mockups standing on a desk, proportions wrong and unresolved',
+          width: 1500,
+          height: 2000,
+        },
+        {
+          src: `${dir}/reject-peel-test.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwEF/8QAIhABAAIBAQkBAAAAAAAAAAAAAQIDABESExQiUmNxgZHB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwT/xAAYEQADAQEAAAAAAAAAAAAAAAAAAQIhEf/aAAwDAQACEQMRAD8AxWxr1K9iZYsjQ9fmThO6fMGnlrqYqMiSp5x97PqfuBT3CqW+H//Z',
+          alt: 'A peel strip tested on a black pack, the tear line landing in the wrong place',
+          width: 1500,
+          height: 2000,
+        },
+        {
+          src: `${dir}/reject-black-pack.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQEG/8QAHxAAAgEEAgMAAAAAAAAAAAAAAQIDAAQREgUyMXGB/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//EABcRAAMBAAAAAAAAAAAAAAAAAAABAlH/2gAMAwEAAhEDEQA/AApZNZFErxllOGVI8fc1obTllNsmpQEdtiRk0ZN3PuqPFCqHc6f/2Q==',
+          alt: 'A black packaging direction abandoned before the green and maroon were settled',
+          width: 2000,
+          height: 1500,
+        },
+      ],
+      captions: [
+        'Proportions, wrong',
+        'The peel, in the wrong place',
+        'The black direction, dropped',
+      ],
     },
     /* The analysis this heading promises. These two paragraphs were the
        third and fourth of the closing reflection — they are the failures,

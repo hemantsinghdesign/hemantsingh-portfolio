@@ -76,7 +76,12 @@ export function TadkaOpening({ hero }: { hero: ContentImage }) {
   return (
     <div ref={trackRef} className={styles.track}>
       <div className={styles.stage}>
-        <div className={styles.hero}>
+        {/* Everything happens inside a panel the shape of the drawing, not
+            across the whole viewport. A full-bleed wash uncovers empty paper
+            for the first half of the scroll, which reads as a loading screen;
+            a panel uncovers the drawing from the first pixel, and looks like
+            an object being opened. */}
+        <div className={styles.panel}>
           <Image
             className={styles.drawing}
             src={hero.src}
@@ -84,22 +89,26 @@ export function TadkaOpening({ hero }: { hero: ContentImage }) {
             width={hero.width}
             height={hero.height}
             priority
-            sizes="(max-width: 700px) 60vw, 34vh"
+            sizes="(max-width: 700px) 78vw, 42vh"
             quality={IMAGE_QUALITY}
             placeholder={hero.blurDataURL ? 'blur' : 'empty'}
             blurDataURL={hero.blurDataURL}
           />
+
+          <div className={styles.seal} aria-hidden="true">
+            <div className={styles.sealMark}>
+              <MandalaSeal />
+            </div>
+          </div>
+
+          <div className={styles.stripTrack} aria-hidden="true">
+            <div className={styles.strip} />
+          </div>
         </div>
 
-        <div className={styles.seal} aria-hidden="true">
-          <div className={styles.sealMark}>
-            <MandalaSeal />
-          </div>
-          <p className={`${styles.hint} mono`}>Scroll to open</p>
-        </div>
-        <div className={styles.stripTrack} aria-hidden="true">
-          <div className={styles.strip} />
-        </div>
+        <p className={`${styles.hint} mono`} aria-hidden="true">
+          Scroll to open
+        </p>
       </div>
     </div>
   );

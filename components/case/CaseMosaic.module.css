@@ -28,11 +28,36 @@
   margin-top: 8px;
 }
 
-/* ---- even: natural aspect, nothing cropped ----
-   For sheets and artwork. Two up on narrow viewports so a page is still
-   legible, opening to one column per image once there is room. */
+/* ---- even: nothing cropped, but a common measure ----
+   For sheets and artwork. Each cell is a fixed portrait box and the image is
+   contained inside it, so a set of pages with slightly different proportions
+   still sits on one baseline. Letting the images set their own heights makes
+   every caption land somewhere different, which is the single thing that
+   makes a grid of good photographs look unconsidered. */
 .even {
   grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+}
+
+.even .cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.even .imageBox {
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.even .image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 @media (min-width: 860px) {
@@ -49,7 +74,15 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+/* The cell already carries the square proportion here, so the box just
+   fills it and the image crops to cover. */
+.feature .imageBox {
+  position: absolute;
+  inset: 0;
+}
+
 .feature .image {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }

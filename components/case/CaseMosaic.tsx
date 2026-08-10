@@ -45,22 +45,26 @@ export function CaseMosaic({ block, glyph }: { block: BlockOfType<'mosaic'> ; gl
       >
         {block.images.map((image, index) => (
           <figure className={styles.cell} key={image.src}>
-            <Image
-              className={styles.image}
-              src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
-              // The feature cell is roughly twice the width of the others.
-              sizes={
-                isFeature && index === 0
-                  ? '(max-width: 860px) 100vw, 55vw'
-                  : '(max-width: 860px) 50vw, 27vw'
-              }
-              quality={IMAGE_QUALITY}
-              placeholder={image.blurDataURL ? 'blur' : 'empty'}
-              blurDataURL={image.blurDataURL}
-            />
+            {/* The box, not the image, carries the cell's proportion — that is
+                what puts every caption in the set on one line. */}
+            <div className={styles.imageBox}>
+              <Image
+                className={styles.image}
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                // The feature cell is roughly twice the width of the others.
+                sizes={
+                  isFeature && index === 0
+                    ? '(max-width: 860px) 100vw, 55vw'
+                    : '(max-width: 860px) 50vw, 27vw'
+                }
+                quality={IMAGE_QUALITY}
+                placeholder={image.blurDataURL ? 'blur' : 'empty'}
+                blurDataURL={image.blurDataURL}
+              />
+            </div>
             {block.captions?.[index] && (
               <figcaption className={`${styles.caption} caption mono`}>
                 {block.captions[index]}
