@@ -56,7 +56,28 @@ function Figure({
   );
 }
 
-export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
+/** A project may mark its section rules with its own object instead of a
+ *  letter. Tadka Trail uses the jharokha the whole brand is built on. */
+const CHAPTER_GLYPH: Record<
+  string,
+  { src: string; width: number; height: number }
+> = {
+  'tadka-trail': {
+    src: '/projects/tadka-trail/chapter-jharokha.png',
+    width: 663,
+    height: 1023,
+  },
+};
+
+export function CaseBlocks({
+  blocks,
+  slug,
+}: {
+  blocks: ContentBlock[];
+  slug?: string;
+}) {
+  const glyph = slug ? CHAPTER_GLYPH[slug] : undefined;
+
   return (
     <>
       {blocks.map((block, index) => {
@@ -70,6 +91,7 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
                   marker={block.marker}
                   title={block.title}
                   note={block.note}
+                  glyph={glyph}
                 />
               </Section>
             );
@@ -170,10 +192,10 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
             );
 
           case 'mosaic':
-            return <CaseMosaic key={key} block={block} />;
+            return <CaseMosaic key={key} block={block} glyph={glyph} />;
 
           case 'annotate':
-            return <CaseAnnotate key={key} block={block} />;
+            return <CaseAnnotate key={key} block={block} glyph={glyph} />;
 
           case 'story':
             return <CaseStory key={key} block={block} />;
@@ -182,19 +204,19 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
             return <CaseGallery key={key} block={block} />;
 
           case 'timeline':
-            return <CaseTimeline key={key} block={block} />;
+            return <CaseTimeline key={key} block={block} glyph={glyph} />;
 
           case 'compare':
-            return <CaseCompare key={key} block={block} />;
+            return <CaseCompare key={key} block={block} glyph={glyph} />;
 
           case 'interlude':
             return <CaseInterlude key={key} block={block} />;
 
           case 'columns':
-            return <CaseColumns key={key} block={block} />;
+            return <CaseColumns key={key} block={block} glyph={glyph} />;
 
           case 'visualLanguage':
-            return <CaseVisualLanguage key={key} block={block} />;
+            return <CaseVisualLanguage key={key} block={block} glyph={glyph} />;
         }
       })}
     </>

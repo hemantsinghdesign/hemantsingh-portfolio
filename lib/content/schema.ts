@@ -299,9 +299,13 @@ export const projectSchema = z.object({
   overview: z.string().min(1),
   approach: z.array(z.string().min(1)).min(1),
   outcome: z.string().min(1),
+  /** Optional. A project with no meaningful figures should not invent three
+   *  to fill a row — and a case study that ends on a reflection should not
+   *  then follow it with an inventory. */
   metrics: z
     .array(z.object({ label: z.string().min(1), value: z.string().min(1) }))
-    .min(1),
+    .min(1)
+    .optional(),
   blocks: z.array(blockSchema),
   /** Optional per-project SEO overrides; sensible defaults are derived. */
   seo: z

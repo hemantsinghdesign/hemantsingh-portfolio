@@ -12,7 +12,13 @@ import styles from './CaseMetrics.module.css';
  * wrong term. The figure still sits above its label visually; that is done
  * with `order` in the stylesheet, where presentation belongs.
  */
-export function CaseMetrics({ metrics }: { metrics: Project['metrics'] }) {
+export function CaseMetrics({
+  metrics,
+}: {
+  // Metrics are optional on a project; the route decides whether to render
+  // this section at all, so the component itself always has a list.
+  metrics: NonNullable<Project['metrics']>;
+}) {
   return (
     <dl className={styles.metrics}>
       {metrics.map((metric) => (

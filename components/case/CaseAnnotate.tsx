@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { SectionHead } from '@/components/ui/SectionHead';
+import { SectionHead, type ChapterGlyph } from '@/components/ui/SectionHead';
 import { IMAGE_QUALITY } from '@/lib/images';
 import type { BlockOfType } from '@/types/content';
 import styles from './CaseAnnotate.module.css';
@@ -23,7 +23,7 @@ import styles from './CaseAnnotate.module.css';
  * Below 860px the sticky layout collapses, the annotations have nothing to
  * point at, and every paragraph is simply legible. Same for reduced motion.
  */
-export function CaseAnnotate({ block }: { block: BlockOfType<'annotate'> }) {
+export function CaseAnnotate({ block, glyph }: { block: BlockOfType<'annotate'> ; glyph?: ChapterGlyph }) {
   const [active, setActive] = useState(0);
   const stepRefs = useRef<(HTMLLIElement | null)[]>([]);
 
@@ -50,7 +50,7 @@ export function CaseAnnotate({ block }: { block: BlockOfType<'annotate'> }) {
 
   return (
     <section className={styles.block}>
-      <SectionHead marker={block.marker} title={block.title} note={block.note} />
+      <SectionHead marker={block.marker} title={block.title} note={block.note} glyph={glyph} />
 
       <div className={styles.grid}>
         <figure className={styles.figure}>

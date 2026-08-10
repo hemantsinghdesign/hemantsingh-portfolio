@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { IMAGE_QUALITY } from '@/lib/images';
 import { Section } from '@/components/ui/Section';
-import { SectionHead } from '@/components/ui/SectionHead';
+import { SectionHead, type ChapterGlyph } from '@/components/ui/SectionHead';
 import type { BlockOfType } from '@/types/content';
 import styles from './CaseMosaic.module.css';
 
@@ -22,7 +22,7 @@ import styles from './CaseMosaic.module.css';
  * cell, which is for photography, where the crop is a composition. At five
  * images `feature` tiles a four-column grid exactly, with no orphan cell.
  */
-export function CaseMosaic({ block }: { block: BlockOfType<'mosaic'> }) {
+export function CaseMosaic({ block, glyph }: { block: BlockOfType<'mosaic'> ; glyph?: ChapterGlyph }) {
   const isFeature = block.layout === 'feature';
 
   return (
@@ -31,7 +31,7 @@ export function CaseMosaic({ block }: { block: BlockOfType<'mosaic'> }) {
         <SectionHead
           marker={block.marker ?? '·'}
           title={block.title}
-          note={block.note}
+          note={block.note} glyph={glyph}
         />
       )}
 

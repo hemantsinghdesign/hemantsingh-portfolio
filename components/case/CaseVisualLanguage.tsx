@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { IMAGE_QUALITY } from '@/lib/images';
 import { Reveal } from '@/components/ui/Reveal';
-import { SectionHead } from '@/components/ui/SectionHead';
+import { SectionHead, type ChapterGlyph } from '@/components/ui/SectionHead';
 import type { BlockOfType } from '@/types/content';
 import styles from './CaseVisualLanguage.module.css';
 
@@ -19,10 +19,10 @@ import styles from './CaseVisualLanguage.module.css';
  * animation library, no scroll-jacking — matches
  * docs/routing-and-motion.md.
  */
-export function CaseVisualLanguage({ block }: { block: BlockOfType<'visualLanguage'> }) {
+export function CaseVisualLanguage({ block, glyph }: { block: BlockOfType<'visualLanguage'> ; glyph?: ChapterGlyph }) {
   return (
     <Reveal as="section" className={styles.section}>
-      <SectionHead marker={block.marker} title={block.title} note={block.note} />
+      <SectionHead marker={block.marker} title={block.title} note={block.note} glyph={glyph} />
 
       <div className={styles.layout}>
         <div className={styles.referenceWrap}>

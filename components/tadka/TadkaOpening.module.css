@@ -1,0 +1,162 @@
+/* The opening: the approved hero already in place, covered by a sealed
+   surface that the visitor's scroll pulls away.
+
+   Layer order, bottom to top:
+     .hero    the approved jharokha, untouched
+     .seal    the unopened package — pattern ground, mandala seal
+     .strip   the peel strip at the seal's leading edge
+
+   Progress (--peel, 0 to 1) is written by TadkaOpening inside a rAF. */
+
+.track {
+  /* Scroll distance that drives the peel. Finite on purpose — the visitor
+     is never held longer than this. */
+  height: 220vh;
+  margin: 0 calc(-1 * var(--pad));
+  position: relative;
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+}
+
+/* ---- the hero, already there ---- */
+.hero {
+  grid-area: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: clamp(24px, 6vh, 72px) var(--pad);
+}
+
+.drawing {
+  width: clamp(200px, 38vh, 380px);
+  height: auto;
+}
+
+/* ---- the sealed surface ---- */
+.seal {
+  position: relative;
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(rgb(30 58 36 / 96%), rgb(30 58 36 / 96%)),
+    url('/projects/tadka-trail/pattern-tile.jpg') repeat;
+  background-size: auto, 300px auto;
+  /* Recedes to the right as the strip is pulled, so the hero is uncovered
+     from the left — the same direction the strip's own arrow points. */
+  clip-path: inset(0 0 0 calc(var(--peel, 0) * 112%));
+}
+
+.sealMark {
+  width: clamp(90px, 13vw, 150px);
+  /* Fades only in the last third, so the seal is not gone before the
+     surface carrying it is. */
+  opacity: calc(1 - max(0, (var(--peel, 0) - 0.62)) * 2.7);
+}
+
+/* ---- the strip at the leading edge ---- */
+/* The strip sits exactly on the seal's leading edge: its right edge is the
+   boundary, so everything left of it is opened and everything right is not.
+
+   Thickness is suggested by three bands rather than by 3D — a shadow falling
+   on the revealed hero, the printed orange face, and a darker fold where the
+   material turns. No perspective, no particles. */
+/* Full-width carrier: translating it by a percentage of its own width moves
+   the strip across the stage without touching layout. */
+.stripTrack {
+  position: absolute;
+  inset: 0;
+  transform: translateX(calc(var(--peel, 0) * 112%));
+  pointer-events: none;
+}
+
+.strip {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: clamp(22px, 2.8vw, 40px);
+  transform: translateX(-100%);
+  background: linear-gradient(
+    to right,
+    rgb(20 20 15 / 0%) 0%,
+    rgb(20 20 15 / 16%) 14%,
+    #F0821F 26%,
+    #F79A3E 62%,
+    #C85F12 100%
+  );
+  opacity: calc(min(1, var(--peel, 0) * 14));
+}
+
+/* The curl: a narrow highlight along the fold, and a soft shadow thrown
+   back onto the part of the hero just uncovered. */
+.strip::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 3px;
+  background: rgb(255 255 255 / 28%);
+}
+
+.strip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  width: clamp(14px, 2vw, 26px);
+  background: linear-gradient(to left, rgb(20 20 15 / 12%), rgb(20 20 15 / 0%));
+}
+
+/* Printed on the package, so it lives inside the sealed layer and is clipped
+   away with it. Cream rather than orange: it sits over the pattern ground,
+   where paper reads at 10.6:1 and the signal would not clear AA. */
+.hint {
+  position: absolute;
+  bottom: clamp(24px, 5vh, 48px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--paper);
+  opacity: calc(0.78 - var(--peel, 0) * 2.4);
+  white-space: nowrap;
+}
+
+/* ---- reduced motion, handled in CSS only ----
+   Doing this with a JS class caused the server to render one height and the
+   client another, which moved everything below it. The markup is now
+   identical on both sides and only the styling differs. */
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    height: auto;
+    margin: 0;
+  }
+
+  .stage {
+    position: static;
+    height: auto;
+    padding: clamp(32px, 7vw, 88px) 0 clamp(40px, 8vw, 104px);
+  }
+
+  .seal,
+  .stripTrack,
+  .hint {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .track {
+    height: 180vh;
+  }
+}

@@ -1,6 +1,6 @@
 import { ColumnGrid } from '@/components/ui/ColumnGrid';
 import { Section } from '@/components/ui/Section';
-import { SectionHead } from '@/components/ui/SectionHead';
+import { SectionHead, type ChapterGlyph } from '@/components/ui/SectionHead';
 import type { BlockOfType } from '@/types/content';
 
 /**
@@ -11,10 +11,10 @@ import type { BlockOfType } from '@/types/content';
  * Used in: CaseBlocks.
  * Reusable: yes.
  */
-export function CaseColumns({ block }: { block: BlockOfType<'columns'> }) {
+export function CaseColumns({ block, glyph }: { block: BlockOfType<'columns'> ; glyph?: ChapterGlyph }) {
   return (
     <Section>
-      <SectionHead marker={block.marker} title={block.title} note={block.note} />
+      <SectionHead marker={block.marker} title={block.title} note={block.note} glyph={glyph} />
       <ColumnGrid items={block.items} columns={block.items.length === 4 ? 4 : 3} />
     </Section>
   );
