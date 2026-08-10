@@ -13,8 +13,15 @@ import type { ProjectInput } from '@/types/content';
  * late and small. A reader who leaves before the packaging should still
  * understand the project.
  *
- * All copy is taken from the project's own sketchbook and story cards. None
- * of it is written for the website.
+ * All copy is taken from the project's own sketchbook, story cards and the
+ * accompanying research report. None of it is written for the website.
+ *
+ * The report describes an earlier direction in places — a turmeric and chilli
+ * palette, truck art and henna reference, a three-layer tiffin structure. The
+ * finished work went elsewhere, so none of that appears here: the case study
+ * shows the project that exists, not the one that was proposed. What is taken
+ * from the report is the part that still holds — the research question, the
+ * competitor picture, and the limitations.
  */
 
 const dir = '/projects/tadka-trail';
@@ -101,18 +108,26 @@ export const tadkaTrail: ProjectInput = {
       marker: 'B',
       title: 'What the market misses',
       left: {
-        title: 'Meal kits abroad',
+        title: 'What is already there',
         items: [
+          'HelloFresh, Gousto — convenience and personalisation',
+          'MasalaBox, Patak’s, Indian Tiffin Room — culturally styled',
           'Indian dishes adapted to general palates',
-          'No story behind the recipe',
-          'Convenience sold as the whole proposition',
           'Nothing of the region a dish comes from',
         ],
       },
       right: {
         title: 'What is missing',
-        text: 'Brands like HelloFresh and Gousto are strong on convenience, but the emotional connection that comes with home-cooked food is not what they are selling. For students who already know what the food should taste like, an adapted recipe with no story is a meal, not a memory.',
+        text: 'The gap is not that culture is absent from the shelf. Culturally inspired brands exist, but their cultural work stops at the surface — a palette, a pattern, a name. The large kits sell convenience, and sell it well. Neither carries the thing a person actually misses: where a dish is from, and who cooked it. For a student who already knows what the food should taste like, an adapted recipe with no story is a meal, not a memory.',
       },
+    },
+
+    /* The question the gap produces. Placed here rather than at the top
+       because it is a finding, not an introduction — it only means anything
+       once the reader has seen what is already on the shelf. */
+    {
+      type: 'note',
+      text: 'What role does packaging design play in delivering cultural narrative and emotional value in food branding?',
     },
 
     /* 05 — THE IDEA · EMOTIONAL CENTRE ----------------------------------- */
@@ -332,7 +347,7 @@ export const tadkaTrail: ProjectInput = {
     {
       type: 'prose',
       text:
-        'I also found that I trust a mark differently once I have cut it into lino and printed it badly a few times. What survives ink is not the same as what survives a screen. I did that after the illustration was already drawn. Next time I would do it first.\n\nThe honest gap is that I designed this for international students missing home, and the only student I checked it against was myself. I know what I missed. I do not know what someone from Kerala or Assam would have missed, and I never asked. That is the part I would change.',
+        'I also found that I trust a mark differently once I have cut it into lino and printed it badly a few times. What survives ink is not the same as what survives a screen. I did that after the illustration was already drawn. Next time I would do it first.\n\nThe honest gap is that I designed this for international students missing home, and the only student I checked it against was myself. I know what I missed. I do not know what someone from Kerala or Assam would have missed, and I never asked. That is the part I would change.\n\nThe other risk I could not fully resolve is the line between drawing on a culture and flattening it into decoration. Four folk art forms, one state, one window — the further the work travels from the people it came from, the easier it is for the motifs to become a style. Getting the story cards specific to a region and a dish was the only defence I found against that, and it is the reason they matter more than the illustration does.',
     },
 
     /* 13 — ON THE TABLE · EVIDENCE ------------------------------------
