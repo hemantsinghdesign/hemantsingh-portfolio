@@ -1,0 +1,87 @@
+/* A composed group of images. Gaps are tighter than the space between
+   blocks, which is what makes the set read as one artefact rather than as
+   several stacked ones. */
+.text {
+  max-width: 60ch;
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.6;
+  color: var(--mute-sm);
+  margin-bottom: clamp(20px, 3vw, 34px);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(8px, 1.2vw, 18px);
+}
+
+.cell {
+  margin: 0;
+  min-width: 0;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  margin-top: 8px;
+}
+
+/* ---- even: natural aspect, nothing cropped ----
+   For sheets and artwork. Two up on narrow viewports so a page is still
+   legible, opening to one column per image once there is room. */
+.even {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 860px) {
+  .even {
+    grid-template-columns: repeat(var(--cols, 4), 1fr);
+  }
+}
+
+/* ---- feature: cropped cells, first image doubled ----
+   For photography. Square cells give the grid a common measure; the first
+   image takes two columns and two rows, so five images fill four columns
+   with no gap left over. */
+.feature {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.feature .image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature .cell {
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* A cropped cell has nowhere to put a caption, so it sits over the image. */
+.feature .caption {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  margin: 0;
+  padding: 4px 8px;
+  background: var(--surface-dark);
+  color: var(--paper);
+}
+
+.feature .cell:first-child {
+  grid-column: span 2;
+}
+
+@media (min-width: 860px) {
+  .feature {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .feature .cell:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}

@@ -191,6 +191,30 @@ const annotateBlock = z.object({
     .max(6),
 });
 
+/** A composed set of images read as one artefact rather than as a sequence.
+ *  Use it wherever three or more images say a single thing — four reference
+ *  sheets, a shoot from one session — because stacking those as separate
+ *  full-width blocks makes each one a statement and turns the page into a
+ *  contact sheet.
+ *
+ *  Two layouts, and the difference is whether cropping is allowed:
+ *  - `even`    tiles at natural aspect, nothing cropped. For artwork, sketch
+ *              pages and reference sheets, where the edge of the sheet is
+ *              part of what is being shown.
+ *  - `feature` gives the first image a double cell and crops the rest square.
+ *              For photography, where a crop is a composition and five frames
+ *              want to read as one spread. Five images tile it exactly. */
+const mosaicBlock = z.object({
+  type: z.literal('mosaic'),
+  marker: z.string().min(1).max(3).optional(),
+  title: z.string().min(1).optional(),
+  note: z.string().optional(),
+  text: z.string().optional(),
+  layout: z.enum(['even', 'feature']).default('even'),
+  images: z.array(imageSchema).min(3).max(6),
+  captions: z.array(z.string()).optional(),
+});
+
 /** A single story card given its own viewport and its own ground colour.
  *  Bilingual by design — the Hindi is not a translation of the English, it is
  *  half of the artefact. */
@@ -216,6 +240,7 @@ export const blockSchema = z.discriminatedUnion('type', [
   fullBlock,
   pairBlock,
   triptychBlock,
+  mosaicBlock,
   galleryBlock,
   timelineBlock,
   compareBlock,

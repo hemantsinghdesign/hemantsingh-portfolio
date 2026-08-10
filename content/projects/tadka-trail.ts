@@ -158,25 +158,28 @@ export const tadkaTrail: ProjectInput = {
 
     /* 06 — LEARNING THE LANGUAGE ----------------------------------------- */
     { type: 'heading', marker: 'D', title: 'Learning the language', note: 'Four folk art forms' },
+    /* One block, not two pairs: the heading promises four art forms and
+       these are the four. Split across two `pair` blocks they implied two
+       groupings that do not exist. `even` so no sheet is cropped. */
     {
-      type: 'pair',
+      type: 'mosaic',
+      layout: 'even',
       images: [
         { src: `${dir}/art-bhil.jpg`,
  blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQP/xAAfEAACAgEEAwAAAAAAAAAAAAABAgADBBESIVFSkdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAh/9oADAMBAAIRAxEAPwC+Tmg3qarGKKpBXnk6xHUeI9QoUJtf4O4luPcA7Jv/2Q==', alt: 'Reference sheet on Bhil art — dots and simple geometric human and animal forms', width: 1459, height: 1900 },
         { src: `${dir}/art-mandana.jpg`,
  blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIAAwQREpETIlL/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC8zPdr3qrVkKsfZWI3F+Zvtu5nZ1YGW42dc99x3EQCrVQAv//Z', alt: 'Reference sheet on Mandana art — white chalk and rice paste motifs painted over red earth', ...PAGE },
-      ],
-      captions: ['Bhil — dots, geometric figures', 'Mandana — walls and floors, white on red earth'],
-    },
-    {
-      type: 'pair',
-      images: [
         { src: `${dir}/art-bhilala.jpg`,
  blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAfEAABBAICAwAAAAAAAAAAAAABAAIDERIhBFETMpH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AKiY553M8sgDHE+1XtKZt6b8CEh4oe9xMkm71YrZS+A7KIa//9k=', alt: 'Reference sheet on Bhilala art — a mix of Gond and Bhil styles with religious and ritual symbols', ...PAGE },
         { src: `${dir}/art-pithora.jpg`,
  blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAABP/EAB8QAAEEAgIDAAAAAAAAAAAAAAEAAgMREiEEYZGh8f/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEQMRAD8AbHOJXOZICRkS2vqZg3rwgxcVrhebxZJ1WvSZXZQMt//Z', alt: 'Reference sheet on Pithora painting — horses, animals and deities in bold colour on tribal home walls', ...PAGE },
       ],
-      captions: ['Bhilala — Gond and Bhil, ritual symbols', 'Pithora — horses and deities, bold colour'],
+      captions: [
+        'Bhil — dots, geometric figures',
+        'Mandana — walls and floors, white on red earth',
+        'Bhilala — Gond and Bhil, ritual symbols',
+        'Pithora — horses and deities, bold colour',
+      ],
     },
 
     /* 07 — DRAWING IT BY HAND -------------------------------------------- */
@@ -322,8 +325,22 @@ export const tadkaTrail: ProjectInput = {
       },
       caption: 'Experiments failed — the sketchbook page, unedited',
     },
+    /* The analysis this heading promises. These two paragraphs were the
+       third and fourth of the closing reflection — they are the failures,
+       and they were sitting past the end of the case study where nobody
+       reaches them. Hemant's words, moved, not rewritten. */
+    {
+      type: 'prose',
+      text:
+        'I also found that I trust a mark differently once I have cut it into lino and printed it badly a few times. What survives ink is not the same as what survives a screen. I did that after the illustration was already drawn. Next time I would do it first.\n\nThe honest gap is that I designed this for international students missing home, and the only student I checked it against was myself. I know what I missed. I do not know what someone from Kerala or Assam would have missed, and I never asked. That is the part I would change.',
+    },
 
-    /* 13 — IN THE WORLD · EVIDENCE --------------------------------------- */
+    /* 13 — ON THE TABLE · EVIDENCE ------------------------------------
+       Given its own heading. This is the finished work, and it previously
+       sat under 'What did not work' — five product photographs filed as
+       failures. The bleed establishes it; the mosaic holds the rest as one
+       shoot instead of five separate full-width claims. */
+    { type: 'heading', marker: 'J', title: 'On the table', note: 'The finished range' },
     {
       type: 'bleed',
       image: {
@@ -335,34 +352,49 @@ export const tadkaTrail: ProjectInput = {
       caption: 'It arrives, and it opens',
     },
     {
-      type: 'pair',
+      type: 'mosaic',
+      layout: 'feature',
+      /* The cards lead, because the reflection says they are what carries
+         the brand — the feature cell should agree with the argument. */
       images: [
-        { src: `${dir}/photo-pair.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAfEAACAQQCAwAAAAAAAAAAAAABAgMABAUREmEhMVH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABYRAQEBAAAAAAAAAAAAAAAAAAARIf/aAAwDAQACEQMRAD8Aoz0ctuFhtoikLAaKAksfh6qnHWWShs41VkG/PF/a9UpUzS//2Q==', alt: 'Two Tadka Trail packs, green and maroon, standing together in raking light', ...PHOTO },
-        { src: `${dir}/photo-side.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAgEAABAwQCAwAAAAAAAAAAAAACAAEDBAURIRIUMYGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAQf/aAAwDAQACEQMRAD8ATWOpCc+EJGzvohdt+nUk9rrSkz1Jj15xj4iKdJ//2Q==', alt: 'Side panel of the Moong Daal pack reading from the farms of Barwani to your bowl, in English and Hindi', ...PHOTO },
+        {
+          src: `${dir}/photo-cards.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAeEAACAgICAwAAAAAAAAAAAAABAgMRABIEIRMxQf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AcmOYpPOWrwnZDEoVXBHo131k8j3rK0pdpVEhtQ2pPyzjGESP/9k=',
+          alt: 'The full set of story cards laid out across a table with the packs',
+          ...PHOTO,
+        },
+        {
+          src: `${dir}/photo-pair.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAfEAACAQQCAwAAAAAAAAAAAAABAgMABAUREmEhMVH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABYRAQEBAAAAAAAAAAAAAAAAAAARIf/aAAwDAQACEQMRAD8Aoz0ctuFhtoikLAaKAksfh6qnHWWShs41VkG/PF/a9UpUzS//2Q==',
+          alt: 'Two Tadka Trail packs, green and maroon, standing together in raking light',
+          ...PHOTO,
+        },
+        {
+          src: `${dir}/photo-side.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAgEAABAwQCAwAAAAAAAAAAAAACAAEDBAURIRIUMYGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAQf/aAAwDAQACEQMRAD8ATWOpCc+EJGzvohdt+nUk9rrSkz1Jj15xj4iKdJ//2Q==',
+          alt: 'Side panel of the Moong Daal pack reading from the farms of Barwani to your bowl, in English and Hindi',
+          ...PHOTO,
+        },
+        {
+          src: `${dir}/photo-read.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIDEQAEBRITITGB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQEAAwAAAAAAAAAAAAAAAAAAESFB/9oADAMBAAIRAxEAPwCTmTsrvSvGZFh6QVZQVF0PnjNFxEUexxkEmzD3HINMy2as17xjIwxb/9k=',
+          alt: 'A story card held and read, its bilingual text visible',
+          ...PHOTO,
+        },
+        {
+          src: `${dir}/photo-detail.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMF/8QAHRAAAgICAwEAAAAAAAAAAAAAAQMCEQAEEyFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAWEQEBAQAAAAAAAAAAAAAAAAABACH/2gAMAwEAAhEDEQA/AJ6yGFMVuVwxu4yYLJ9PWbadfTYqJnqrZMCpSIqz9xjAHZnS/9k=',
+          alt: 'Detail of the rope handle and printed pattern on the pack, with lentils scattered beneath',
+          ...PHOTO,
+        },
       ],
-      captions: ['Two regions, two grounds', 'What it says on the side'],
-    },
-    {
-      type: 'pair',
-      images: [
-        { src: `${dir}/photo-cards.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAeEAACAgICAwAAAAAAAAAAAAABAgMRABIEIRMxQf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AcmOYpPOWrwnZDEoVXBHo131k8j3rK0pdpVEhtQ2pPyzjGESP/9k=', alt: 'The full set of story cards laid out across a table with the packs', ...PHOTO },
-        { src: `${dir}/photo-read.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIDEQAEBRITITGB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQEAAwAAAAAAAAAAAAAAAAAAESFB/9oADAMBAAIRAxEAPwCTmTsrvSvGZFh6QVZQVF0PnjNFxEUexxkEmzD3HINMy2as17xjIwxb/9k=', alt: 'A story card held and read, its bilingual text visible', ...PHOTO },
+      captions: [
+        'The cards come out',
+        'Two regions, two grounds',
+        'What it says on the side',
+        'And someone reads one',
+        'What is left on the table',
       ],
-      captions: ['The cards come out', 'And someone reads one'],
-    },
-    {
-      type: 'full',
-      image: {
-        src: `${dir}/photo-detail.jpg`,
-        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMF/8QAHRAAAgICAwEAAAAAAAAAAAAAAQMCEQAEEyFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAWEQEBAQAAAAAAAAAAAAAAAAABACH/2gAMAwEAAhEDEQA/AJ6yGFMVuVwxu4yYLJ9PWbadfTYqJnqrZMCpSIqz9xjAHZnS/9k=',
-        alt: 'Detail of the rope handle and printed pattern on the pack, with lentils scattered beneath',
-        ...PHOTO,
-      },
-      caption: 'What is left on the table afterwards',
     },
 
     /* 14 — REFLECTION ---------------------------------------------------- */
@@ -374,7 +406,7 @@ export const tadkaTrail: ProjectInput = {
     {
       type: 'prose',
       variant: 'reflection',
-      text: 'I started this thinking cultural branding meant using cultural imagery. Draw the right motifs, use the right colours, and the work would feel like Madhya Pradesh. Most of the project went into learning that the motifs were the easy part.\n\nWhat actually carries the brand is not the illustration. It is the cards — a particular daal, from a particular region, with a story I had to go and find. They took the longest to make and they look the least designed of anything here. If I had to keep one part and throw away the rest, it would be those.\n\nI also found that I trust a mark differently once I have cut it into lino and printed it badly a few times. What survives ink is not the same as what survives a screen. I did that after the illustration was already drawn. Next time I would do it first.\n\nThe honest gap is that I designed this for international students missing home, and the only student I checked it against was myself. I know what I missed. I do not know what someone from Kerala or Assam would have missed, and I never asked. That is the part I would change.',
+      text: 'I started this thinking cultural branding meant using cultural imagery. Draw the right motifs, use the right colours, and the work would feel like Madhya Pradesh. Most of the project went into learning that the motifs were the easy part.\n\nWhat actually carries the brand is not the illustration. It is the cards — a particular daal, from a particular region, with a story I had to go and find. They took the longest to make and they look the least designed of anything here. If I had to keep one part and throw away the rest, it would be those.',
     },
   ],
 

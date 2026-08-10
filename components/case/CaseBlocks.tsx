@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { IMAGE_QUALITY } from '@/lib/images';
 import { CaseAnnotate } from '@/components/case/CaseAnnotate';
 import { CaseGallery } from '@/components/case/CaseGallery';
+import { CaseMosaic } from '@/components/case/CaseMosaic';
 import { CaseStory } from '@/components/case/CaseStory';
 import { CaseTimeline } from '@/components/case/CaseTimeline';
 import { CaseCompare } from '@/components/case/CaseCompare';
@@ -167,6 +168,9 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
                 </div>
               </Section>
             );
+
+          case 'mosaic':
+            return <CaseMosaic key={key} block={block} />;
 
           case 'annotate':
             return <CaseAnnotate key={key} block={block} />;

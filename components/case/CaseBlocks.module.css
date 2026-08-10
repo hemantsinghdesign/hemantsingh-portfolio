@@ -33,6 +33,9 @@
 
 .prose {
   max-width: 64ch;
+  /* A prose block may run to several paragraphs, same as a reflection.
+     Harmless on single-paragraph text, which has no newlines to preserve. */
+  white-space: pre-line;
 }
 
 /* The closing statement — set apart from a standard prose paragraph so it
