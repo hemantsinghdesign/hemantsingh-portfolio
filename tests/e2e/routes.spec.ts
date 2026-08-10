@@ -17,6 +17,7 @@ const ROUTES = [
   '/projects/sora-matcha',
   '/projects/hsbc-onboarding',
   '/projects/tadka-trail',
+  '/projects/tadka-trail/research',
 ] as const;
 
 for (const route of ROUTES) {

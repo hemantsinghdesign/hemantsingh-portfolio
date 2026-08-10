@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CaseBlocks } from '@/components/case/CaseBlocks';
-import { TadkaOpening } from '@/components/tadka/TadkaOpening';
 import { CaseHero } from '@/components/case/CaseHero';
 import { CaseMetrics } from '@/components/case/CaseMetrics';
 import { CaseNext } from '@/components/case/CaseNext';
@@ -74,14 +73,7 @@ export default async function ProjectPage({
         {!project.hero && <p className={`${styles.summary} lede`}>{project.summary}</p>}
       </section>
 
-      {/* Tadka Trail opens as its own product does: a sealed surface the
-          visitor pulls away. Opt-in by slug — SORA and HSBC keep the
-          unchanged CaseHero. */}
-      {project.slug === 'tadka-trail' && project.hero?.image ? (
-        <TadkaOpening hero={project.hero.image} />
-      ) : (
-        project.hero && <CaseHero hero={project.hero} />
-      )}
+      {project.hero && <CaseHero hero={project.hero} />}
 
       {project.hero ? (
         <CaseOverview project={project} />
@@ -92,6 +84,22 @@ export default async function ProjectPage({
       )}
 
       <CaseBlocks blocks={project.blocks} slug={project.slug} />
+
+      {/* The process lives on its own page. Offered after the story has been
+          told, so it reads as depth for anyone who wants it rather than as
+          more of the case study. */}
+      {project.research && (
+        <Section>
+          <div className={styles.research}>
+            <p className={`${styles.researchNote} lede`}>
+              {project.research.intro}
+            </p>
+            <TextLink href={`/projects/${project.slug}/research`}>
+              See the research
+            </TextLink>
+          </div>
+        </Section>
+      )}
 
       {project.metrics && project.metrics.length > 0 && (
         <Section>

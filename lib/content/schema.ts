@@ -307,6 +307,21 @@ export const projectSchema = z.object({
     .min(1)
     .optional(),
   blocks: z.array(blockSchema),
+  /** The process, held on its own page at /projects/<slug>/research.
+   *
+   *  The case study answers what the problem was, what was decided and what
+   *  came out of it. Everything that evidences those decisions — studies,
+   *  iterations, dielines, the things that failed — belongs here instead, so
+   *  the case study stays readable and the depth is still one click away for
+   *  anyone who wants it. Same block vocabulary; it is a second ordered list,
+   *  not a second format. */
+  research: z
+    .object({
+      /** Sentence under the research page's heading. */
+      intro: z.string().min(1),
+      blocks: z.array(blockSchema).min(1),
+    })
+    .optional(),
   /** Optional per-project SEO overrides; sensible defaults are derived. */
   seo: z
     .object({
