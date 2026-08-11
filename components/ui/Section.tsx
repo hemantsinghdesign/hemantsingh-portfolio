@@ -15,13 +15,14 @@ export function Section({
   reveal = true,
 }: {
   children: React.ReactNode;
-  variant?: 'default' | 'tight' | 'flush';
+  variant?: 'default' | 'tight' | 'flush' | 'compact';
   reveal?: boolean;
 }) {
   const className = [
     styles.section,
     variant === 'tight' ? styles.tight : '',
     variant === 'flush' ? styles.flush : '',
+    variant === 'compact' ? styles.compact : '',
   ]
     .filter(Boolean)
     .join(' ');

@@ -118,3 +118,45 @@
     grid-row: span 2;
   }
 }
+
+/* ---- dense: archive density, for research pages ----
+   Same grid, smaller cells and tighter gaps. A research page is a set of
+   exhibits, not a set of statements — at case-study size the reader is
+   asked to consider each sheet as a claim, which is the wrong invitation
+   and makes the page endless. */
+.dense {
+  gap: clamp(6px, 0.7vw, 12px);
+}
+
+/* Cell size drives the grid here, not the number of images. Tying columns
+   to the image count meant a four-image set still filled the row at full
+   width, which is the opposite of dense. */
+.dense.even {
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+}
+
+@media (min-width: 700px) {
+  .dense.even {
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    /* Capped so a four-sheet set fills its row instead of stranding half the
+       page empty. Wider sets simply wrap onto a second line. */
+    max-width: 940px;
+  }
+}
+
+.dense .caption {
+  margin-top: 6px;
+  font-size: 10px;
+  opacity: 0.75;
+}
+
+/* The feature cell stops dominating at this scale. */
+.dense.feature {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 700px) {
+  .dense.feature {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

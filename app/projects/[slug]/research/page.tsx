@@ -69,7 +69,7 @@ export default async function ProjectResearchPage({
         note={project.research.intro}
       />
 
-      <CaseBlocks blocks={project.research.blocks} slug={project.slug} />
+      <CaseBlocks blocks={project.research.blocks} slug={project.slug} dense />
 
       <Section>
         <div className={styles.back}>

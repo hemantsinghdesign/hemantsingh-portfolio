@@ -211,7 +211,7 @@ const mosaicBlock = z.object({
   note: z.string().optional(),
   text: z.string().optional(),
   layout: z.enum(['even', 'feature']).default('even'),
-  images: z.array(imageSchema).min(3).max(6),
+  images: z.array(imageSchema).min(3).max(8),
   captions: z.array(z.string()).optional(),
 });
 

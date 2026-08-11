@@ -72,9 +72,12 @@ const CHAPTER_GLYPH: Record<
 export function CaseBlocks({
   blocks,
   slug,
+  dense = false,
 }: {
   blocks: ContentBlock[];
   slug?: string;
+  /** Research pages render the same blocks at archive density. */
+  dense?: boolean;
 }) {
   const glyph = slug ? CHAPTER_GLYPH[slug] : undefined;
 
@@ -86,7 +89,7 @@ export function CaseBlocks({
         switch (block.type) {
           case 'heading':
             return (
-              <Section key={key}>
+              <Section key={key} variant={dense ? 'compact' : 'default'}>
                 <SectionHead
                   marker={block.marker}
                   title={block.title}
@@ -192,7 +195,7 @@ export function CaseBlocks({
             );
 
           case 'mosaic':
-            return <CaseMosaic key={key} block={block} glyph={glyph} />;
+            return <CaseMosaic key={key} block={block} glyph={glyph} dense={dense} />;
 
           case 'annotate':
             return <CaseAnnotate key={key} block={block} glyph={glyph} />;

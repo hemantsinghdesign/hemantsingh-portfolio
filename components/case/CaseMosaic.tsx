@@ -22,11 +22,21 @@ import styles from './CaseMosaic.module.css';
  * cell, which is for photography, where the crop is a composition. At five
  * images `feature` tiles a four-column grid exactly, with no orphan cell.
  */
-export function CaseMosaic({ block, glyph }: { block: BlockOfType<'mosaic'> ; glyph?: ChapterGlyph }) {
+export function CaseMosaic({
+  block,
+  glyph,
+  dense = false,
+}: {
+  block: BlockOfType<'mosaic'>;
+  glyph?: ChapterGlyph;
+  /** Research pages show working, not statements: smaller cells, more of
+   *  them per row, tighter gaps. */
+  dense?: boolean;
+}) {
   const isFeature = block.layout === 'feature';
 
   return (
-    <Section variant={block.title ? 'default' : 'flush'}>
+    <Section variant={block.title ? (dense ? 'compact' : 'default') : 'flush'}>
       {block.title && (
         <SectionHead
           marker={block.marker ?? '·'}
@@ -38,9 +48,17 @@ export function CaseMosaic({ block, glyph }: { block: BlockOfType<'mosaic'> ; gl
       {block.text && <p className={styles.text}>{block.text}</p>}
 
       <div
-        className={`${styles.grid} ${isFeature ? styles.feature : styles.even}`}
+        className={[
+          styles.grid,
+          isFeature ? styles.feature : styles.even,
+          dense ? styles.dense : '',
+        ]
+          .filter(Boolean)
+          .join(' ')}
         style={
-          { '--cols': Math.min(block.images.length, 4) } as React.CSSProperties
+          {
+            '--cols': Math.min(block.images.length, dense ? 6 : 4),
+          } as React.CSSProperties
         }
       >
         {block.images.map((image, index) => (

@@ -14,3 +14,9 @@
   border-top: 0;
   padding: 0 0 clamp(24px, 4vw, 56px);
 }
+
+/* Archive density, for research pages. `tight` only reduces the top, which
+   still left a case-study-sized gap under every heading. */
+.compact {
+  padding: clamp(26px, 3.5vw, 44px) 0 clamp(14px, 1.8vw, 22px);
+}
