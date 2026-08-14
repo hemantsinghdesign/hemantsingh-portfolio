@@ -1,5 +1,5 @@
-/* Contact form. It is a real <form> with no endpoint — submission is handled
-   in JS and composes a mailto: link. See the component comment. */
+/* Contact form. Posts to /api/contact, which sends the email server-side.
+   See the component comment. */
 .fields {
   display: grid;
   gap: 18px;
@@ -72,4 +72,26 @@
 .link:hover {
   color: var(--signal-sm);
   border-color: var(--signal);
+}
+
+/* Honeypot. Moved out of sight rather than hidden with display:none, which
+   some bots check for; kept out of the tab order and out of the a11y tree. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Reserves no space when empty, so the button does not shift when a failure
+   is announced. */
+.status {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--signal-sm);
+}
+
+.status:empty {
+  display: none;
 }
