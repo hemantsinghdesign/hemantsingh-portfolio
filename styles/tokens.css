@@ -9,6 +9,11 @@
   --paper: #EDEDE8;
   --ink: #14140F;
   --rule: #C6C6BE;
+  /* 3.21:1 on paper. --rule is 1.46:1, which is right for a decorative
+     hairline but below the 3:1 WCAG 1.4.11 asks of anything that identifies
+     a control — a text field's underline is the field. Used for form
+     boundaries only; ordinary rules stay on --rule. */
+  --rule-strong: #84847A;
 
   /* Muted grey.
      --mute        3.79:1 on paper — passes AA for large text only (>=24px).

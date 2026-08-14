@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { IMAGE_QUALITY } from '@/lib/images';
 import { CaseAnnotate } from '@/components/case/CaseAnnotate';
 import { CaseGallery } from '@/components/case/CaseGallery';
+import { CaseMosaic } from '@/components/case/CaseMosaic';
 import { CaseStory } from '@/components/case/CaseStory';
 import { CaseTimeline } from '@/components/case/CaseTimeline';
 import { CaseCompare } from '@/components/case/CaseCompare';
@@ -55,7 +56,31 @@ function Figure({
   );
 }
 
-export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
+/** A project may mark its section rules with its own object instead of a
+ *  letter. Tadka Trail uses the jharokha the whole brand is built on. */
+const CHAPTER_GLYPH: Record<
+  string,
+  { src: string; width: number; height: number }
+> = {
+  'tadka-trail': {
+    src: '/projects/tadka-trail/chapter-jharokha.png',
+    width: 663,
+    height: 1023,
+  },
+};
+
+export function CaseBlocks({
+  blocks,
+  slug,
+  dense = false,
+}: {
+  blocks: ContentBlock[];
+  slug?: string;
+  /** Research pages render the same blocks at archive density. */
+  dense?: boolean;
+}) {
+  const glyph = slug ? CHAPTER_GLYPH[slug] : undefined;
+
   return (
     <>
       {blocks.map((block, index) => {
@@ -64,11 +89,12 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
         switch (block.type) {
           case 'heading':
             return (
-              <Section key={key}>
+              <Section key={key} variant={dense ? 'compact' : 'default'}>
                 <SectionHead
                   marker={block.marker}
                   title={block.title}
                   note={block.note}
+                  glyph={glyph}
                 />
               </Section>
             );
@@ -168,8 +194,11 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
               </Section>
             );
 
+          case 'mosaic':
+            return <CaseMosaic key={key} block={block} glyph={glyph} dense={dense} />;
+
           case 'annotate':
-            return <CaseAnnotate key={key} block={block} />;
+            return <CaseAnnotate key={key} block={block} glyph={glyph} />;
 
           case 'story':
             return <CaseStory key={key} block={block} />;
@@ -178,19 +207,19 @@ export function CaseBlocks({ blocks }: { blocks: ContentBlock[] }) {
             return <CaseGallery key={key} block={block} />;
 
           case 'timeline':
-            return <CaseTimeline key={key} block={block} />;
+            return <CaseTimeline key={key} block={block} glyph={glyph} />;
 
           case 'compare':
-            return <CaseCompare key={key} block={block} />;
+            return <CaseCompare key={key} block={block} glyph={glyph} />;
 
           case 'interlude':
             return <CaseInterlude key={key} block={block} />;
 
           case 'columns':
-            return <CaseColumns key={key} block={block} />;
+            return <CaseColumns key={key} block={block} glyph={glyph} />;
 
           case 'visualLanguage':
-            return <CaseVisualLanguage key={key} block={block} />;
+            return <CaseVisualLanguage key={key} block={block} glyph={glyph} />;
         }
       })}
     </>

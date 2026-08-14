@@ -1,5 +1,5 @@
 import { Section } from '@/components/ui/Section';
-import { SectionHead } from '@/components/ui/SectionHead';
+import { SectionHead, type ChapterGlyph } from '@/components/ui/SectionHead';
 import type { BlockOfType } from '@/types/content';
 import styles from './CaseCompare.module.css';
 
@@ -10,10 +10,10 @@ import styles from './CaseCompare.module.css';
  * Reusable: yes — any project with a research phase shaped as
  *   "here's what I checked" / "here's what mattered."
  */
-export function CaseCompare({ block }: { block: BlockOfType<'compare'> }) {
+export function CaseCompare({ block, glyph }: { block: BlockOfType<'compare'> ; glyph?: ChapterGlyph }) {
   return (
     <Section>
-      <SectionHead marker={block.marker} title={block.title} />
+      <SectionHead marker={block.marker} title={block.title} glyph={glyph} />
       <div className={styles.grid}>
         <div>
           <h3 className={styles.panelTitle}>{block.left.title}</h3>

@@ -13,6 +13,11 @@ const config = [
       'coverage/**',
       'playwright-report/**',
       'test-results/**',
+      // Vendored agent skills, not project source. They ship their own
+      // scripts under conventions this config does not apply to, and linting
+      // them fails the build for code nobody here maintains.
+      '.agents/**',
+      '.claude/**',
     ],
   },
   ...coreWebVitals,

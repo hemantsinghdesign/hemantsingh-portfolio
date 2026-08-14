@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { PageTransition } from '@/components/layout/PageTransition';
+import { SkipLink } from '@/components/layout/SkipLink';
 import { SiteChrome } from '@/components/layout/SiteChrome';
 import { PersonJsonLd, WebSiteJsonLd } from '@/components/seo/JsonLd';
 import { siteConfig } from '@/lib/site';
@@ -45,9 +46,7 @@ export default function RootLayout({
   return (
     <html lang={siteConfig.lang} data-scroll-behavior="smooth">
       <body>
-        <a className="skip-link" href="#main">
-          Skip to content
-        </a>
+        <SkipLink />
         <PersonJsonLd />
         <WebSiteJsonLd />
         <PageTransition>

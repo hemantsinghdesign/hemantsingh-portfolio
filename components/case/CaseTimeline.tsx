@@ -1,4 +1,4 @@
-import { SectionHead } from '@/components/ui/SectionHead';
+import { SectionHead, type ChapterGlyph } from '@/components/ui/SectionHead';
 import { Section } from '@/components/ui/Section';
 import type { BlockOfType } from '@/types/content';
 import styles from './CaseTimeline.module.css';
@@ -39,7 +39,7 @@ function buildPoints(steps: readonly { tone?: number }[]) {
   });
 }
 
-export function CaseTimeline({ block }: { block: BlockOfType<'timeline'> }) {
+export function CaseTimeline({ block, glyph }: { block: BlockOfType<'timeline'> ; glyph?: ChapterGlyph }) {
   const points = buildPoints(block.steps);
   const path = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x} ${p.y}`).join(' ');
   const hasTone = block.steps.some((s) => s.tone !== undefined);
@@ -48,7 +48,7 @@ export function CaseTimeline({ block }: { block: BlockOfType<'timeline'> }) {
 
   return (
     <Section>
-      <SectionHead marker={block.marker} title={block.title} note={block.note} />
+      <SectionHead marker={block.marker} title={block.title} note={block.note} glyph={glyph} />
 
       {hasTone && (
         <svg

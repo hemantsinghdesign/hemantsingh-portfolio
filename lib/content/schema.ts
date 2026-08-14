@@ -191,6 +191,30 @@ const annotateBlock = z.object({
     .max(6),
 });
 
+/** A composed set of images read as one artefact rather than as a sequence.
+ *  Use it wherever three or more images say a single thing — four reference
+ *  sheets, a shoot from one session — because stacking those as separate
+ *  full-width blocks makes each one a statement and turns the page into a
+ *  contact sheet.
+ *
+ *  Two layouts, and the difference is whether cropping is allowed:
+ *  - `even`    tiles at natural aspect, nothing cropped. For artwork, sketch
+ *              pages and reference sheets, where the edge of the sheet is
+ *              part of what is being shown.
+ *  - `feature` gives the first image a double cell and crops the rest square.
+ *              For photography, where a crop is a composition and five frames
+ *              want to read as one spread. Five images tile it exactly. */
+const mosaicBlock = z.object({
+  type: z.literal('mosaic'),
+  marker: z.string().min(1).max(3).optional(),
+  title: z.string().min(1).optional(),
+  note: z.string().optional(),
+  text: z.string().optional(),
+  layout: z.enum(['even', 'feature']).default('even'),
+  images: z.array(imageSchema).min(3).max(8),
+  captions: z.array(z.string()).optional(),
+});
+
 /** A single story card given its own viewport and its own ground colour.
  *  Bilingual by design — the Hindi is not a translation of the English, it is
  *  half of the artefact. */
@@ -216,6 +240,7 @@ export const blockSchema = z.discriminatedUnion('type', [
   fullBlock,
   pairBlock,
   triptychBlock,
+  mosaicBlock,
   galleryBlock,
   timelineBlock,
   compareBlock,
@@ -274,10 +299,29 @@ export const projectSchema = z.object({
   overview: z.string().min(1),
   approach: z.array(z.string().min(1)).min(1),
   outcome: z.string().min(1),
+  /** Optional. A project with no meaningful figures should not invent three
+   *  to fill a row — and a case study that ends on a reflection should not
+   *  then follow it with an inventory. */
   metrics: z
     .array(z.object({ label: z.string().min(1), value: z.string().min(1) }))
-    .min(1),
+    .min(1)
+    .optional(),
   blocks: z.array(blockSchema),
+  /** The process, held on its own page at /projects/<slug>/research.
+   *
+   *  The case study answers what the problem was, what was decided and what
+   *  came out of it. Everything that evidences those decisions — studies,
+   *  iterations, dielines, the things that failed — belongs here instead, so
+   *  the case study stays readable and the depth is still one click away for
+   *  anyone who wants it. Same block vocabulary; it is a second ordered list,
+   *  not a second format. */
+  research: z
+    .object({
+      /** Sentence under the research page's heading. */
+      intro: z.string().min(1),
+      blocks: z.array(blockSchema).min(1),
+    })
+    .optional(),
   /** Optional per-project SEO overrides; sensible defaults are derived. */
   seo: z
     .object({

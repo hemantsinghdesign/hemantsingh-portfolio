@@ -22,11 +22,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl('/resume'), priority: 0.4, changeFrequency: 'yearly' },
   ];
 
-  const projects: MetadataRoute.Sitemap = getAllProjects().map((project) => ({
-    url: absoluteUrl(`/projects/${project.slug}`),
-    priority: 0.8,
-    changeFrequency: 'yearly',
-  }));
+  const projects: MetadataRoute.Sitemap = getAllProjects().flatMap((project) => [
+    {
+      url: absoluteUrl(`/projects/${project.slug}`),
+      priority: 0.8,
+      changeFrequency: 'yearly' as const,
+    },
+    // The research page is a real route with its own content, so it is
+    // crawlable — ranked below the case study it supports.
+    ...(project.research
+      ? [
+          {
+            url: absoluteUrl(`/projects/${project.slug}/research`),
+            priority: 0.5,
+            changeFrequency: 'yearly' as const,
+          },
+        ]
+      : []),
+  ]);
 
   const posts = getAllJournalPosts();
   const journal: MetadataRoute.Sitemap =

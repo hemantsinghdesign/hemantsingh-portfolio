@@ -1,0 +1,161 @@
+/* A composed group of images. Gaps are tighter than the space between
+   blocks, which is what makes the set read as one artefact rather than as
+   several stacked ones. */
+.text {
+  max-width: 60ch;
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.6;
+  color: var(--mute-sm);
+  margin-bottom: clamp(20px, 3vw, 34px);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(8px, 1.2vw, 18px);
+}
+
+.cell {
+  margin: 0;
+  min-width: 0;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  margin-top: 8px;
+}
+
+/* ---- even: nothing cropped, but a common measure ----
+   For sheets and artwork. Each cell is a fixed portrait box and the image is
+   contained inside it, so a set of pages with slightly different proportions
+   still sits on one baseline. Letting the images set their own heights makes
+   every caption land somewhere different, which is the single thing that
+   makes a grid of good photographs look unconsidered. */
+.even {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+}
+
+.even .cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.even .imageBox {
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.even .image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 860px) {
+  .even {
+    grid-template-columns: repeat(var(--cols, 4), 1fr);
+  }
+}
+
+/* ---- feature: cropped cells, first image doubled ----
+   For photography. Square cells give the grid a common measure; the first
+   image takes two columns and two rows, so five images fill four columns
+   with no gap left over. */
+.feature {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* The cell already carries the square proportion here, so the box just
+   fills it and the image crops to cover. */
+.feature .imageBox {
+  position: absolute;
+  inset: 0;
+}
+
+.feature .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature .cell {
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* A cropped cell has nowhere to put a caption, so it sits over the image. */
+.feature .caption {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  margin: 0;
+  padding: 4px 8px;
+  background: var(--surface-dark);
+  color: var(--paper);
+}
+
+.feature .cell:first-child {
+  grid-column: span 2;
+}
+
+@media (min-width: 860px) {
+  .feature {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .feature .cell:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* ---- dense: archive density, for research pages ----
+   Same grid, smaller cells and tighter gaps. A research page is a set of
+   exhibits, not a set of statements — at case-study size the reader is
+   asked to consider each sheet as a claim, which is the wrong invitation
+   and makes the page endless. */
+.dense {
+  gap: clamp(6px, 0.7vw, 12px);
+}
+
+/* auto-fit, not auto-fill: empty tracks collapse, so a set of any size
+   spreads across the full measure instead of leaving the right half bare.
+   The minimum still keeps cells small — an eight-sheet set lands near
+   150px, a four-sheet set near 320px, and both read as exhibits rather
+   than as statements. */
+.dense.even {
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+}
+
+@media (min-width: 700px) {
+  .dense.even {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+.dense .caption {
+  margin-top: 6px;
+  font-size: 10px;
+  opacity: 0.75;
+}
+
+/* The feature cell stops dominating at this scale. */
+.dense.feature {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 700px) {
+  .dense.feature {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

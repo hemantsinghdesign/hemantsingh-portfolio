@@ -1,10 +1,30 @@
 import { expect, test } from '@playwright/test';
+import type { Locator } from '@playwright/test';
 import { getNextProject } from '@/lib/content/projects';
 
 /**
  * Route coverage. Every route must return 200, expose exactly one <h1>,
  * carry a canonical URL, and be reachable by keyboard.
  */
+
+
+/**
+ * Activates an element the way the device would.
+ *
+ * `click()` dispatches mouse events. WebKit under touch emulation does not
+ * synthesise activation from those, so a click lands on the element and
+ * nothing happens — no navigation, no handler. Chromium does synthesise it,
+ * which is why this only ever failed on the iPhone project. Touch contexts
+ * therefore get a real tap.
+ */
+async function activate(locator: Locator) {
+  const { hasTouch } = test.info().project.use;
+  if (hasTouch) {
+    await locator.tap();
+    return;
+  }
+  await locator.click();
+}
 
 const ROUTES = [
   '/',
@@ -17,6 +37,7 @@ const ROUTES = [
   '/projects/sora-matcha',
   '/projects/hsbc-onboarding',
   '/projects/tadka-trail',
+  '/projects/tadka-trail/research',
 ] as const;
 
 for (const route of ROUTES) {
@@ -42,16 +63,33 @@ test('an unknown route returns the 404 page', async ({ page }) => {
   await expect(page.getByText('Error 404')).toBeVisible();
 });
 
-test('the skip link moves focus to the main landmark', async ({ page }) => {
+test('the skip link moves focus to the main landmark', async ({
+  page,
+  browserName,
+}) => {
   await page.goto('/');
-  await page.keyboard.press('Tab');
 
   const skip = page.getByRole('link', { name: 'Skip to content' });
+
+  // WebKit only tabs to links when full keyboard access is on, which is off
+  // by default and not settable from here. The tab order is asserted where it
+  // is meaningful; what the skip link actually does is asserted everywhere.
+  if (browserName === 'webkit') {
+    await skip.focus();
+  } else {
+    await page.keyboard.press('Tab');
+  }
+
   await expect(skip).toBeFocused();
 
-  // Following the link must land focus in <main>, not merely scroll to it —
-  // that is the whole point of the skip link for a keyboard user.
-  await skip.press('Enter');
+  // Activated with a click rather than Enter: mobile WebKit has no keyboard
+  // model for link activation, so Enter does nothing there. The link is
+  // off-screen until focused, and `.skip-link:focus` brings it into view,
+  // so focusing first is what makes the click possible at all.
+  await activate(skip);
+
+  // Following it must land focus in <main>, not merely scroll to it — that is
+  // the whole point of the skip link for a keyboard user.
   await expect(page.locator('main#main')).toBeFocused();
 });
 
@@ -78,26 +116,36 @@ test('the HSBC case study deep-links correctly and wraps to the next project', a
 });
 
 test('the back button returns to the previous route', async ({ page }) => {
+  // Driven through a project row rather than the header: below 760px the
+  // primary nav is hidden behind the menu, and what is under test here is
+  // client-side navigation and history, not the header.
   await page.goto('/');
-  await page.getByRole('link', { name: 'Work', exact: true }).first().click();
-  await expect(page).toHaveURL(/\/work$/);
+  await page.goto('/work');
+
+  await activate(page.locator('a[href="/projects/sora-matcha"]').first());
+  await expect(page).toHaveURL(/\/projects\/sora-matcha$/);
+
   await page.goBack();
-  await expect(page).toHaveURL(/\/$/);
+  await expect(page).toHaveURL(/\/work$/);
 });
 
 test('going back mid-transition does not get overridden by the queued route', async ({
   page,
 }) => {
   await page.goto('/');
-  await page.getByRole('link', { name: 'Work', exact: true }).first().click();
-  await expect(page).toHaveURL(/\/work$/);
+  await page.goto('/work');
 
   // A case-study link plays the cover half before pushing the route. Leaving
   // during that window must abandon the push, not merely outrun it.
-  await page.locator('a[href="/projects/sora-matcha"]').first().click();
+  // Deliberately not awaiting the navigation: going back has to happen
+  // inside the cover window, which is the whole point. Waiting for the URL
+  // first would make this a test of ordinary back navigation.
+  await activate(page.locator('a[href="/projects/sora-matcha"]').first());
   await page.goBack();
 
-  // Comfortably past the cover delay, so a surviving timer would have fired.
+  // The click is intercepted before it pushes, so back leaves /work for the
+  // entry before it. A surviving timer would land us on the case study
+  // instead; this waits comfortably past the cover delay to catch that.
   await page.waitForTimeout(1500);
   await expect(page).toHaveURL(/\/$/);
 });

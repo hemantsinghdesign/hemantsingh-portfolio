@@ -10,3 +10,17 @@
 .summary {
   margin-top: 26px;
 }
+
+/* The invitation to the research page. Sits between the story and the
+   figures — after the argument is made, before the inventory. */
+.research {
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(22px, 3vw, 34px);
+}
+
+.researchNote {
+  max-width: 46ch;
+}

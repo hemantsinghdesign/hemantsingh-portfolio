@@ -15,6 +15,8 @@
   color: var(--mute-sm);
 }
 
+/* The underline is the only thing that identifies these as fields, so it uses
+   --rule-strong (3.21:1) rather than the decorative --rule (1.46:1). */
 .input,
 .textarea {
   font-family: var(--sans);
@@ -22,7 +24,7 @@
   color: var(--ink);
   background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-strong);
   padding: 10px 0;
   transition: border-color var(--dur-hover) var(--ease);
 }

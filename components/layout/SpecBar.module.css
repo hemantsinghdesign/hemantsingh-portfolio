@@ -13,11 +13,14 @@
   padding: 0 var(--pad);
   background: var(--surface-dark);
   color: var(--paper);
-  opacity: 0.95;
 }
 
+/* --signal is 4.40:1 on this ground, which misses AA at 11px — the reason
+   --signal-on-dark exists. The bar was also at opacity 0.95, which composites
+   the text along with the background and pulled the coordinates down to
+   4.13:1; a solid ground restores the token's intended 4.56:1. */
 .coords {
-  color: var(--signal);
+  color: var(--signal-on-dark);
 }
 
 /* The clock is fixed-width so seconds ticking never shifts the layout. */

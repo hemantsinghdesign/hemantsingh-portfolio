@@ -22,3 +22,15 @@
 .note {
   color: var(--mute-sm);
 }
+
+
+/* Project chapter marker. The jharokha replaces the letter on Tadka Trail,
+   so the section rules are marked by the object the project is built on
+   rather than by an index. */
+.glyph {
+  width: 15px;
+  height: auto;
+  flex: none;
+  align-self: center;
+  opacity: 0.9;
+}

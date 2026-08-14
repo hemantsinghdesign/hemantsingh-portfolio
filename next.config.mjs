@@ -7,6 +7,17 @@
  */
 const isDev = process.env.NODE_ENV === 'development';
 
+/**
+ * `upgrade-insecure-requests` is right in production and meaningless anywhere
+ * the site is not served over TLS. It is also actively harmful there: WebKit
+ * applies it to localhost — Chromium exempts it — so every page-initiated
+ * navigation on an http test server is upgraded to https and fails the
+ * handshake. Emitted only when the site really is https.
+ */
+const isHttps = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hemantsingh.design'
+).startsWith('https:');
+
 const csp = [
   "default-src 'self'",
   "base-uri 'self'",
@@ -19,7 +30,7 @@ const csp = [
   "font-src 'self' data:",
   "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://vitals.vercel-insights.com",
   "manifest-src 'self'",
-  'upgrade-insecure-requests',
+  ...(isHttps ? ['upgrade-insecure-requests'] : []),
 ].join('; ');
 
 const securityHeaders = [

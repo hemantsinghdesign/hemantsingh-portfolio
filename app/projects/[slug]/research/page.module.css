@@ -1,0 +1,12 @@
+/* Research page. Deliberately plainer than the case study — this is the
+   appendix, and it should not compete with the work it supports. */
+.head {
+  padding-top: clamp(20px, 4vw, 36px);
+}
+
+.back {
+  display: flex;
+  justify-content: flex-start;
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(20px, 3vw, 32px);
+}

@@ -83,12 +83,30 @@ export default async function ProjectPage({
         </Section>
       )}
 
-      <CaseBlocks blocks={project.blocks} />
+      <CaseBlocks blocks={project.blocks} slug={project.slug} />
 
-      <Section>
-        <SectionHead marker="G" title="At a glance" note="Scope, not outcome" />
-        <CaseMetrics metrics={project.metrics} />
-      </Section>
+      {/* The process lives on its own page. Offered after the story has been
+          told, so it reads as depth for anyone who wants it rather than as
+          more of the case study. */}
+      {project.research && (
+        <Section>
+          <div className={styles.research}>
+            <p className={`${styles.researchNote} lede`}>
+              {project.research.intro}
+            </p>
+            <TextLink href={`/projects/${project.slug}/research`}>
+              See the research
+            </TextLink>
+          </div>
+        </Section>
+      )}
+
+      {project.metrics && project.metrics.length > 0 && (
+        <Section>
+          <SectionHead marker="G" title="At a glance" note="Scope, not outcome" />
+          <CaseMetrics metrics={project.metrics} />
+        </Section>
+      )}
 
       <Section>
         <CaseNext next={next} />
