@@ -21,6 +21,7 @@
     "blur": "node scripts/generate-blur.mjs"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^2.0.0",
     "framer-motion": "^11.15.0",
     "next": "^16.2.12",
     "react": "^19.2.8",

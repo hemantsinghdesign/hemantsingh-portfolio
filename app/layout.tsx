@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { PageTransition } from '@/components/layout/PageTransition';
 import { SiteChrome } from '@/components/layout/SiteChrome';
 import { PersonJsonLd, WebSiteJsonLd } from '@/components/seo/JsonLd';
@@ -52,6 +53,7 @@ export default function RootLayout({
         <PageTransition>
           <SiteChrome>{children}</SiteChrome>
         </PageTransition>
+        <SpeedInsights />
       </body>
     </html>
   );
