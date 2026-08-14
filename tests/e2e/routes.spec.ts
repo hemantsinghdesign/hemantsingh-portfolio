@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import type { Locator } from '@playwright/test';
 import { getNextProject } from '@/lib/content/projects';
 
 /**
@@ -6,6 +7,24 @@ import { getNextProject } from '@/lib/content/projects';
  * carry a canonical URL, and be reachable by keyboard.
  */
 
+
+/**
+ * Activates an element the way the device would.
+ *
+ * `click()` dispatches mouse events. WebKit under touch emulation does not
+ * synthesise activation from those, so a click lands on the element and
+ * nothing happens — no navigation, no handler. Chromium does synthesise it,
+ * which is why this only ever failed on the iPhone project. Touch contexts
+ * therefore get a real tap.
+ */
+async function activate(locator: Locator) {
+  const { hasTouch } = test.info().project.use;
+  if (hasTouch) {
+    await locator.tap();
+    return;
+  }
+  await locator.click();
+}
 
 const ROUTES = [
   '/',
@@ -67,7 +86,7 @@ test('the skip link moves focus to the main landmark', async ({
   // model for link activation, so Enter does nothing there. The link is
   // off-screen until focused, and `.skip-link:focus` brings it into view,
   // so focusing first is what makes the click possible at all.
-  await skip.click();
+  await activate(skip);
 
   // Following it must land focus in <main>, not merely scroll to it — that is
   // the whole point of the skip link for a keyboard user.
@@ -103,7 +122,7 @@ test('the back button returns to the previous route', async ({ page }) => {
   await page.goto('/');
   await page.goto('/work');
 
-  await page.locator('a[href="/projects/sora-matcha"]').first().click();
+  await activate(page.locator('a[href="/projects/sora-matcha"]').first());
   await expect(page).toHaveURL(/\/projects\/sora-matcha$/);
 
   await page.goBack();
@@ -118,7 +137,10 @@ test('going back mid-transition does not get overridden by the queued route', as
 
   // A case-study link plays the cover half before pushing the route. Leaving
   // during that window must abandon the push, not merely outrun it.
-  await page.locator('a[href="/projects/sora-matcha"]').first().click();
+  // Deliberately not awaiting the navigation: going back has to happen
+  // inside the cover window, which is the whole point. Waiting for the URL
+  // first would make this a test of ordinary back navigation.
+  await activate(page.locator('a[href="/projects/sora-matcha"]').first());
   await page.goBack();
 
   // The click is intercepted before it pushes, so back leaves /work for the
