@@ -1,10 +1,36 @@
 import { expect, test } from '@playwright/test';
 import { getNextProject } from '@/lib/content/projects';
+import type { Page } from '@playwright/test';
 
 /**
  * Route coverage. Every route must return 200, expose exactly one <h1>,
  * carry a canonical URL, and be reachable by keyboard.
  */
+
+
+/**
+ * Navigates using the site's own navigation, whichever one is showing.
+ * Below 760px the primary nav is hidden and the same links live in the
+ * mobile sheet, which is inert until the menu is opened — clicking them
+ * blind silently does nothing and the URL never changes.
+ *
+ * Matched by href rather than by name: the mobile links carry an index, so
+ * "Work" in the header is "02Work" in the sheet.
+ */
+async function navigateTo(page: Page, href: string) {
+  const primary = page.getByRole('navigation', { name: 'Primary' });
+
+  if (await primary.isVisible()) {
+    await primary.locator(`a[href="${href}"]`).click();
+    return;
+  }
+
+  await page.getByRole('button', { name: 'Open menu' }).click();
+  await page
+    .getByRole('navigation', { name: 'Mobile' })
+    .locator(`a[href="${href}"]`)
+    .click();
+}
 
 const ROUTES = [
   '/',
@@ -43,11 +69,23 @@ test('an unknown route returns the 404 page', async ({ page }) => {
   await expect(page.getByText('Error 404')).toBeVisible();
 });
 
-test('the skip link moves focus to the main landmark', async ({ page }) => {
+test('the skip link moves focus to the main landmark', async ({
+  page,
+  browserName,
+}) => {
   await page.goto('/');
-  await page.keyboard.press('Tab');
 
   const skip = page.getByRole('link', { name: 'Skip to content' });
+
+  // WebKit only tabs to links when full keyboard access is on, which is off
+  // by default and not settable from here. The tab order is asserted where it
+  // is meaningful; what the skip link actually does is asserted everywhere.
+  if (browserName === 'webkit') {
+    await skip.focus();
+  } else {
+    await page.keyboard.press('Tab');
+  }
+
   await expect(skip).toBeFocused();
 
   // Following the link must land focus in <main>, not merely scroll to it —
@@ -80,7 +118,7 @@ test('the HSBC case study deep-links correctly and wraps to the next project', a
 
 test('the back button returns to the previous route', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('link', { name: 'Work', exact: true }).first().click();
+  await navigateTo(page, '/work');
   await expect(page).toHaveURL(/\/work$/);
   await page.goBack();
   await expect(page).toHaveURL(/\/$/);
@@ -90,7 +128,7 @@ test('going back mid-transition does not get overridden by the queued route', as
   page,
 }) => {
   await page.goto('/');
-  await page.getByRole('link', { name: 'Work', exact: true }).first().click();
+  await navigateTo(page, '/work');
   await expect(page).toHaveURL(/\/work$/);
 
   // A case-study link plays the cover half before pushing the route. Leaving
