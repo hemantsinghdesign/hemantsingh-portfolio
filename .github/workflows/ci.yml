@@ -48,7 +48,12 @@ jobs:
       - run: npx playwright install --with-deps chromium webkit
 
       # Builds and boots a production server itself, per the webServer config.
+      # The origin is declared so the CSP does not emit
+      # upgrade-insecure-requests, which WebKit applies to localhost and which
+      # breaks every link click and back navigation over http.
       - run: npm run test:e2e
+        env:
+          NEXT_PUBLIC_SITE_URL: http://localhost:3000
 
       # The CI reporter is 'github', which annotates the run but writes no HTML
       # report — so this keeps the traces and screenshots instead, which is
