@@ -63,9 +63,14 @@ test('the skip link moves focus to the main landmark', async ({
 
   await expect(skip).toBeFocused();
 
-  // Following the link must land focus in <main>, not merely scroll to it —
-  // that is the whole point of the skip link for a keyboard user.
-  await skip.press('Enter');
+  // Activated with a click rather than Enter: mobile WebKit has no keyboard
+  // model for link activation, so Enter does nothing there. The link is
+  // off-screen until focused, and `.skip-link:focus` brings it into view,
+  // so focusing first is what makes the click possible at all.
+  await skip.click();
+
+  // Following it must land focus in <main>, not merely scroll to it — that is
+  // the whole point of the skip link for a keyboard user.
   await expect(page.locator('main#main')).toBeFocused();
 });
 
@@ -92,15 +97,17 @@ test('the HSBC case study deep-links correctly and wraps to the next project', a
 });
 
 test('the back button returns to the previous route', async ({ page }) => {
-  // Driven through a project link rather than the header: below 760px the
+  // Driven through a project row rather than the header: below 760px the
   // primary nav is hidden behind the menu, and what is under test here is
   // client-side navigation and history, not the header.
   await page.goto('/');
+  await page.goto('/work');
+
   await page.locator('a[href="/projects/sora-matcha"]').first().click();
   await expect(page).toHaveURL(/\/projects\/sora-matcha$/);
 
   await page.goBack();
-  await expect(page).toHaveURL(/\/$/);
+  await expect(page).toHaveURL(/\/work$/);
 });
 
 test('going back mid-transition does not get overridden by the queued route', async ({
