@@ -11,20 +11,22 @@ import styles from './ContactForm.module.css';
  * Used in: /contact.
  * Reusable: no — one form, one destination.
  *
- * It composes a mailto: link rather than posting anywhere, so the site needs
- * no backend and no third-party script. To use a real endpoint later,
- * replace the body of `submit` with a fetch to Formspree, Basin or a Next
- * route handler — the markup and styling do not change.
+ * It posts to /api/contact, which sends the email server-side. That matters:
+ * the previous version composed a mailto: link and handed it to the device,
+ * so an enquiry only arrived if the visitor had a mail client configured and
+ * then pressed send themselves. Most never did, and the form said "Message
+ * ready." either way.
  *
- * It is a real <form> even with no endpoint: that is what makes Enter submit
- * from any field, and what makes `required` and `type="email"` produce the
- * browser's own validation and error messages. `noValidate` is deliberately
- * not set, and submission is prevented in the handler rather than by
- * omitting the element.
+ * If the endpoint is unconfigured or the send fails it says so plainly and
+ * offers the mail-app route as a fallback rather than pretending. Nothing
+ * here ever claims a message was sent when it was not.
  *
- * The confirmation is in an aria-live region so it is announced, not just
- * shown.
+ * It is a real <form>: Enter submits from any field, and `required` and
+ * `type="email"` give the browser's own validation.
  */
+
+type Status = 'idle' | 'sending' | 'sent' | 'error';
+
 export function ContactForm() {
   const [values, setValues] = useState({
     name: '',
@@ -32,7 +34,9 @@ export function ContactForm() {
     budget: '',
     note: '',
   });
-  const [isSent, setSent] = useState(false);
+  const [status, setStatus] = useState<Status>('idle');
+  const [message, setMessage] = useState('');
+  const [canFallBack, setCanFallBack] = useState(false);
 
   const update =
     (key: keyof typeof values) =>
@@ -42,39 +46,70 @@ export function ContactForm() {
   const canSubmit =
     values.name.trim().length > 0 && values.email.trim().length > 0;
 
-  const submit = (event: React.FormEvent<HTMLFormElement>) => {
-    // There is no endpoint — the browser must not navigate away.
-    event.preventDefault();
-    if (!canSubmit) return;
-
-    const body = [
+  /** The mail-app route, kept only as a fallback when sending fails. */
+  const mailtoHref = `mailto:${profile.email}?subject=${encodeURIComponent(
+    `New project — ${values.name}`,
+  )}&body=${encodeURIComponent(
+    [
       `Name: ${values.name}`,
       `Email: ${values.email}`,
       `Budget: ${values.budget || '—'}`,
       '',
       values.note,
-    ].join('\n');
+    ].join('\n'),
+  )}`;
 
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(
-      `New project — ${values.name}`,
-    )}&body=${encodeURIComponent(body)}`;
+  const submit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!canSubmit || status === 'sending') return;
 
-    setSent(true);
+    setStatus('sending');
+    setMessage('');
+    setCanFallBack(false);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+      const body = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        setStatus('error');
+        setMessage(body.error ?? 'The message could not be sent.');
+        setCanFallBack(Boolean(body.fallback));
+        return;
+      }
+
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+      setMessage('The message could not be sent — you may be offline.');
+      setCanFallBack(true);
+    }
   };
 
-  if (isSent) {
+  if (status === 'sent') {
     return (
       <div className={styles.sent} aria-live="polite">
-        <p className={styles.sentTitle}>Message ready.</p>
+        <p className={styles.sentTitle}>Message sent.</p>
         <p className={styles.sentBody}>
-          Your mail app should have opened with the details filled in. If it did
-          not, write to{' '}
+          It is in my inbox and I reply to everything within two working days.
+          If you would rather have a copy, write to{' '}
           <a className={styles.link} href={`mailto:${profile.email}`}>
             {profile.email}
-          </a>{' '}
-          directly.
+          </a>
+          .
         </p>
-        <Button onClick={() => setSent(false)}>Write another</Button>
+        <Button
+          onClick={() => {
+            setValues({ name: '', email: '', budget: '', note: '' });
+            setStatus('idle');
+          }}
+        >
+          Write another
+        </Button>
       </div>
     );
   }
@@ -131,9 +166,32 @@ export function ContactForm() {
         />
       </label>
 
-      <Button type="submit" disabled={!canSubmit}>
-        Send message
+      {/* Honeypot: off-screen and skipped by the keyboard, so only a bot
+          fills it. Not `display: none`, which some bots detect. */}
+      <div className={styles.honeypot} aria-hidden="true">
+        <label>
+          Company
+          <input name="company" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
+
+      <Button type="submit" disabled={!canSubmit || status === 'sending'}>
+        {status === 'sending' ? 'Sending…' : 'Send message'}
       </Button>
+
+      {/* Announced rather than only shown, and never silent about a failure. */}
+      <p className={styles.status} role="status" aria-live="polite">
+        {status === 'error' && (
+          <>
+            {message}{' '}
+            {canFallBack && (
+              <a className={styles.link} href={mailtoHref}>
+                Open it in your mail app instead
+              </a>
+            )}
+          </>
+        )}
+      </p>
     </form>
   );
 }
