@@ -248,13 +248,13 @@ export const tadkaTrail: ProjectInput = {
     {
           src: `${dir}/photo-cards.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAeEAACAgICAwAAAAAAAAAAAAABAgMRABIEIRMxQf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AcmOYpPOWrwnZDEoVXBHo131k8j3rK0pdpVEhtQ2pPyzjGESP/9k=',
-          alt: 'The full set of story cards laid out across a table with the packs',
+          alt: 'The full set of story cards spread across a wooden table, printed sides and coloured backs together',
           ...PHOTO,
         },
     {
           src: `${dir}/photo-pair.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAfEAACAQQCAwAAAAAAAAAAAAABAgMABAUREmEhMVH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABYRAQEBAAAAAAAAAAAAAAAAAAARIf/aAAwDAQACEQMRAD8Aoz0ctuFhtoikLAaKAksfh6qnHWWShs41VkG/PF/a9UpUzS//2Q==',
-          alt: 'Two Tadka Trail packs, green and maroon, standing together in raking light',
+          alt: 'The green Moong Daal pack opened flat, the jharokha front and the daal-bowl back lying side by side with lentils scattered around them',
           ...PHOTO,
         },
     {
@@ -266,7 +266,7 @@ export const tadkaTrail: ProjectInput = {
     {
           src: `${dir}/photo-read.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIDEQAEBRITITGB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQEAAwAAAAAAAAAAAAAAAAAAESFB/9oADAMBAAIRAxEAPwCTmTsrvSvGZFh6QVZQVF0PnjNFxEUexxkEmzD3HINMy2as17xjIwxb/9k=',
-          alt: 'A story card held and read, its bilingual text visible',
+          alt: 'The Moong Daal story card laid flat, the recipe and the regional story running side by side in English and Hindi',
           ...PHOTO,
         },
     {
@@ -278,9 +278,9 @@ export const tadkaTrail: ProjectInput = {
       ],
       captions: [
         'The cards come out',
-        'Two regions, two grounds',
+        'Front and back, opened out',
         'What it says on the side',
-        'And someone reads one',
+        'Both languages, side by side',
         'What is left on the table',
       ],
     },
@@ -338,9 +338,9 @@ export const tadkaTrail: ProjectInput = {
           { src: `${dir}/sketch-tiger.jpg`,
  blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAiEAAABQMEAwAAAAAAAAAAAAAAAQIRIQMSYQQFEzFRkaH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8AUukat45bShZTf1HgUmx9AKKH1hqc3OQ6ws+wKt1//9k=', alt: 'Pencil pattern study on grid paper of a tiger surrounded by folk motifs', ...PAGE },
           { src: `${dir}/sketch-poha.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAdEAACAgEFAAAAAAAAAAAAAAABEQACEgMEJDEy/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AHg2tvjbKqzfca5O0RzLFn01HwL/2Q==', alt: 'Pencil pattern study on grid paper of a bowl of poha with sun and wheat motifs, labelled Indore', ...PAGE },
+ blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAdEAACAgEFAAAAAAAAAAAAAAABEQACEgMEJDEy/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AHg2tvjbKqzfca5O0RzLFn01HwL/2Q==', alt: 'Two pencil pattern studies on grid paper — a bowl of hot poha and a kettle of chai, each labelled in Hindi among sun, leaf and border motifs', ...PAGE },
           { src: `${dir}/sketch-jalebi.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAeEAACAQMFAAAAAAAAAAAAAAABAgADESEEEhQxUf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8ATWY8iykABhfMTtXyTajE6vs5YSjeFL//2Q==', alt: 'Pencil pattern study on grid paper of jalebi spirals with birds and leaf motifs', ...PAGE },
+ blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAeEAACAQMFAAAAAAAAAAAAAAABAgADESEEEhQxUf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8ATWY8iykABhfMTtXyTajE6vs5YSjeFL//2Q==', alt: 'Two pencil pattern studies on grid paper — jalebi spirals with birds and leaves, and a samosa set against a sun and stepped motifs, both labelled in Hindi', ...PAGE },
         ],
         captions: [
           'Tiger',
