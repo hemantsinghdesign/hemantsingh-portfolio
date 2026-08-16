@@ -27,7 +27,7 @@ export const hsbcOnboarding: ProjectInput = {
   thumbnail: {
     src: `${dir}/tote-light.jpg`,
     blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgMEBf/EAB8QAAIBAwUBAAAAAAAAAAAAAAECAwARIQQSEyIxUf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAMAwEAAhEDEQA/ANZ0lbaY3VV2kkN5iouXd2+5FI1k8qxMvISLWF7YzRy9WAHgAojsky//2Q==',
-    alt: 'White HSBC tote bag with a red Warli peacock mark, standing in soft daylight',
+    alt: 'White HSBC tote bag with a red Warli peacock mark, resting on a wooden chair in soft daylight',
     width: 1600,
     height: 1600,
   },
@@ -61,17 +61,21 @@ export const hsbcOnboarding: ProjectInput = {
   outcome:
     "The final design system combines HSBC's trusted brand identity with subtle cultural storytelling. Every touchpoint shares the same visual language, creating a consistent and welcoming experience for international students from their first interaction onwards.",
 
-  /* Every figure here is shown somewhere on the page. "Languages explored: 4"
-     used to sit in this row and was the one claim the case study could not
-     back up — only the Chinese card appears anywhere, so a reader counting
-     would find one. It is replaced by the motif count, which the visual
-     language section evidences directly above the row. If four localisations
-     really were explored, show them in the Explorations section and put the
-     original figure back; an accurate three beats an unverifiable four. */
+  /* Every figure here is countable on the page itself.
+     Two figures have been through this slot and both were wrong:
+     "Languages explored: 4" (only the Chinese card appears anywhere, so a
+     reader counting finds one) and then "Warli motifs drawn: 3", taken from
+     the three motif SVGs below. That one undercounts: the peacock rides on
+     the cards, tote, letter, notebook and gift box, the elephants are on the
+     welcome letter, and the mandala is on the cap — none of them in the set
+     of three. The palette is the honest third figure, because the visual
+     language block prints exactly those three swatches and labels them.
+     If a figure cannot be recounted from what is on screen, it does not
+     belong in this row. */
   metrics: [
     { label: 'Touchpoints designed', value: '5' },
     { label: 'Design principles', value: '3' },
-    { label: 'Warli motifs drawn', value: '3' },
+    { label: 'Brand colours', value: '3' },
   ],
 
   blocks: [
@@ -237,7 +241,7 @@ export const hsbcOnboarding: ProjectInput = {
         {
           src: `${dir}/tote-light.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgMEBf/EAB8QAAIBAwUBAAAAAAAAAAAAAAECAwARIQQSEyIxUf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAMAwEAAhEDEQA/ANZ0lbaY3VV2kkN5iouXd2+5FI1k8qxMvISLWF7YzRy9WAHgAojsky//2Q==',
-          alt: 'White HSBC tote bag standing upright in soft directional daylight',
+          alt: 'White HSBC tote bag hanging from the back of a wooden chair in soft directional daylight',
           width: 1600,
           height: 1600,
         },
