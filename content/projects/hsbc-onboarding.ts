@@ -61,10 +61,17 @@ export const hsbcOnboarding: ProjectInput = {
   outcome:
     "The final design system combines HSBC's trusted brand identity with subtle cultural storytelling. Every touchpoint shares the same visual language, creating a consistent and welcoming experience for international students from their first interaction onwards.",
 
+  /* Every figure here is shown somewhere on the page. "Languages explored: 4"
+     used to sit in this row and was the one claim the case study could not
+     back up — only the Chinese card appears anywhere, so a reader counting
+     would find one. It is replaced by the motif count, which the visual
+     language section evidences directly above the row. If four localisations
+     really were explored, show them in the Explorations section and put the
+     original figure back; an accurate three beats an unverifiable four. */
   metrics: [
     { label: 'Touchpoints designed', value: '5' },
     { label: 'Design principles', value: '3' },
-    { label: 'Languages explored', value: '4' },
+    { label: 'Warli motifs drawn', value: '3' },
   ],
 
   blocks: [
