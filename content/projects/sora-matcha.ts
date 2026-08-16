@@ -6,6 +6,13 @@ import type { ProjectInput } from '@/types/content';
  * This file is the entire case study: prose, facts, and the order and
  * layout of every image. No component needs editing to change any of it.
  * Images live in /public/projects/sora-matcha/.
+ *
+ * Five of those files used to carry each other's names — `pouch.jpg` held
+ * the ceremonial kit, `stationery.jpg` held the applications grid, and so
+ * on round a five-file cycle — so every alt text and caption below
+ * described an image the reader was not looking at. The files have been
+ * renamed to match what is inside them. If artwork is ever re-exported,
+ * open it before trusting the filename, then run `npm run blur`.
  */
 
 const dir = '/projects/sora-matcha';
@@ -172,7 +179,7 @@ export const soraMatcha: ProjectInput = {
         },
         {
           src: `${dir}/pouch.jpg`,
-          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAMF/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIDIQAEERIxQVFS/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AN5NXI2smheFlRNuLhgQ1XXjGV9DBMNpQwJvvK8j7wE//9k=',
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAIxAAAgECBAcAAAAAAAAAAAAAAQIEAAMFERIhFSMxQVKhwf/EABUBAQEAAAAAAAAAAAAAAAAAAAID/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8ARDsR1w8SLloO2orv33y+0w4XEzPK9msxpbrCFpURU16sgD1qeJSPIVM3/9k=',
           alt: 'Cream 30g resealable matcha pouch in raking daylight',
           ...P,
         },
@@ -240,29 +247,44 @@ export const soraMatcha: ProjectInput = {
         },
         {
           src: `${dir}/kit-light.jpg`,
-          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIG/8QAHRAAAQQCAwAAAAAAAAAAAAAAAQACEVESIQMiMf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDSN6SXPcQLpXIOwi5jhi4e7TAyJtEn/9k=',
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAMF/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIDIQAEERIxQVFS/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AN5NXI2smheFlRNuLhgQ1XXjGV9DBMNpQwJvvK8j7wE//9k=',
           alt: 'Overhead flat lay of the ceremonial kit on cream linen with the retail tin and gold scoop',
           ...P,
         },
       ],
       captions: ['Kit, dark set', 'Kit, light set'],
     },
+    {
+      type: 'note',
+      text: 'The kit is the one place the range is allowed to be generous — whisk, scoop, bowl and tin in a box that opens flat. Everything else here is made to be bought again. This is made to be given once, which is why it gets the foil.',
+    },
 
     {
       type: 'heading',
       marker: 'E',
-      title: 'Stationery',
+      title: 'Stationery and applications',
       note: 'Applied across every surface',
     },
     {
-      type: 'full',
-      image: {
-        src: `${dir}/stationery.jpg`,
-        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAIxAAAgECBQUBAAAAAAAAAAAAAQIDAAQREyExQRIyUWHR8P/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDaivEnOXHIrlB1ajD9xS17Rq23gUBwtvAZo0QOVHHqoW8nKg5mGI2Cj5RJ/9k=',
-        alt: 'Business cards, envelope, letterhead, notebook, stickers and gift card in the SORA identity',
-        ...P,
-      },
-      caption: 'Cards, letterhead, stickers, notebook',
+      type: 'pair',
+      images: [
+        {
+          src: `${dir}/stationery.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIG/8QAHRAAAQQCAwAAAAAAAAAAAAAAAQACEVESIQMiMf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDSN6SXPcQLpXIOwi5jhi4e7TAyJtEn/9k=',
+          alt: 'Business cards, envelope, letterhead, notebook, stickers and gift card in the SORA identity',
+          ...P,
+        },
+        {
+          src: `${dir}/applications.jpg`,
+          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAIxAAAgECBQUBAAAAAAAAAAAAAQIDAAQREyExQRIyUWHR8P/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDaivEnOXHIrlB1ajD9xS17Rq23gUBwtvAZo0QOVHHqoW8nKg5mGI2Cj5RJ/9k=',
+          alt: 'Application grid — gift box, carrier bag, stoneware bowl, tin, shopfront window, tote bag and wall signage all carrying the mark',
+          ...P,
+        },
+      ],
+      captions: [
+        'Cards, letterhead, stickers, notebook',
+        'The same mark at tote and shopfront scale',
+      ],
     },
     // A dark full-bleed before the black campaign band, so the page
     // darkens gradually instead of cutting from cream to ink. It also
@@ -272,7 +294,7 @@ export const soraMatcha: ProjectInput = {
       image: {
         src: `${dir}/hero-tin-bowl.jpg`,
         blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgQF/8QAIxAAAgECBAcAAAAAAAAAAAAAAQIDABEEBSExEiIkUWFxkf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AwsT1BQRlbxoqtc21pHDmcKQxqS/KoGi+PdElRd7DerOM9h8o4Sv/2Q==',
-        alt: 'Deep green SORA tin with its lid removed, beside a stoneware bowl of matcha powder on a dark wooden floor',
+        alt: 'Deep green SORA tin with its lid lying beside it and a stoneware bowl of matcha powder, on a dark wooden table by a shoji screen',
         ...P,
       },
       caption: 'The same system, after dark',
@@ -312,13 +334,13 @@ export const soraMatcha: ProjectInput = {
         {
           src: `${dir}/campaign-pouch.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQIE/8QAIxAAAgIBAQkBAAAAAAAAAAAAAQIDEQASBBMhIiMxQYGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AhnWKOPUI2kL6AQPB4fPmaIoUaJC05DFRYDj8wva0aNVVZXrfBaNHv6xKlh6SoCqcosm6HvCv/9k=',
-          alt: 'Poster of the kraft matcha pouch behind repeated SORA lettering',
+          alt: 'Poster of the matcha pouch behind repeated SORA lettering',
           ...P,
         },
         {
           src: `${dir}/campaign-cup.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQID/8QAIRAAAgEEAgIDAAAAAAAAAAAAAQIDAAQRIRMUBXESIjH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8APmkaFmMhOQxCFdY1ScHXaCNnu1DFQSOVRg49Vh5VEa3QFQS84jLHOQD+1XDax/Tp2zfHWWj2fdB//9k=',
-          alt: 'Poster of a steaming takeaway cup behind repeated SORA lettering',
+          alt: 'Poster of a takeaway cup behind repeated SORA lettering',
           ...P,
         },
         {
@@ -359,10 +381,18 @@ export const soraMatcha: ProjectInput = {
       type: 'bleed',
       image: {
         src: `${dir}/editorial-spread.jpg`,
-        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAIxAAAgECBAcAAAAAAAAAAAAAAQIEAAMFERIhFSMxQVKhwf/EABUBAQEAAAAAAAAAAAAAAAAAAAID/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8ARDsR1w8SLloO2orv33y+0w4XEzPK9msxpbrCFpURU16sgD1qeJSPIVM3/9k=',
+        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwX/xAAjEAABAgUDBQAAAAAAAAAAAAABAgQAAwUR0RUiMVFUYZGS/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ALjqoMWe6e7WgXI4OIfVGncn5OIm1Kkt3CbLKxeYVGxHNj4h9NkdV+xiA//Z',
         alt: 'SORA editorial spread pairing a daylight still life with a dark studio still life under the line about light and shadow',
-        ...P,
+        // Not ...P — this one is 896×1200.
+        width: 896,
+        height: 1200,
       },
+    },
+
+    {
+      type: 'prose',
+      variant: 'reflection',
+      text: 'SORA taught me that restraint only reads as confidence when something else is carrying the volume. For most of the four weeks I thought the quiet was the whole idea — then I mocked the cream tin onto a shelf beside coffee bags and chocolate bars and saw that quiet, on a shelf, is just invisible. The campaign came out of that, not out of the brief. It exists so the packaging can afford to stay still.\n\nThe part I would still want to test is the part a concept project cannot answer. Everything here depends on things a screen flatters — the deboss, the foil, the weight of an uncoated stock — and none of it has met a printer. Until it does, this is a set of decisions rather than a finished system, which is why I wrote the photography and the margins down as rules instead of leaving them to taste.',
     },
   ],
 

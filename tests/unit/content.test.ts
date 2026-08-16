@@ -1,3 +1,6 @@
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+import sharp from 'sharp';
 import { describe, expect, it } from 'vitest';
 import {
   getAllProjects,
@@ -44,6 +47,41 @@ describe('project content', () => {
         expect(image.width).toBeGreaterThan(0);
         expect(image.height).toBeGreaterThan(0);
       }
+    }
+  });
+
+  /**
+   * The declared size is what Next reserves space with, so a src pointing at
+   * a differently shaped file lays the page out wrong and shows up only by
+   * eye. Renaming or re-exporting artwork is when that happens.
+   *
+   * Being honest about the limit: this would NOT have caught the SORA bug it
+   * was written after, where five images sat under each other's filenames.
+   * Four of the five were the same 927×1147, so the sizes all checked out
+   * while every caption described a picture the reader was not looking at.
+   * No assertion can read a photograph — only opening the files catches that.
+   * What this does catch is the adjacent failure that is otherwise silent
+   * until someone loads the page.
+   */
+  it('points every image at a real file of the declared size', async () => {
+    const images = projects.flatMap((project) => [
+      project.thumbnail,
+      ...project.blocks.flatMap((block) => {
+        if ('image' in block) return [block.image];
+        if ('images' in block) return block.images;
+        return [];
+      }),
+    ]);
+
+    for (const image of images) {
+      const file = path.join(process.cwd(), 'public', image.src);
+      expect(existsSync(file), `missing asset: ${image.src}`).toBe(true);
+
+      const { width, height } = await sharp(file).metadata();
+      expect(
+        { src: image.src, width, height },
+        `declared size does not match the file: ${image.src}`,
+      ).toEqual({ src: image.src, width: image.width, height: image.height });
     }
   });
 
