@@ -12,7 +12,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Resume',
-  description: `${profile.name} — ${profile.role}. Experience, capabilities and selected work.`,
+  description: `${profile.name}, ${profile.role}. Experience, capabilities and selected work.`,
   path: '/resume',
   type: 'profile',
 });
@@ -36,7 +36,7 @@ export default function ResumePage() {
               <span className={`${styles.year} mono`}>{project.year}</span>
               <span className={styles.title}>
                 {project.title}
-                <em className={styles.detail}> — {project.discipline}</em>
+                <em className={styles.detail}> · {project.discipline}</em>
               </span>
             </li>
           ))}
@@ -51,7 +51,7 @@ export default function ResumePage() {
               <span className={`${styles.year} mono`}>{capability.marker}</span>
               <span className={styles.title}>
                 {capability.title}
-                <em className={styles.detail}> — {capability.items.join(', ')}</em>
+                <em className={styles.detail}> · {capability.items.join(', ')}</em>
               </span>
             </li>
           ))}

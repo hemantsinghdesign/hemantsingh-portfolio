@@ -10,7 +10,7 @@ import styles from './not-found.module.css';
 export default function NotFound() {
   return (
     <section className={styles.lost}>
-      <p className={`${styles.eyebrow} eyebrow mono`}>Error 404 — off grid</p>
+      <p className={`${styles.eyebrow} eyebrow mono`}>Error 404 · off grid</p>
       <DisplayHeading lines={['This page is', 'outside the margin.']} accent="margin" />
       <p className={`${styles.note} lede`}>
         Nothing is set here. Try the index, or go straight to the work.

@@ -20,7 +20,7 @@ export const process: ProcessStep[] = [
   {
     step: '03',
     title: 'Build',
-    body: 'The mark, then the system, then the applications that matter most — packaging, print, screen.',
+    body: 'The mark, then the system, then the applications that matter most: packaging, print, screen.',
   },
   {
     step: '04',
@@ -39,7 +39,7 @@ export const engagements: Engagement[] = [
   {
     title: 'Project',
     detail: 'One brief, one deliverable',
-    body: 'A defined scope with a start and an end — an identity, a packaging range, a campaign. Fixed fee, agreed up front.',
+    body: 'A defined scope with a start and an end: an identity, a packaging range, a campaign. Fixed fee, agreed up front.',
   },
   {
     title: 'Ongoing',

@@ -11,7 +11,7 @@ export const capabilities: Capability[] = [
   {
     marker: 'A',
     title: 'Brand identity',
-    body: 'Marks, wordmarks, colour and type, plus the rules that hold them together — documented well enough to be produced from anywhere.',
+    body: 'Marks, wordmarks, colour and type, plus the rules that hold them together, documented well enough to be produced from anywhere.',
     items: ['Logo and wordmark', 'Colour and type systems', 'Icon sets', 'Brand guidelines'],
   },
   {
@@ -29,7 +29,7 @@ export const capabilities: Capability[] = [
   {
     marker: 'D',
     title: 'Editorial & digital',
-    body: 'Decks, publications, social systems and web layout — grid-first, built from the same rules as everything else.',
+    body: 'Decks, publications, social systems and web layout. Grid first, built from the same rules as everything else.',
     items: ['Publication design', 'Presentation systems', 'Social templates', 'Web layout'],
   },
 ];

@@ -35,7 +35,7 @@ export function CaseGallery({ block }: { block: BlockOfType<'gallery'> }) {
         className={styles.scroller}
         tabIndex={0}
         role="group"
-        aria-label={`${block.title} — scrollable gallery`}
+        aria-label={`${block.title}, scrollable gallery`}
       >
         {block.images.map((image) => (
           <div className={styles.item} key={image.src}>

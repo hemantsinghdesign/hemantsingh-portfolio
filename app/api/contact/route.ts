@@ -64,7 +64,7 @@ export async function POST(request: Request) {
   const lines = [
     `Name: ${name}`,
     `Email: ${email}`,
-    `Budget: ${budget || '—'}`,
+    `Budget: ${budget || 'not specified'}`,
     '',
     note || '(no message)',
   ].join('\n');
@@ -81,7 +81,7 @@ export async function POST(request: Request) {
         to: [process.env.CONTACT_TO ?? profile.email],
         // So replying in the mail client goes to the enquirer, not to Resend.
         reply_to: email,
-        subject: `New project — ${name}`,
+        subject: `New project from ${name}`,
         text: lines,
       }),
     });

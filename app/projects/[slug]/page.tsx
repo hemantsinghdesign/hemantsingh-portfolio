@@ -37,7 +37,7 @@ export async function generateMetadata({
   if (!project) return {};
 
   return pageMetadata({
-    title: `${project.title} — ${project.kicker}`,
+    title: `${project.title} · ${project.kicker}`,
     description: project.seo?.description ?? project.summary,
     path: `/projects/${project.slug}`,
     type: 'article',
@@ -64,7 +64,7 @@ export default async function ProjectPage({
           Back to work
         </TextLink>
         <p className={`${styles.eyebrow} eyebrow mono`}>
-          Case {project.index} — {project.kicker} — {project.year}
+          Case {project.index} · {project.kicker} · {project.year}
         </p>
         <DisplayHeading lines={[project.title]} variant="case" />
         {/* For hero-led case studies, the hero statement + the first content

@@ -45,9 +45,12 @@
   letter-spacing: -0.02em;
 }
 
+/* 11px, matching every other mono label on the site. It was 9px, which is
+   below the scale the rest of the system uses and hard to read at arm's
+   length — and this is the line that tells a visitor what I actually do. */
 .role {
   color: var(--mute-sm);
-  font-size: 9px;
+  font-size: 11px;
 }
 
 /* ---- nav ---- */

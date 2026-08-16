@@ -29,7 +29,7 @@ export const soraMatcha: ProjectInput = {
   discipline: 'Brand identity · Packaging · Art direction',
   year: '2025',
   summary:
-    'A ceremonial matcha brand built on one idea — the packaging should be as still as the ritual it belongs to.',
+    'A ceremonial matcha brand built on one idea: the packaging should be as still as the ritual it belongs to.',
 
   thumbnail: {
     src: `${dir}/hero-tin-bowl.jpg`,
@@ -47,18 +47,18 @@ export const soraMatcha: ProjectInput = {
   },
 
   overview:
-    'Ceremonial matcha in western retail tends to arrive as one of two things: a wellness supplement in a clinical white tub, or an imported curio wrapped in borrowed ornament. Neither describes what the product actually is — a slow, deliberate morning. SORA needed an identity that reads as premium without raising its voice, and that a small team could apply across tins, pouches, cups and cards without a designer in the room.',
+    'Ceremonial matcha in western retail tends to arrive as one of two things: a wellness supplement in a clinical white tub, or an imported curio wrapped in borrowed ornament. Neither describes what the product actually is: a slow, deliberate morning. SORA needed an identity that reads as premium without raising its voice, and that a small team could apply across tins, pouches, cups and cards without a designer in the room.',
 
   approach: [
     'Drew the mark from the moment rather than the plant: a sunrise breaking over two leaves. Sora means sky, so the mark reads as dawn before it reads as tea.',
     'Set the wordmark in a high-contrast serif with wide letterspacing so the name sits still on the pack instead of competing with it, with one line of copy underneath and never more.',
-    'Split the range by light — a cream, silver-lidded tin for daylight retail and a deep green tin with gold foil for gifting and dark shelves. Same layout, same margins, different temperature.',
+    'Split the range by light. A cream, silver-lidded tin for daylight retail, a deep green tin with gold foil for gifting and dark shelves. Same layout, same margins, different temperature.',
     'Wrote the photography rules into the system itself: natural daylight, soft shadows, no clutter, no artificial colour. Every future shot has a spec to meet.',
     'Ran a black-and-white typographic campaign as counterweight. The name repeats until it becomes texture, which lets the packaging stay quiet while the campaign carries the volume.',
   ],
 
   outcome:
-    'A complete identity system — mark, wordmark, four-colour palette, a ten-icon set, photography direction, packaging across five formats, full stationery, and retail and gifting collateral — documented in a guidelines book that can be handed to any printer or photographer without a briefing call.',
+    'A complete identity system: mark, wordmark, four-colour palette, a ten-icon set, photography direction, packaging across five formats, full stationery, and retail and gifting collateral. All of it documented in a guidelines book that can be handed to any printer or photographer without a briefing call.',
 
   metrics: [
     { label: 'Pack formats', value: '5' },
@@ -166,7 +166,7 @@ export const soraMatcha: ProjectInput = {
           height: 1101,
         },
       ],
-      captions: ['Gift tin — deep green, gold foil', 'Retail tin — cream, silver lid'],
+      captions: ['Gift tin, deep green and gold foil', 'Retail tin, cream and silver lid'],
     },
     {
       type: 'triptych',
@@ -234,7 +234,7 @@ export const soraMatcha: ProjectInput = {
         alt: 'Open cream gift box containing a bamboo whisk, scoop, stoneware bowl and matcha tin',
         ...P,
       },
-      caption: 'Kit box — whisk, scoop, bowl, tin',
+      caption: 'Kit box: whisk, scoop, bowl, tin',
     },
     {
       type: 'pair',
@@ -256,7 +256,7 @@ export const soraMatcha: ProjectInput = {
     },
     {
       type: 'note',
-      text: 'The kit is the one place the range is allowed to be generous — whisk, scoop, bowl and tin in a box that opens flat. Everything else here is made to be bought again. This is made to be given once, which is why it gets the foil.',
+      text: 'The kit is the one place the range is allowed to be generous: whisk, scoop, bowl and tin in a box that opens flat. Everything else here is made to be bought again. This is made to be given once, which is why it gets the foil.',
     },
 
     {
@@ -277,7 +277,7 @@ export const soraMatcha: ProjectInput = {
         {
           src: `${dir}/applications.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAIxAAAgECBQUBAAAAAAAAAAAAAQIDAAQREyExQRIyUWHR8P/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDaivEnOXHIrlB1ajD9xS17Rq23gUBwtvAZo0QOVHHqoW8nKg5mGI2Cj5RJ/9k=',
-          alt: 'Application grid — gift box, carrier bag, stoneware bowl, tin, shopfront window, tote bag and wall signage all carrying the mark',
+          alt: 'Application grid showing gift box, carrier bag, stoneware bowl, tin, shopfront window, tote bag and wall signage, all carrying the mark',
           ...P,
         },
       ],
@@ -392,14 +392,14 @@ export const soraMatcha: ProjectInput = {
     {
       type: 'prose',
       variant: 'reflection',
-      text: 'SORA taught me that restraint only reads as confidence when something else is carrying the volume. For most of the four weeks I thought the quiet was the whole idea — then I mocked the cream tin onto a shelf beside coffee bags and chocolate bars and saw that quiet, on a shelf, is just invisible. The campaign came out of that, not out of the brief. It exists so the packaging can afford to stay still.\n\nThe part I would still want to test is the part a concept project cannot answer. Everything here depends on things a screen flatters — the deboss, the foil, the weight of an uncoated stock — and none of it has met a printer. Until it does, this is a set of decisions rather than a finished system, which is why I wrote the photography and the margins down as rules instead of leaving them to taste.',
+      text: 'SORA taught me that restraint only reads as confidence when something else is carrying the volume. For most of the four weeks I thought the quiet was the whole idea. Then I mocked the cream tin onto a shelf beside coffee bags and chocolate bars and saw that quiet, on a shelf, is just invisible. The campaign came out of that, not out of the brief. It exists so the packaging can afford to stay still.\n\nThe part I would still want to test is the part a concept project cannot answer. Everything here depends on things a screen flatters: the deboss, the foil, the weight of an uncoated stock. None of it has met a printer. Until it does, this is a set of decisions rather than a finished system, which is why I wrote the photography and the margins down as rules instead of leaving them to taste.',
     },
   ],
 
 
   seo: {
     description:
-      'SORA — a ceremonial matcha identity covering mark, packaging across five formats, stationery, photography direction and a black-and-white typographic campaign.',
+      'SORA, a ceremonial matcha identity covering mark, packaging across five formats, stationery, photography direction and a black-and-white typographic campaign.',
   },
 
   published: true,

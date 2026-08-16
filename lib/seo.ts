@@ -15,7 +15,7 @@ import { absoluteUrl, siteConfig } from '@/lib/site';
  * is left alone — otherwise the card reads "… — Hemant Singh — Hemant Singh".
  */
 function socialTitle(title: string): string {
-  return title.includes(siteConfig.name) ? title : `${title} — ${siteConfig.name}`;
+  return title.includes(siteConfig.name) ? title : `${title} · ${siteConfig.name}`;
 }
 
 export function pageMetadata({

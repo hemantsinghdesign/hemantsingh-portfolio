@@ -81,7 +81,7 @@ export function ProjectJsonLd({ project }: { project: Project }) {
           '@type': 'CreativeWork',
           '@id': absoluteUrl(`${path}#work`),
           name: project.title,
-          headline: `${project.title} — ${project.kicker}`,
+          headline: `${project.title} · ${project.kicker}`,
           description: project.summary,
           url: absoluteUrl(path),
           dateCreated: project.year,

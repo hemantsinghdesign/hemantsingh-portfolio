@@ -143,10 +143,13 @@
   }
 }
 
+/* No opacity fade here. --mute-sm is 4.57:1 on paper and only just clears AA
+   for small text; dropping it to 0.75 composites to #8C8C84, which is 2.88:1
+   and fails. The label is small enough already, so the colour token does the
+   receding on its own. */
 .dense .caption {
   margin-top: 6px;
-  font-size: 10px;
-  opacity: 0.75;
+  font-size: 11px;
 }
 
 /* The feature cell stops dominating at this scale. */

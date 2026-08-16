@@ -11,9 +11,9 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hemantsingh.design',
   name: 'Hemant Singh',
   role: 'Graphic & brand designer',
-  title: 'Hemant Singh — Graphic & Brand Designer',
+  title: 'Hemant Singh, Graphic & Brand Designer',
   description:
-    'Graphic and brand designer working on identity, packaging and art direction. Systems built with fewer parts, documented well enough to run without me.',
+    'Graphic and brand designer working in identity, packaging and art direction. I build systems with fewer parts, documented well enough to run without me.',
   locale: 'en_GB',
   lang: 'en-GB',
 } as const;
