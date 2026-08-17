@@ -12,7 +12,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = pageMetadata({
   title: 'Capabilities',
   description:
-    'Brand identity, packaging, art direction and editorial design — how each engagement works and what it includes.',
+    'Brand identity, packaging, art direction and editorial design. How each engagement works and what it includes.',
   path: '/capabilities',
 });
 

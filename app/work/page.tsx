@@ -23,7 +23,7 @@ export default function WorkPage() {
       <PageIntro
         kicker="Work"
         lines={['Identity, packaging', 'and art direction.']}
-        note="Full case studies below. More projects are being written up — get in touch if you want to see something specific."
+        note="Full case studies below. More are being written up, so get in touch if you want to see something specific."
       />
 
       <Section variant="tight" reveal={false}>

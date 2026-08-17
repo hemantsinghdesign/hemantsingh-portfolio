@@ -48,12 +48,12 @@ export function ContactForm() {
 
   /** The mail-app route, kept only as a fallback when sending fails. */
   const mailtoHref = `mailto:${profile.email}?subject=${encodeURIComponent(
-    `New project — ${values.name}`,
+    `New project from ${values.name}`,
   )}&body=${encodeURIComponent(
     [
       `Name: ${values.name}`,
       `Email: ${values.email}`,
-      `Budget: ${values.budget || '—'}`,
+      `Budget: ${values.budget || 'not specified'}`,
       '',
       values.note,
     ].join('\n'),
@@ -85,7 +85,7 @@ export function ContactForm() {
       setStatus('sent');
     } catch {
       setStatus('error');
-      setMessage('The message could not be sent — you may be offline.');
+      setMessage('The message could not be sent. You may be offline.');
       setCanFallBack(true);
     }
   };

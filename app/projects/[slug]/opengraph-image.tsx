@@ -14,7 +14,7 @@ export const contentType = OG_CONTENT_TYPE;
  * `generateImageMetadata`, which moves these off the build-time path and
  * gives every card a runtime cost for one line of alt text.
  */
-export const alt = 'Case study — Hemant Singh, graphic & brand designer';
+export const alt = 'Case study by Hemant Singh, graphic & brand designer';
 
 export function generateStaticParams() {
   return getAllProjects().map((project) => ({ slug: project.slug }));
@@ -29,7 +29,7 @@ export default async function ProjectOpengraphImage({
   const project = getProjectBySlug(slug);
 
   return renderOgImage({
-    kicker: project ? `${project.kicker} — ${project.year}` : 'Case study',
+    kicker: project ? `${project.kicker} · ${project.year}` : 'Case study',
     title: project?.title ?? 'Work',
     note: project?.discipline ?? 'Identity, packaging and art direction',
   });

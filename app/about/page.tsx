@@ -17,7 +17,7 @@ export const metadata: Metadata = pageMetadata({
 export default function AboutPage() {
   return (
     <>
-      <PageIntro kicker="About" lines={['Hi — I am Hemant.']} note={about.lede} />
+      <PageIntro kicker="About" lines={['Hi, I am Hemant.']} note={about.lede} />
 
       <Section>
         <div className={styles.grid}>

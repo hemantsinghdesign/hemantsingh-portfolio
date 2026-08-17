@@ -1,12 +1,11 @@
 /**
  * About page copy.
- * Placeholder narrative — replace with your own before launch.
  */
 
 export const about = {
   lede: 'I design identities, packaging and the art direction that holds them together.',
   paragraphs: [
-    'Most of what I do is decide what to leave out. A brand with four colours and one typeface is harder to design and far easier to live with than one with twelve of each — and it is the second thing that decides whether a brand still looks like itself two years later.',
+    'Most of my work is deciding what to leave out. A brand with four colours and one typeface is harder to design and far easier to live with than one carrying twelve of each. That restraint is what keeps a brand looking like itself two years later.',
     'The work leans structural: grids, type, hierarchy. That is what still holds when the photography budget disappears and someone on the team has to lay out a new SKU on a Tuesday afternoon.',
     'I work mostly in food, drink and lifestyle, on identity from naming through to what goes on the shelf. Before that I spent my time on print and packaging, which is where I learned that a specification is part of the design, not paperwork that follows it.',
   ],

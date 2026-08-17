@@ -22,7 +22,7 @@ export const hsbcOnboarding: ProjectInput = {
   discipline: 'Brand experience · Service design',
   year: '2025',
   summary:
-    'How might HSBC make international students feel welcomed — before asking them to become customers?',
+    'How might HSBC make international students feel welcomed, before asking them to become customers?',
 
   thumbnail: {
     src: `${dir}/tote-light.jpg`,
@@ -40,7 +40,7 @@ export const hsbcOnboarding: ProjectInput = {
   },
 
   meta: {
-    client: 'Concept project — unaffiliated with HSBC',
+    client: 'Concept project, unaffiliated with HSBC',
     role: 'Brand experience, service design',
     timeframe: 'University brief, extended independently for this case study',
     scope: 'Welcome letter · Debit card · Tote bag & bottle · Stationery & lanyard · Student kit & cap',
@@ -54,9 +54,9 @@ export const hsbcOnboarding: ProjectInput = {
   overview:
     'When students arrive in a new country, opening a bank account becomes one of their first essential tasks. Yet the experience often feels transactional at a time when reassurance matters most. This project explores how HSBC could transform onboarding into something that feels welcoming, supportive, and human.',
   approach: [
-    'Reduce anxiety — the design should feel simple, reassuring, and easy to understand from the first interaction.',
-    'Create familiarity — introduce subtle cultural references and welcoming touchpoints without overwhelming the HSBC brand.',
-    'Build trust — every interaction should reinforce clarity, professionalism, and confidence.',
+    'Reduce anxiety. The design should feel simple, reassuring, and easy to understand from the first interaction.',
+    'Create familiarity. Introduce subtle cultural references and welcoming touchpoints without overwhelming the HSBC brand.',
+    'Build trust. Every interaction should reinforce clarity, professionalism, and confidence.',
   ],
   outcome:
     "The final design system combines HSBC's trusted brand identity with subtle cultural storytelling. Every touchpoint shares the same visual language, creating a consistent and welcoming experience for international students from their first interaction onwards.",
@@ -149,7 +149,7 @@ export const hsbcOnboarding: ProjectInput = {
       reference: {
         src: `${dir}/warli-reference.jpg`,
         blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAYDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAXEAEBAQEAAAAAAAAAAAAAAAAAAQJR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwC9dW9CCZP/2Q==',
-        alt: 'Pencil reference sheet of traditional Warli folk-art motifs — dancers, huts, trees, and geometric patterns — used as the source material for the illustration style',
+        alt: 'Pencil reference sheet of traditional Warli folk-art motifs including dancers, huts, trees and geometric patterns, used as the source material for the illustration style',
         width: 694,
         height: 1400,
       },
@@ -175,7 +175,7 @@ export const hsbcOnboarding: ProjectInput = {
         width: 1800,
         height: 1241,
       },
-      caption: 'An early direction, localised — "Welcome to your journey," in Chinese',
+      caption: 'An early direction, localised. "Welcome to your journey," in Chinese',
     },
     {
       type: 'prose',
@@ -197,19 +197,19 @@ export const hsbcOnboarding: ProjectInput = {
         {
           src: `${dir}/cards.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAKAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIEBf/EAB4QAAEEAwADAAAAAAAAAAAAAAEAAgMRBBIxFEFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAAAESH/2gAMAwEAAhEDEQA/ANzMyosQtEpI3vU1fEcaTyIGShpbsOH0rC1rugGvoSEUi5H/2Q==',
-          alt: 'Two HSBC Visa card designs — an ivory card with a peacock watermark and a red card with a heritage skyline — leaning against each other',
+          alt: 'Two HSBC Visa card designs leaning against each other, an ivory card with a peacock watermark and a red card with a heritage skyline',
           width: 1800,
           height: 1440,
         },
       ],
       captions: [
-        'Welcome letter — a reassuring first interaction',
-        'Debit card — minimal, with subtle Warli-inspired details',
+        'Welcome letter, a reassuring first interaction',
+        'Debit card, minimal with subtle Warli-inspired details',
       ],
     },
     {
       type: 'note',
-      text: 'Two touchpoints, one language — warmth and restraint applied the same way whether the surface is paper or plastic.',
+      text: 'Two touchpoints, one language. Warmth and restraint applied the same way whether the surface is paper or plastic.',
     },
 
     {
@@ -302,13 +302,13 @@ export const hsbcOnboarding: ProjectInput = {
     {
       type: 'prose',
       variant: 'reflection',
-      text: "This project changed how I think about onboarding. I realised that trust isn't built through a logo — it's built through a series of small, reassuring interactions. That idea has influenced how I approach every project since.",
+      text: "This project changed how I think about onboarding. I realised that trust is not built through a logo. It is built through a series of small, reassuring interactions. That idea has influenced how I approach every project since.",
     },
   ],
 
   seo: {
     description:
-      'HSBC — how might HSBC make international students feel welcomed before asking them to become customers? A brand experience and service design case study.',
+      'HSBC. How might a bank make international students feel welcomed before asking them to become customers? A brand experience and service design case study.',
   },
 
   published: true,

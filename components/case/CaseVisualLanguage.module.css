@@ -102,10 +102,12 @@
   object-fit: contain;
 }
 
+/* 11px, the site's mono label size. These name the three motifs the
+   metrics row counts, so they need to be readable, not decorative. */
 .motifLabel {
   color: var(--mute-sm);
   text-align: center;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 @keyframes rise {

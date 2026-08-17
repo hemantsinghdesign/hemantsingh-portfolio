@@ -38,7 +38,7 @@ export const tadkaTrail: ProjectInput = {
   discipline: 'Brand identity · Illustration · Packaging',
   year: '2025',
   summary:
-    'A food brand for international students from Madhya Pradesh — built so that a meal arrives with the story of where it comes from.',
+    'A food brand for international students from Madhya Pradesh, built so that a meal arrives with the story of where it comes from.',
 
   thumbnail: {
     src: `${dir}/jharokha-hero.png`,
@@ -61,7 +61,7 @@ export const tadkaTrail: ProjectInput = {
   },
 
   meta: {
-    client: 'Final Major Project — MA Graphic Design, Coventry University',
+    client: 'Final Major Project, MA Graphic Design, Coventry University',
     role: 'Cultural research, brand strategy, illustration, pattern design, packaging, bilingual copy',
     timeframe: '2025',
     scope: 'Illustration · pattern system · packaging · story cards · print craft',
@@ -69,18 +69,18 @@ export const tadkaTrail: ProjectInput = {
   },
 
   overview:
-    'Madhya Pradesh is called the heart of India and its food is a blend of tribal, Mughal, Rajput and Maratha influence — and in global markets it is almost entirely unexplored. Meal-kit brands sell Indian food abroad as convenience: recipes adapted to general palates, no story behind the dish, nothing of where it came from. For a student living away from home, that misses the point of the meal entirely.',
+    'Madhya Pradesh is called the heart of India and its food is a blend of tribal, Mughal, Rajput and Maratha influence. In global markets it is almost entirely unexplored. Meal-kit brands sell Indian food abroad as convenience: recipes adapted to general palates, no story behind the dish, nothing of where it came from. For a student living away from home, that misses the point of the meal entirely.',
 
   approach: [
-    'Built the identity on a jharokha — an ornamental Indian window whose whole purpose is to look out from, and to be looked into. It carries the tribal woman cooking, the heritage fort, and the map of the state.',
-    'Studied four folk art forms of Madhya Pradesh — Bhil, Mandana, Bhilala and Pithora — before drawing anything, so the motifs are learned rather than borrowed.',
+    'Built the identity on a jharokha, an ornamental Indian window whose whole purpose is to look out from, and to be looked into. It carries the tribal woman cooking, the heritage fort, and the map of the state.',
+    'Studied four folk art forms of Madhya Pradesh, Bhil, Mandana, Bhilala and Pithora, before drawing anything, so the motifs are learned rather than borrowed.',
     'Drew every pattern by hand on grid paper first, then digitised them into a repeatable system for packaging.',
     'Cut and printed the mark by hand in lino, to test how the illustration behaves as ink on paper rather than as vector on screen.',
-    'Wrote a story card for each daal — its region, its folk story and its benefit — set in Hindi and English at equal weight, so the language is part of the artefact rather than a translation of it.',
+    'Wrote a story card for each daal covering its region, its folk story and its benefit, set in Hindi and English at equal weight, so the language is part of the artefact rather than a translation of it.',
   ],
 
   outcome:
-    'A complete cultural brand — illustrated mark, hand-drawn pattern system, four-colour palette, bilingual story cards for three regional daals, and packaging built around them — where the meal is the delivery mechanism and the story is the product.',
+    'A complete cultural brand: illustrated mark, hand-drawn pattern system, four-colour palette, bilingual story cards for three regional daals, and packaging built around them. The meal is the delivery mechanism and the story is the product.',
 
   metrics: [
     { label: 'Folk art forms studied', value: '4' },
@@ -92,7 +92,7 @@ export const tadkaTrail: ProjectInput = {
     /* 02 — WHY THIS EXISTS ----------------------------------------------- */
     {
       type: 'prose',
-      text: 'As an international design student from Madhya Pradesh studying abroad, I have personally experienced the emotional void of being away from home cooked food and familiar spices. This project is a way to channel that nostalgia into a meaningful design outcome — one that feels personal yet widely relatable.',
+      text: 'As an international design student from Madhya Pradesh studying abroad, I have personally experienced the emotional void of being away from home cooked food and familiar spices. This project is a way to channel that nostalgia into a meaningful design outcome, one that feels personal yet widely relatable.',
     },
     /* 03 — THE HEART OF INDIA -------------------------------------------- */
     { type: 'heading', marker: 'A', title: 'The heart of India', note: 'Madhya Pradesh' },
@@ -108,15 +108,15 @@ export const tadkaTrail: ProjectInput = {
       left: {
         title: 'What is already there',
         items: [
-          'HelloFresh, Gousto — convenience and personalisation',
-          'MasalaBox, Patak’s, Indian Tiffin Room — culturally styled',
+          'HelloFresh, Gousto: convenience and personalisation',
+          'MasalaBox, Patak’s, Indian Tiffin Room: culturally styled',
           'Indian dishes adapted to general palates',
           'Nothing of the region a dish comes from',
         ],
       },
       right: {
         title: 'What is missing',
-        text: 'The gap is not that culture is absent from the shelf. Culturally inspired brands exist, but their cultural work stops at the surface — a palette, a pattern, a name. The large kits sell convenience, and sell it well. Neither carries the thing a person actually misses: where a dish is from, and who cooked it. For a student who already knows what the food should taste like, an adapted recipe with no story is a meal, not a memory.',
+        text: 'The gap is not that culture is absent from the shelf. Culturally inspired brands exist, but their cultural work stops at the surface: a palette, a pattern, a name. The large kits sell convenience, and sell it well. Neither carries the thing a person actually misses: where a dish is from, and who cooked it. For a student who already knows what the food should taste like, an adapted recipe with no story is a meal, not a memory.',
       },
     },
     /* The question the gap produces. Placed here rather than at the top
@@ -144,13 +144,13 @@ export const tadkaTrail: ProjectInput = {
           label: 'The window',
           x: 50,
           y: 8,
-          text: 'A jharokha is an ornamental projecting window found in Mughal and Rajput architecture. Its purpose is to look out at the world from inside — and for the world to look in. That is exactly what this brand is asking of the people who buy it.',
+          text: 'A jharokha is an ornamental projecting window found in Mughal and Rajput architecture. Its purpose is to look out at the world from inside, and for the world to look in. That is exactly what this brand is asking of the people who buy it.',
         },
     {
           label: 'Tribal lady cooking',
           x: 40,
           y: 55,
-          text: 'Inside the window a tribal woman of Madhya Pradesh is cooking something traditional. She is the centre of the drawing, not the architecture — the food is made by someone, not manufactured.',
+          text: 'Inside the window a tribal woman of Madhya Pradesh is cooking something traditional. She is the centre of the drawing, not the architecture. The food is made by someone, not manufactured.',
         },
     {
           label: 'Heritage fort',
@@ -204,7 +204,7 @@ export const tadkaTrail: ProjectInput = {
       english:
         'Masoor Daal is earthy, warming, and full of nutrition. Women weavers of Maheshwar cherish this dal during winter. It is known to warm the body and support health during cold months or times of recovery.\n\nFolk story: as the winter wind would rattle the looms, Maheshwar\u2019s weavers gathered for bowls of masoor daal and warmth. They say the deep red colour gave the thread for Maheshwar\u2019s famous saree borders.',
       hindi:
-        'मसूर दाल मिट्टी जैसी, गर्माहट देने वाली और पोषण से भरपूर होती है। माहेश्वर की बुनकर महिलाएँ सर्दियों में इसे विशेष पसंद करती हैं — यह शरीर को गर्म रखती है।\n\nलोककथा: सर्द हवाओं के साथ माहेश्वर के करघों पर जब आवाज़ होती थी, तब बुनकर महिलाएँ मसूर दाल और गर्माहट के लिए इकट्ठा होती थीं। कहते हैं मसूर की गहरी लालिमा माहेश्वर की मशहूर साड़ियों के किनारों का रंग देती है।',
+        'मसूर दाल मिट्टी जैसी, गर्माहट देने वाली और पोषण से भरपूर होती है। माहेश्वर की बुनकर महिलाएँ सर्दियों में इसे विशेष पसंद करती हैं, क्योंकि यह शरीर को गर्म रखती है।\n\nलोककथा: सर्द हवाओं के साथ माहेश्वर के करघों पर जब आवाज़ होती थी, तब बुनकर महिलाएँ मसूर दाल और गर्माहट के लिए इकट्ठा होती थीं। कहते हैं मसूर की गहरी लालिमा माहेश्वर की मशहूर साड़ियों के किनारों का रंग देती है।',
     },
     {
       type: 'story',
@@ -293,7 +293,7 @@ export const tadkaTrail: ProjectInput = {
     {
       type: 'prose',
       variant: 'reflection',
-      text: 'I started this thinking cultural branding meant using cultural imagery. Draw the right motifs, use the right colours, and the work would feel like Madhya Pradesh. Most of the project went into learning that the motifs were the easy part.\n\nWhat actually carries the brand is not the illustration. It is the cards — a particular daal, from a particular region, with a story I had to go and find. They took the longest to make and they look the least designed of anything here. If I had to keep one part and throw away the rest, it would be those.',
+      text: 'I started this thinking cultural branding meant using cultural imagery. Draw the right motifs, use the right colours, and the work would feel like Madhya Pradesh. Most of the project went into learning that the motifs were the easy part.\n\nWhat actually carries the brand is not the illustration. It is the cards: a particular daal, from a particular region, with a story I had to go and find. They took the longest to make and they look the least designed of anything here. If I had to keep one part and throw away the rest, it would be those.',
     },
   ],
 
@@ -314,19 +314,19 @@ export const tadkaTrail: ProjectInput = {
       layout: 'even',
       images: [
       { src: `${dir}/art-bhil.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQP/xAAfEAACAgEEAwAAAAAAAAAAAAABAgADBBESIVFSkdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAh/9oADAMBAAIRAxEAPwC+Tmg3qarGKKpBXnk6xHUeI9QoUJtf4O4luPcA7Jv/2Q==', alt: 'Reference sheet on Bhil art — dots and simple geometric human and animal forms', width: 1459, height: 1900 },
+ blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQP/xAAfEAACAgEEAwAAAAAAAAAAAAABAgADBBESIVFSkdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAh/9oADAMBAAIRAxEAPwC+Tmg3qarGKKpBXnk6xHUeI9QoUJtf4O4luPcA7Jv/2Q==', alt: 'Reference sheet on Bhil art showing dots and simple geometric human and animal forms', width: 1459, height: 1900 },
       { src: `${dir}/art-mandana.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIAAwQREpETIlL/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC8zPdr3qrVkKsfZWI3F+Zvtu5nZ1YGW42dc99x3EQCrVQAv//Z', alt: 'Reference sheet on Mandana art — white chalk and rice paste motifs painted over red earth', ...PAGE },
+ blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIAAwQREpETIlL/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC8zPdr3qrVkKsfZWI3F+Zvtu5nZ1YGW42dc99x3EQCrVQAv//Z', alt: 'Reference sheet on Mandana art showing white chalk and rice paste motifs painted over red earth', ...PAGE },
       { src: `${dir}/art-bhilala.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAfEAABBAICAwAAAAAAAAAAAAABAAIDERIhBFETMpH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AKiY553M8sgDHE+1XtKZt6b8CEh4oe9xMkm71YrZS+A7KIa//9k=', alt: 'Reference sheet on Bhilala art — a mix of Gond and Bhil styles with religious and ritual symbols', ...PAGE },
+ blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAfEAABBAICAwAAAAAAAAAAAAABAAIDERIhBFETMpH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AKiY553M8sgDHE+1XtKZt6b8CEh4oe9xMkm71YrZS+A7KIa//9k=', alt: 'Reference sheet on Bhilala art, a mix of Gond and Bhil styles with religious and ritual symbols', ...PAGE },
       { src: `${dir}/art-pithora.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAABP/EAB8QAAEEAgIDAAAAAAAAAAAAAAEAAgMREiEEYZGh8f/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEQMRAD8AbHOJXOZICRkS2vqZg3rwgxcVrhebxZJ1WvSZXZQMt//Z', alt: 'Reference sheet on Pithora painting — horses, animals and deities in bold colour on tribal home walls', ...PAGE },
+ blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAABP/EAB8QAAEEAgIDAAAAAAAAAAAAAAEAAgMREiEEYZGh8f/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEQMRAD8AbHOJXOZICRkS2vqZg3rwgxcVrhebxZJ1WvSZXZQMt//Z', alt: 'Reference sheet on Pithora painting showing horses, animals and deities in bold colour on tribal home walls', ...PAGE },
       ],
       captions: [
-        'Bhil — dots, geometric figures',
-        'Mandana — walls and floors, white on red earth',
-        'Bhilala — Gond and Bhil, ritual symbols',
-        'Pithora — horses and deities, bold colour',
+        'Bhil: dots, geometric figures',
+        'Mandana: walls and floors, white on red earth',
+        'Bhilala: Gond and Bhil, ritual symbols',
+        'Pithora: horses and deities, bold colour',
       ],
     },
       /* 07 — DRAWING IT BY HAND -------------------------------------------- */
@@ -338,9 +338,9 @@ export const tadkaTrail: ProjectInput = {
           { src: `${dir}/sketch-tiger.jpg`,
  blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAiEAAABQMEAwAAAAAAAAAAAAAAAQIRIQMSYQQFEzFRkaH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8AUukat45bShZTf1HgUmx9AKKH1hqc3OQ6ws+wKt1//9k=', alt: 'Pencil pattern study on grid paper of a tiger surrounded by folk motifs', ...PAGE },
           { src: `${dir}/sketch-poha.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAdEAACAgEFAAAAAAAAAAAAAAABEQACEgMEJDEy/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AHg2tvjbKqzfca5O0RzLFn01HwL/2Q==', alt: 'Two pencil pattern studies on grid paper — a bowl of hot poha and a kettle of chai, each labelled in Hindi among sun, leaf and border motifs', ...PAGE },
+ blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAdEAACAgEFAAAAAAAAAAAAAAABEQACEgMEJDEy/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AHg2tvjbKqzfca5O0RzLFn01HwL/2Q==', alt: 'Two pencil pattern studies on grid paper showing a bowl of hot poha and a kettle of chai, each labelled in Hindi among sun, leaf and border motifs', ...PAGE },
           { src: `${dir}/sketch-jalebi.jpg`,
- blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAeEAACAQMFAAAAAAAAAAAAAAABAgADESEEEhQxUf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8ATWY8iykABhfMTtXyTajE6vs5YSjeFL//2Q==', alt: 'Two pencil pattern studies on grid paper — jalebi spirals with birds and leaves, and a samosa set against a sun and stepped motifs, both labelled in Hindi', ...PAGE },
+ blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAeEAACAQMFAAAAAAAAAAAAAAABAgADESEEEhQxUf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8ATWY8iykABhfMTtXyTajE6vs5YSjeFL//2Q==', alt: 'Two pencil pattern studies on grid paper showing jalebi spirals with birds and leaves, and a samosa set against a sun and stepped motifs, both labelled in Hindi', ...PAGE },
         ],
         captions: [
           'Tiger',
@@ -404,7 +404,7 @@ export const tadkaTrail: ProjectInput = {
       tone: 'green',
       title: 'Cutting it by hand',
       note: 'Lino and ink',
-      text: 'The mark was cut into lino and printed by hand before it was trusted as a vector. Ink behaves differently to a screen — it fills, it skips, it presses unevenly. Every one of these pulls is a different result from the same block.',
+      text: 'The mark was cut into lino and printed by hand before it was trusted as a vector. Ink behaves differently to a screen. It fills, it skips, it presses unevenly. Every one of these pulls is a different result from the same block.',
       images: [
       { src: `${dir}/lino-blocks.jpg`,
  blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQH/xAAfEAABBAEFAQAAAAAAAAAAAAABAAIDERIEISJScqH/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//EABoRAAICAwAAAAAAAAAAAAAAAAABAgMREiH/2gAMAwEAAhEDEQA/AJrhI8MEQOTSb3qkzy6j4irJlf6KRzKjVyIpPZ5P/9k=', alt: 'Lino blocks of the jharokha inked in orange, green and black, with pulled prints beside them', ...PAGE },
@@ -482,7 +482,7 @@ export const tadkaTrail: ProjectInput = {
           'Both scripts, on grid',
           'Stacked and set',
           'Palette against a stamp',
-          'Wordmark — Devanagari and Latin',
+          'Wordmark, Devanagari and Latin',
         ],
       },
       /* 11 — STRUCTURE ----------------------------------------------------- */
@@ -569,7 +569,7 @@ export const tadkaTrail: ProjectInput = {
           },
         ],
         captions: [
-          'Experiments failed — the sketchbook page, unedited',
+          'Experiments failed: the sketchbook page, unedited',
           'Proportions, wrong',
           'The peel, in the wrong place',
           'The black direction, dropped',
@@ -582,14 +582,14 @@ export const tadkaTrail: ProjectInput = {
       {
       type: 'prose',
       text:
-        'I also found that I trust a mark differently once I have cut it into lino and printed it badly a few times. What survives ink is not the same as what survives a screen. I did that after the illustration was already drawn. Next time I would do it first.\n\nThe honest gap is that I designed this for international students missing home, and the only student I checked it against was myself. I know what I missed. I do not know what someone from Kerala or Assam would have missed, and I never asked. That is the part I would change.\n\nThe other risk I could not fully resolve is the line between drawing on a culture and flattening it into decoration. Four folk art forms, one state, one window — the further the work travels from the people it came from, the easier it is for the motifs to become a style. Getting the story cards specific to a region and a dish was the only defence I found against that, and it is the reason they matter more than the illustration does.',
+        'I also found that I trust a mark differently once I have cut it into lino and printed it badly a few times. What survives ink is not the same as what survives a screen. I did that after the illustration was already drawn. Next time I would do it first.\n\nThe honest gap is that I designed this for international students missing home, and the only student I checked it against was myself. I know what I missed. I do not know what someone from Kerala or Assam would have missed, and I never asked. That is the part I would change.\n\nThe other risk I could not fully resolve is the line between drawing on a culture and flattening it into decoration. Four folk art forms, one state, one window. The further the work travels from the people it came from, the easier it is for the motifs to become a style. Getting the story cards specific to a region and a dish was the only defence I found against that, and it is the reason they matter more than the illustration does.',
     },
     ],
   },
 
   seo: {
     description:
-      'Tadka Trail — a cultural food brand for Madhya Pradesh, built on an illustrated jharokha, hand-drawn folk patterns and bilingual story cards that carry each daal\u2019s region and folk story.',
+      'Tadka Trail, a cultural food brand for Madhya Pradesh, built on an illustrated jharokha, hand-drawn folk patterns and bilingual story cards that carry each daal\u2019s region and folk story.',
   },
 
   published: true,

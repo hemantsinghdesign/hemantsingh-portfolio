@@ -24,7 +24,7 @@ export function CaseNext({ next }: { next?: Project }) {
 
   return (
     <TransitionLink href={`/projects/${next.slug}`} className={styles.next}>
-      <span className={`${styles.key} mono`}>Next case — {next.index}</span>
+      <span className={`${styles.key} mono`}>Next case · {next.index}</span>
       <span className={styles.title}>{next.title}</span>
       <span className={styles.arrow} aria-hidden="true">
         →

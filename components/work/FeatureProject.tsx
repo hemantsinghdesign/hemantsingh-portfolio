@@ -39,7 +39,7 @@ export function FeatureProject({
 
       <div className={styles.meta}>
         <span className={`${styles.index} mono`}>
-          {project.index} — {project.year}
+          {project.index} · {project.year}
         </span>
         <h3 className={styles.title}>{project.title}</h3>
         <p className={`${styles.discipline} mono`}>{project.discipline}</p>

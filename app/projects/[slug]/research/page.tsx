@@ -39,7 +39,7 @@ export async function generateMetadata({
   if (!project?.research) return {};
 
   return pageMetadata({
-    title: `${project.title} — Research`,
+    title: `${project.title} · Research`,
     description: project.research.intro,
     path: `/projects/${project.slug}/research`,
     type: 'article',
@@ -64,7 +64,7 @@ export default async function ProjectResearchPage({
       </section>
 
       <PageIntro
-        kicker={`${project.title} — Research`}
+        kicker={`${project.title} · Research`}
         lines={['The working out.']}
         note={project.research.intro}
       />
