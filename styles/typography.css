@@ -46,10 +46,20 @@
 
   /* ---- masked line reveal ----
      Each line is clipped by its own overflow box and rises into place.
-     Stagger is index-based so any number of lines works. */
+     Stagger is index-based so any number of lines works.
+
+     The padding/margin pair is not decoration. `overflow: hidden` clips to
+     the line box, and at line-height 0.92 that box is shorter than the
+     glyphs: every descender was being sliced flat, so "you are making."
+     lost the tail of the y and the bowl of the g. The padding lets the
+     mask extend past the baseline, and the equal negative margin takes
+     that space back out of the layout, so lines sit exactly where they
+     did. Keep the two values identical. */
   .line {
     display: block;
     overflow: hidden;
+    padding-bottom: 0.2em;
+    margin-bottom: -0.2em;
   }
 
   .line > span {

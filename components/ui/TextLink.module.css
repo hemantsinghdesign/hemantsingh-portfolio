@@ -1,12 +1,20 @@
-/* Understated inline link with a rule beneath it. */
+/* Understated inline link with a rule beneath it.
+
+   These read as standalone calls to action ("All work", "See the research"),
+   not as links inside a sentence, so WCAG 2.5.8's inline exemption does not
+   cover them and 24px is the floor. The height comes from padding-top rather
+   than min-height: the rule has to stay tight under the text, and centring
+   the label in a taller box would push the two apart. The top margin drops
+   by the same 6px so nothing moves on the page. */
 .link {
   display: inline-flex;
   gap: 9px;
   align-items: center;
   font-size: 13px;
   border-bottom: 1px solid var(--ink);
+  padding-top: 6px;
   padding-bottom: 2px;
-  margin-top: 34px;
+  margin-top: 28px;
   text-decoration: none;
   width: fit-content;
 }
@@ -16,7 +24,8 @@
   border-color: var(--signal);
 }
 
-/* For links that sit inside prose rather than after a block. */
+/* For links that sit inside prose rather than after a block. Pulled up by
+   the padding added above so it still sits flush. */
 .flush {
-  margin-top: 0;
+  margin-top: -6px;
 }

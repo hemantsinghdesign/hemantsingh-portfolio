@@ -27,11 +27,22 @@
 }
 
 .link {
+  position: relative;
   text-decoration: none;
   border-bottom: 1px solid var(--rule);
   transition:
     color var(--dur-hover) var(--ease),
     border-color var(--dur-hover) var(--ease);
+}
+
+/* The email and LinkedIn links are 18px tall, under the 24px minimum. The
+   tap area is grown with a pseudo-element rather than padding so the rule
+   stays tight under the text and the long email address keeps its normal
+   inline wrapping behaviour on narrow screens. */
+.link::after {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
 }
 
 .link:hover {

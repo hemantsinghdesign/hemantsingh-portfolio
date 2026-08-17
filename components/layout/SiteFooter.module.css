@@ -13,16 +13,20 @@
   gap: clamp(20px, 3vw, 40px);
 }
 
+/* The 7px gap became padding on the links themselves. Each link was a
+   17px-tall target, under the 24px WCAG 2.5.8 asks for; moving the spacing
+   inside the link turns dead space between rows into hit area and leaves
+   the rhythm looking the same. */
 .column {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 7px;
+  gap: 0;
 }
 
 .key {
   color: var(--signal-sm);
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .name {
@@ -39,6 +43,7 @@
 
 .link {
   font-size: 14px;
+  padding: 4px 0;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition:

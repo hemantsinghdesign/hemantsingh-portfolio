@@ -7,6 +7,18 @@
   z-index: 41;
 }
 
+/* The glyph is 26x16, which is the right size to look at and the wrong size
+   to hit: it is the primary navigation control on mobile and was the
+   smallest target on the page. This extends the tap area to 54x44 without
+   moving a pixel of the drawn mark. WCAG 2.5.8 asks for 24x24; thumbs want
+   more like 44. Not padding on the button, because the bars are positioned
+   against its box and padding would stretch them. */
+.button::after {
+  content: '';
+  position: absolute;
+  inset: -14px;
+}
+
 .bar {
   position: absolute;
   left: 0;
