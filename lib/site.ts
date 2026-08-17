@@ -2,9 +2,17 @@
  * Site-wide configuration.
  * Everything that appears in more than one place lives here.
  *
- * NEXT_PUBLIC_SITE_URL must be set in Vercel for canonical URLs, the
- * sitemap and Open Graph images to resolve correctly. Falls back to the
- * production domain so local builds still produce valid absolute URLs.
+ * `url` is the single source for every canonical tag, the sitemap,
+ * robots.txt, the Open Graph image URLs and the JSON-LD. Whatever it holds
+ * is what the site tells search engines it is.
+ *
+ * It must therefore match the domain the site is actually served from. If it
+ * says `*.vercel.app` while visitors arrive on hemantsingh.design, every page
+ * on the custom domain declares the .vercel.app copy as the real one, and
+ * that is the copy Google indexes. Set NEXT_PUBLIC_SITE_URL in Vercel and
+ * redeploy after changing domains; see "Connecting hemantsingh.design" in
+ * the README. The fallback below keeps local builds producing valid
+ * absolute URLs.
  */
 
 export const siteConfig = {
