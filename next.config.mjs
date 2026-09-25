@@ -2,8 +2,15 @@
 
 /**
  * Content Security Policy.
- * `unsafe-inline` on style-src is required by Next's inlined critical CSS.
+ * `unsafe-inline` on style-src is required by Next's inlined critical CSS, and
+ * on script-src by Next's inline bootstrap and route-prefetch payloads.
  * `unsafe-eval` is dev-only (React Refresh); it is dropped in production.
+ *
+ * The only third-party origins listed are the two Vercel Speed Insights needs:
+ * va.vercel-scripts.com serves its script, vitals.vercel-insights.com receives
+ * the beacons. Nothing else is allowed — an origin listed here that no code
+ * loads is a hole with no upside, so add one only alongside the code that
+ * needs it.
  */
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -24,11 +31,11 @@ const csp = [
   "form-action 'self'",
   "frame-ancestors 'none'",
   "object-src 'none'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://va.vercel-scripts.com`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://www.googletagmanager.com",
+  "img-src 'self' data: blob:",
   "font-src 'self' data:",
-  "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://vitals.vercel-insights.com",
+  "connect-src 'self' https://vitals.vercel-insights.com",
   "manifest-src 'self'",
   ...(isHttps ? ['upgrade-insecure-requests'] : []),
 ].join('; ');

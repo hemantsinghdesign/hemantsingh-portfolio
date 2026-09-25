@@ -4,12 +4,18 @@ import type { JournalPost } from '@/types/content';
 /**
  * Journal registry.
  *
- * Intentionally empty. The route, schema and listing all exist so the
- * first post only requires a content file — no engineering work.
+ * Intentionally empty. The schema and the /journal listing exist so the first
+ * post only requires a content file.
  *
  * Adding a post:
  *   1. create `content/journal/<slug>.ts`
  *   2. add one import + one entry to `sources` below
+ *
+ * A per-post page is the one thing still missing: there is no
+ * /journal/[slug] route, so the slug and by-slug lookups a route would need
+ * are not written yet. Add them with the route that uses them rather than
+ * ahead of it — `getAllProjects`/`getProjectBySlug` next door are the shape
+ * to copy.
  */
 const sources: unknown[] = [];
 
@@ -28,12 +34,4 @@ const posts: JournalPost[] = sources
 
 export function getAllJournalPosts(): JournalPost[] {
   return posts;
-}
-
-export function getJournalSlugs(): string[] {
-  return posts.map((post) => post.slug);
-}
-
-export function getJournalPostBySlug(slug: string): JournalPost | undefined {
-  return posts.find((post) => post.slug === slug);
 }
