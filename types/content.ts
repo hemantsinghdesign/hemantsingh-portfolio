@@ -23,6 +23,8 @@ export type BlockOfType<T extends ContentBlock['type']> = Extract<
   { type: T }
 >;
 
-/** Input shape before defaults are applied (e.g. `published`). */
+/** Input shape before defaults are applied (e.g. `published`). Content files
+ *  annotate themselves with this, which is what makes a malformed project a
+ *  type error in the editor rather than a parse failure at build time. The
+ *  journal equivalent lands with the first post that needs it. */
 export type ProjectInput = z.input<typeof projectSchema>;
-export type JournalPostInput = z.input<typeof journalPostSchema>;
