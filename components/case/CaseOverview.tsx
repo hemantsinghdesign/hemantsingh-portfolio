@@ -2,8 +2,10 @@ import type { Project } from '@/types/content';
 import styles from './CaseOverview.module.css';
 
 /**
- * Purpose: a compact facts strip — Role, Duration, Deliverables, Project
- *   Type — so a recruiter can place the project before reading the story.
+ * Purpose: a compact facts strip — Status, Role, Timeframe, Deliverables,
+ *   Project type — so a recruiter can place the project before reading the
+ *   story. Status comes first because it answers the question a reader
+ *   asks before any other: was this commissioned, or is it a concept?
  * Props: `project`.
  * Used in: /projects/[slug], directly under CaseHero, for projects that
  *   define `hero`. Distinct from CaseSummary: this carries facts only, no
@@ -13,8 +15,9 @@ import styles from './CaseOverview.module.css';
  */
 export function CaseOverview({ project }: { project: Project }) {
   const facts = [
+    ['Status', project.meta.client],
     ['Role', project.meta.role],
-    ['Duration', project.meta.timeframe],
+    ['Timeframe', project.meta.timeframe],
     ['Deliverables', project.meta.scope],
     ['Project type', project.meta.type ?? project.discipline],
   ] as const;

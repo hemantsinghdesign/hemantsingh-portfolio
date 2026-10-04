@@ -13,7 +13,7 @@ import styles from './CaseSummary.module.css';
  */
 export function CaseSummary({ project }: { project: Project }) {
   const facts = [
-    ['Client', project.meta.client],
+    ['Status', project.meta.client],
     ['Role', project.meta.role],
     ['Timeframe', project.meta.timeframe],
     ['Scope', project.meta.scope],

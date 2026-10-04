@@ -1,13 +1,19 @@
 import type { ProjectInput } from '@/types/content';
 
 /**
- * HSBC — onboarding for international students.
+ * HSBC — a welcome experience for international students.
  *
- * This case study follows the structure and words of the designer's own
- * presentation deck (Design_portfolio.pdf, slides 6–20) rather than a
- * narrative written for the website. Copy is taken verbatim from the deck
- * wherever possible; only grammar and readability are touched, never voice.
- * Unaffiliated with HSBC — a concept project, not commissioned work.
+ * Follows the structure of the designer's own presentation deck
+ * (Design_portfolio.pdf, slides 6–20), edited for accuracy:
+ *
+ * - It is a brand experience concept, unaffiliated with HSBC. Nothing on the
+ *   page may suggest HSBC commissioned, endorsed or implemented it.
+ * - "Service design" was dropped from the disciplines. The finished work is
+ *   a set of branded touchpoints; there is no journey map or service
+ *   blueprint among the assets to support the larger claim.
+ * - The research was desk research (no interviews). Its conclusion is
+ *   presented as the premise the design was built on, not as a finding
+ *   about what students feel.
  *
  * Images live in /public/projects/hsbc-onboarding/.
  */
@@ -18,11 +24,11 @@ export const hsbcOnboarding: ProjectInput = {
   slug: 'hsbc-onboarding',
   index: '02',
   title: 'HSBC',
-  kicker: 'Onboarding for international students',
-  discipline: 'Brand experience · Service design',
+  kicker: 'Welcome experience for international students',
+  discipline: 'Brand experience · Illustration · Print',
   year: '2025',
   summary:
-    'How might HSBC make international students feel welcomed, before asking them to become customers?',
+    'A concept for how HSBC could welcome international students before asking them to open an account, through a set of Warli-illustrated touchpoints.',
 
   thumbnail: {
     src: `${dir}/tote-held.jpg`,
@@ -40,26 +46,26 @@ export const hsbcOnboarding: ProjectInput = {
   },
 
   meta: {
-    client: 'Concept project, unaffiliated with HSBC',
-    role: 'Brand experience, service design',
-    timeframe: 'University brief, extended independently for this case study',
+    client: 'Brand experience concept. Not commissioned or endorsed by HSBC',
+    role: 'Concept, illustration, touchpoint and print design',
+    timeframe: 'December 2024 – May 2025',
     scope: 'Welcome letter · Debit card · Tote bag & bottle · Stationery & lanyard · Student kit & cap',
     tools: 'Illustrator · Photoshop · Figma',
-    type: 'Service design · Brand experience',
+    type: 'Brand experience concept',
   },
 
   // overview/approach/outcome are structured data only for this project —
   // the editorial layout (hero + blocks) carries the actual narrative.
   // Kept truthful to the deck rather than unused placeholder text.
   overview:
-    'When students arrive in a new country, opening a bank account becomes one of their first essential tasks. Yet the experience often feels transactional at a time when reassurance matters most. This project explores how HSBC could transform onboarding into something that feels welcoming, supportive, and human.',
+    'Opening a bank account is one of the first things a student has to do in a new country. This concept asks how HSBC could make that first contact feel like a welcome, at a moment when a student is likely to need reassurance more than a product.',
   approach: [
     'Reduce anxiety. The design should feel simple, reassuring, and easy to understand from the first interaction.',
     'Create familiarity. Introduce subtle cultural references and welcoming touchpoints without overwhelming the HSBC brand.',
     'Build trust. Every interaction should reinforce clarity, professionalism, and confidence.',
   ],
   outcome:
-    "The final design system combines HSBC's trusted brand identity with subtle cultural storytelling. Every touchpoint shares the same visual language, creating a consistent and welcoming experience for international students from their first interaction onwards.",
+    "A set of welcome touchpoints that keep HSBC's identity and add Warli-inspired drawing: a welcome letter, debit card designs, a student kit box, a tote bag, bottles, a lanyard, stationery and a cap.",
 
   /* Every figure here is countable on the page itself.
      Two figures have been through this slot and both were wrong:
@@ -91,23 +97,23 @@ export const hsbcOnboarding: ProjectInput = {
       left: {
         title: 'What I looked at',
         items: [
-          'Existing HSBC onboarding',
-          'Student experiences',
-          'Competitors',
+          'HSBC’s existing student onboarding',
+          'International students’ experiences of arriving',
+          'Other banks’ student offers',
           'Emotional design',
         ],
       },
       right: {
-        title: 'What I found',
-        text: "Students weren't only looking for a bank. They were looking for confidence.",
+        title: 'The premise I took from it',
+        text: 'A student who has just arrived needs reassurance before they need a product. Every touchpoint was designed around that idea.',
       },
     },
 
     {
       type: 'interlude',
       lines: [
-        "Good onboarding isn't about opening an account.",
-        "It's about helping someone feel at home.",
+        'The first thing a bank sends a new student',
+        'can help them feel at home.',
       ],
     },
 
@@ -138,14 +144,14 @@ export const hsbcOnboarding: ProjectInput = {
     { type: 'heading', marker: 'C', title: 'Designing a Welcome Experience' },
     {
       type: 'prose',
-      text: "Rather than focusing only on banking, I explored how HSBC could become one of the first positive experiences for international students arriving in the UK. The concept was to transform a routine onboarding process into a thoughtful welcome experience through a collection of branded touchpoints that offer guidance, familiarity, and reassurance. To reinforce that sense of familiarity, I incorporated subtle Warli-inspired illustrations throughout the experience, creating a visual connection to home while respecting HSBC's existing brand identity.",
+      text: "The concept turns a routine account opening into a welcome: a letter, a debit card, a student kit and a few everyday things a student would actually use in their first weeks in the UK.\n\nThe brief covered international students in general. For the visual treatment I focused on one group, students arriving from India, and drew on Warli, a folk-art tradition from Maharashtra, so the touchpoints carry a reference to home. The same approach could be localised for other groups; an early card direction, shown below, set its greeting in Chinese.",
     },
 
     {
       type: 'visualLanguage',
       marker: 'D',
       title: 'Building a Familiar Visual Language',
-      text: "HSBC already has a strong visual identity. Rather than replacing it, I extended it with subtle Warli-inspired illustrations that create familiarity for Indian students while preserving the brand's clarity and trust.",
+      text: "I kept HSBC's identity intact, its red, white and grey and its logo, and added a layer of Warli-inspired line drawing on top. The drawings are meant to feel familiar to Indian students without competing with the bank's own marks.",
       reference: {
         src: `${dir}/warli-reference.jpg`,
         blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAYDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAXEAEBAQEAAAAAAAAAAAAAAAAAAQJR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwC9dW9CCZP/2Q==',
@@ -179,7 +185,7 @@ export const hsbcOnboarding: ProjectInput = {
     },
     {
       type: 'prose',
-      text: "My initial explorations focused primarily on creating a premium-looking debit card. Although visually appealing, the concept didn't fully address the emotional needs identified during research. This exploration helped me realise that the project needed to extend beyond a single product and become a complete welcome experience.",
+      text: "My first direction was a single metal debit card. It looked good, but it was one product, and it did little for a student in their first weeks. That is what pushed the project towards a set of touchpoints instead.",
     },
 
     { type: 'heading', marker: 'F', title: 'Touchpoints' },
@@ -296,19 +302,19 @@ export const hsbcOnboarding: ProjectInput = {
 
     {
       type: 'prose',
-      text: "The final design system combines HSBC's trusted brand identity with subtle cultural storytelling. Every touchpoint shares the same visual language, creating a consistent and welcoming experience for international students from their first interaction onwards.",
+      text: "Every touchpoint uses HSBC's red, white and grey with the same Warli-inspired line drawing, so the letter, the card, the kit and the merchandise read as one welcome.",
     },
 
     {
       type: 'prose',
       variant: 'reflection',
-      text: "This project changed how I think about onboarding. I realised that trust is not built through a logo. It is built through a series of small, reassuring interactions. That idea has influenced how I approach every project since.",
+      text: "The metal card taught me the most. It was the most polished thing I made and it answered the wrong question. Once I treated the welcome as a sequence of small things a student receives in their first weeks, the design had a job to do.\n\nThis is a proposal. Whether the sequence actually helps students settle in is something I would want to test with them before taking it further.",
     },
   ],
 
   seo: {
     description:
-      'HSBC. How might a bank make international students feel welcomed before asking them to become customers? A brand experience and service design case study.',
+      'HSBC welcome experience concept for international students: Warli-inspired illustration across a welcome letter, debit cards, a student kit and everyday merchandise. Not commissioned by HSBC.',
   },
 
   published: true,

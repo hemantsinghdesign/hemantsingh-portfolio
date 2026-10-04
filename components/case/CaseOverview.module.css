@@ -1,7 +1,7 @@
-/* Compact facts strip: Role, Duration, Deliverables, Project type. */
+/* Compact facts strip: Status, Role, Timeframe, Deliverables, Project type. */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: clamp(16px, 2.4vw, 28px);
   padding: clamp(20px, 3vw, 32px) 0 clamp(40px, 6vw, 72px);
   border-bottom: 1px solid var(--rule);
@@ -20,7 +20,7 @@
 
 .value {
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
 }
 

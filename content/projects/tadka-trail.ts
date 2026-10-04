@@ -13,8 +13,20 @@ import type { ProjectInput } from '@/types/content';
  * late and small. A reader who leaves before the packaging should still
  * understand the project.
  *
- * All copy is taken from the project's own sketchbook, story cards and the
- * accompanying research report. None of it is written for the website.
+ * Copy is drawn from the project's own sketchbook, story cards and the
+ * accompanying research report, edited for the website with these rules:
+ *
+ * - The range is three daals. Earlier discussion mentioned five; the final
+ *   cards and packs show three, so three is what the page says.
+ * - Card stories are presented as storytelling, in their own "they say"
+ *   voice, never as documented history, and only the story text is quoted.
+ *   The printed cards also make health claims (iron, immunity, blood
+ *   formation, muscle strength) that this site does not repeat.
+ * - The Moong materials name three different places: the card says
+ *   "Mandla & Gond Region", the pack's English line says Barwani, and its
+ *   Hindi line says Malwa soil and Nimar kitchens. Until that is resolved
+ *   the Moong card is not presented as a regional story; it appears in the
+ *   photographs only. See the open question in the handoff.
  *
  * The report describes an earlier direction in places — a turmeric and chilli
  * palette, truck art and henna reference, a three-layer tiffin structure. The
@@ -34,11 +46,11 @@ export const tadkaTrail: ProjectInput = {
   slug: 'tadka-trail',
   index: '03',
   title: 'Tadka Trail',
-  kicker: 'Cultural branding',
+  kicker: 'Regional food brand',
   discipline: 'Brand identity · Illustration · Packaging',
   year: '2025',
   summary:
-    'A food brand for international students from Madhya Pradesh, built so that a meal arrives with the story of where it comes from.',
+    'A food-brand concept for Indian students abroad: three daals from Madhya Pradesh, each packed with a bilingual card about the dish and where it comes from.',
 
   // A photograph of the printed prototype rather than the illustration on its
   // own: the card is where a visitor decides whether to open the case, and
@@ -64,30 +76,30 @@ export const tadkaTrail: ProjectInput = {
   },
 
   meta: {
-    client: 'Final Major Project, MA Graphic Design, Coventry University',
+    client: 'Brand and packaging concept, made as a printed physical prototype',
     role: 'Cultural research, brand strategy, illustration, pattern design, packaging, bilingual copy',
-    timeframe: '2025',
+    timeframe: 'May – August 2025',
     scope: 'Illustration · pattern system · packaging · story cards · print craft',
     tools: 'Illustrator · Photoshop · InDesign · lino cutting · block printing',
   },
 
   overview:
-    'Madhya Pradesh is called the heart of India and its food is a blend of tribal, Mughal, Rajput and Maratha influence. In global markets it is almost entirely unexplored. Meal-kit brands sell Indian food abroad as convenience: recipes adapted to general palates, no story behind the dish, nothing of where it came from. For a student living away from home, that misses the point of the meal entirely.',
+    'Madhya Pradesh is often called the heart of India, and its food draws on tribal, Mughal, Rajput and Maratha cooking. None of the food brands I reviewed, from UK meal kits to Indian-styled brands, told you which region a dish came from. Tadka Trail is a concept for a range that does: each daal is tied to a place, with a card that tells its story.',
 
   approach: [
     'Built the identity on a jharokha, an ornamental Indian window whose whole purpose is to look out from, and to be looked into. It carries the tribal woman cooking, the heritage fort, and the map of the state.',
-    'Studied four folk art forms of Madhya Pradesh, Bhil, Mandana, Bhilala and Pithora, before drawing anything, so the motifs are learned rather than borrowed.',
+    'Studied four folk art forms of Madhya Pradesh, Bhil, Mandana, Bhilala and Pithora, before drawing anything, so the motifs come from study of the originals.',
     'Drew every pattern by hand on grid paper first, then digitised them into a repeatable system for packaging.',
     'Cut and printed the mark by hand in lino, to test how the illustration behaves as ink on paper rather than as vector on screen.',
-    'Wrote a story card for each daal covering its region, its folk story and its benefit, set in Hindi and English at equal weight, so the language is part of the artefact rather than a translation of it.',
+    'Designed a bilingual card for each daal, with Hindi and English set side by side at the same size. The Masoor and Urad cards pair the recipe with a short story about the dish and its place; the Moong card carries the method.',
   ],
 
   outcome:
-    'A complete cultural brand: illustrated mark, hand-drawn pattern system, four-colour palette, bilingual story cards for three regional daals, and packaging built around them. The meal is the delivery mechanism and the story is the product.',
+    'An illustrated mark, a hand-drawn pattern system, a four-colour palette, three daal packs and their bilingual cards, printed, cut and assembled by hand as a physical prototype.',
 
   metrics: [
     { label: 'Folk art forms studied', value: '4' },
-    { label: 'Regions mapped to daals', value: '3' },
+    { label: 'Daals in the range', value: '3' },
     { label: 'Languages, equal weight', value: '2' },
   ],
 
@@ -95,13 +107,13 @@ export const tadkaTrail: ProjectInput = {
     /* 02 — WHY THIS EXISTS ----------------------------------------------- */
     {
       type: 'prose',
-      text: 'As an international design student from Madhya Pradesh studying abroad, I have personally experienced the emotional void of being away from home cooked food and familiar spices. This project is a way to channel that nostalgia into a meaningful design outcome, one that feels personal yet widely relatable.',
+      text: 'I’m from Madhya Pradesh, and I cook. Studying abroad, I missed home-cooked food and familiar spices, and I wanted to see whether packaging could carry some of that: the dish, and also where it comes from. The project grew from that, and from research into the food culture of my home state.',
     },
     /* 03 — THE HEART OF INDIA -------------------------------------------- */
     { type: 'heading', marker: 'A', title: 'The heart of India', note: 'Madhya Pradesh' },
     {
       type: 'note',
-      text: 'Madhya Pradesh is often called the heart of India, and is known for its unique blend of tribal, Mughal, Rajput and Maratha food influences. In global markets its food culture remains unexplored.',
+      text: 'Madhya Pradesh is often called the heart of India. My research looked at its food regions and dishes, and at the folk art made alongside them, before any drawing started.',
     },
     /* 04 — WHAT THE MARKET MISSES ---------------------------------------- */
     {
@@ -119,7 +131,7 @@ export const tadkaTrail: ProjectInput = {
       },
       right: {
         title: 'What is missing',
-        text: 'The gap is not that culture is absent from the shelf. Culturally inspired brands exist, but their cultural work stops at the surface: a palette, a pattern, a name. The large kits sell convenience, and sell it well. Neither carries the thing a person actually misses: where a dish is from, and who cooked it. For a student who already knows what the food should taste like, an adapted recipe with no story is a meal, not a memory.',
+        text: 'The brands I reviewed fell into two groups. Meal kits sell convenience, and do it well. Indian-styled brands use cultural colour, pattern and naming. None of them told you where a dish was from or who traditionally cooks it. That was the space Tadka Trail set out to fill, for students who already know what the food should taste like.',
       },
     },
     /* The question the gap produces. Placed here rather than at the top
@@ -153,7 +165,7 @@ export const tadkaTrail: ProjectInput = {
           label: 'Tribal lady cooking',
           x: 40,
           y: 55,
-          text: 'Inside the window a tribal woman of Madhya Pradesh is cooking something traditional. She is the centre of the drawing, not the architecture. The food is made by someone, not manufactured.',
+          text: 'Inside the window a tribal woman of Madhya Pradesh is cooking. She is the centre of the drawing, and the architecture frames her. The food is shown being made by someone.',
         },
     {
           label: 'Heritage fort',
@@ -165,32 +177,15 @@ export const tadkaTrail: ProjectInput = {
           label: 'Map of the state',
           x: 68,
           y: 30,
-          text: 'And behind that, the outline of Madhya Pradesh. Three things in one frame: a person, a place, and a state most people abroad could not point to.',
+          text: 'And behind that, the outline of Madhya Pradesh. Three things in one frame: a person, a place, and a state that many people abroad would not know.',
         },
       ],
     },
     /* 10 — THREE DAALS · SECOND EMOTIONAL CENTRE ------------------------- */
-    { type: 'heading', marker: 'D', title: 'Three daals, three regions', note: 'The story cards' },
+    { type: 'heading', marker: 'D', title: 'Three daals, three cards', note: 'Bilingual by design' },
     {
       type: 'note',
-      text: 'Each daal in the range is tied to a region of Madhya Pradesh, and each card carries that region\u2019s folk story alongside the recipe. The Hindi is not a translation printed underneath. It is half of the card.',
-    },
-    {
-      type: 'story',
-      tone: 'green',
-      pull: 'From the farms of Barwani to your bowl.',
-      dish: 'Moong Daal',
-      region: 'Mandla & Gond Region',
-      image: {
-        src: `${dir}/card-moong.jpg`,
-        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAKAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwEF/8QAHRAAAgIBBQAAAAAAAAAAAAAAAREAAhMSISIxQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDFyZDc6QFVJxHsOPkJANABy16gB//Z',
-        alt: 'Moong Daal story card in deep green, with the recipe and its regional story set in English and Hindi',
-        ...CARD,
-      },
-      english:
-        'Moong Dal is comforting, hearty, protein-packed, flavorful and super tasty. Make this for a perfect, easy and wholesome vegetarian Indian meal. It is naturally gluten-free and can be made vegan if you use oil for tadka. This yellow mung daal is usually eaten with rice, pickle and papad.\n\nThis recipe starts by soaking the lentils briefly until you prep up the ingredients like onion, tomatoes and other spices. This step helps the lentils to cook faster and give a better texture to the finished dish.',
-      hindi:
-        'मूंग दाल आरामदायक, पौष्टिक, प्रोटीन से भरपूर, स्वादिष्ट और बेहद स्वादिष्ट होती है। इसे एक बेहतरीन, आसान और पौष्टिक भारतीय शाकाहारी भोजन के रूप में बनाएँ। यह पीली मूंग दाल आमतौर पर चावल, अचार और पापड़ के साथ खाई जाती है।\n\nइस रेसिपी की शुरुआत दाल को थोड़ी देर भिगोने से होती है जब तक आप प्याज, टमाटर और अन्य मसाले जैसी सामग्री तैयार नहीं कर लेते।',
+      text: 'Each daal comes with a card, Hindi and English set side by side at the same size. The Masoor and Urad cards pair the recipe with a short story about the dish and its place, told in the \u2018they say\u2019 voice of stories passed on at home. Read them as storytelling written for the brand, not as documented history. The Moong card, in the photographs further down, carries the method.',
     },
     {
       type: 'story',
@@ -205,9 +200,9 @@ export const tadkaTrail: ProjectInput = {
         ...CARD,
       },
       english:
-        'Masoor Daal is earthy, warming, and full of nutrition. Women weavers of Maheshwar cherish this dal during winter. It is known to warm the body and support health during cold months or times of recovery.\n\nFolk story: as the winter wind would rattle the looms, Maheshwar\u2019s weavers gathered for bowls of masoor daal and warmth. They say the deep red colour gave the thread for Maheshwar\u2019s famous saree borders.',
+        'As the winter wind would rattle the looms, Maheshwar\u2019s weavers gathered for bowls of masoor daal and warmth. They say the deep red colour gave the thread for Maheshwar\u2019s famous saree borders.',
       hindi:
-        'मसूर दाल मिट्टी जैसी, गर्माहट देने वाली और पोषण से भरपूर होती है। माहेश्वर की बुनकर महिलाएँ सर्दियों में इसे विशेष पसंद करती हैं, क्योंकि यह शरीर को गर्म रखती है।\n\nलोककथा: सर्द हवाओं के साथ माहेश्वर के करघों पर जब आवाज़ होती थी, तब बुनकर महिलाएँ मसूर दाल और गर्माहट के लिए इकट्ठा होती थीं। कहते हैं मसूर की गहरी लालिमा माहेश्वर की मशहूर साड़ियों के किनारों का रंग देती है।',
+        'सर्द हवाओं के साथ माहेश्वर के करघों पर जब आवाज़ होती थी, तब बुनकर महिलाएँ मसूर दाल और गर्माहट के लिए इकट्ठा होती थीं। कहते हैं मसूर की गहरी लालिमा माहेश्वर की मशहूर साड़ियों के किनारों का रंग देती है।',
     },
     {
       type: 'story',
@@ -222,16 +217,53 @@ export const tadkaTrail: ProjectInput = {
         ...CARD,
       },
       english:
-        'Urad Daal is bold, rich, and deeply satisfying. Often called the royal daal of Madhya Pradesh, it is especially popular in Bhopal during festivals and community feasts. This hearty dal gets its depth from slow cooking and a grand tadka: desi ghee, black cardamom, onion, and a pinch of asafoetida.\n\nThey say in old Bhopal, urad daal was cooked not for the king, but for the guests of God. During Eid, Begum Sultan would serve it in silver bowls to wandering fakirs and travellers, believing every guest brought blessings to her court.',
+        'They say in old Bhopal, urad daal was cooked not for the king, but for the guests of God. During Eid, Begum Sultan would serve it in silver bowls to wandering fakirs and travellers, believing every guest brought blessings to her court.',
       hindi:
-        'उड़द दाल गाढ़ी, पौष्टिक और स्वादिष्ट होती है। इसे मध्य प्रदेश की शाही दाल कहा जाता है, जो खासकर भोपाल के त्योहारों और सामुदायिक भोजन में बनती है। धीमी आंच पर पकाई गई यह दाल घी, बड़ी इलायची, प्याज और हींग के तड़के से खासी स्वादिष्ट बनती है।\n\nलोककथा: कहते हैं पुराने भोपाल में उड़द दाल राजा के लिए नहीं, बल्कि खुदा के मेहमानों के लिए बनाई जाती थी। ईद के दौरान बेगम सुल्तान इसे चांदी की कटोरी में फकीरों और मुसाफ़िरों को परोसती थीं।',
+        'कहते हैं पुराने भोपाल में उड़द दाल राजा के लिए नहीं, बल्कि खुदा के मेहमानों के लिए बनाई जाती थी। ईद के दौरान बेगम सुल्तान इसे चांदी की कटोरी में फकीरों और मुसाफ़िरों को परोसती थीं।',
     },
     /* 13 — ON THE TABLE · EVIDENCE ------------------------------------
        Given its own heading. This is the finished work, and it previously
        sat under 'What did not work' — five product photographs filed as
        failures. The bleed establishes it; the mosaic holds the rest as one
        shoot instead of five separate full-width claims. */
-    { type: 'heading', marker: 'E', title: 'On the table', note: 'The finished range' },
+    /* PROCESS · the four pieces of evidence that most change how the
+       finished packs read: the art form studied, the motifs drawn by hand,
+       the mark cut in lino, and the box cut and scored by hand. The rest
+       stays on the research page. */
+    {
+      type: 'mosaic',
+      marker: 'E',
+      title: 'Made by hand first',
+      note: 'Study, drawing, print, structure',
+      text: 'Before anything was digitised I studied the folk art, drew the patterns on grid paper, cut the wordmark in lino and made the box by hand. The full process, including the directions that were dropped, is on the research page.',
+      layout: 'even',
+      images: [
+        { src: `${dir}/art-pithora.jpg`,
+   blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAABP/EAB8QAAEEAgIDAAAAAAAAAAAAAAEAAgMREiEEYZGh8f/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEQMRAD8AbHOJXOZICRkS2vqZg3rwgxcVrhebxZJ1WvSZXZQMt//Z', alt: 'Reference sheet on Pithora painting showing horses, animals and deities in bold colour on tribal home walls', ...PAGE },
+        {
+              src: `${dir}/draw-pattern-tiles.jpg`,
+              blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQME/8QAIBAAAgEDBAMAAAAAAAAAAAAAAQIAERIhAwQFQVFhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCu2W9mBDi2mK/ZtsTxDePdtR3JPdMemMTgX//Z',
+              alt: 'Sketchbook page of finished pattern tiles in black and white, ready to digitise',
+              width: 1497,
+              height: 2000,
+            },
+        { src: `${dir}/lino-print-a.jpg`,
+   blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAEF/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIDEQAEEiEiUYGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AK00z6diSVqSl71xXnNL0PmAlhVVVD2DOCdwGPvAv//Z', alt: 'Hand-pulled block prints of the words TARKA TRAILS in heavy black ink', width: 1451, height: 1900 },
+        {
+              src: `${dir}/prototype-card.jpg`,
+              blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAkDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAP/xAAhEAACAQALAAAAAAAAAAAAAAAAARECAwQSEyFBUWGRwf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AUrQ1kqTXBeQMt1lzSPBmGt32FSP/2Q==',
+              alt: 'Flat greyboard packaging prototype cut and scored by hand before printing',
+              ...PAGE,
+            },
+      ],
+      captions: [
+        'Pithora painting, one of four art forms studied',
+        'Pattern tiles drawn on grid paper',
+        'Early lino print of the wordmark',
+        'Greyboard prototype, cut and scored by hand',
+      ],
+    },
+    { type: 'heading', marker: 'F', title: 'On the table', note: 'The printed prototype' },
     {
       type: 'bleed',
       image: {
@@ -269,7 +301,7 @@ export const tadkaTrail: ProjectInput = {
     {
           src: `${dir}/photo-read.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIDEQAEBRITITGB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQEAAwAAAAAAAAAAAAAAAAAAESFB/9oADAMBAAIRAxEAPwCTmTsrvSvGZFh6QVZQVF0PnjNFxEUexxkEmzD3HINMy2as17xjIwxb/9k=',
-          alt: 'The Moong Daal story card laid flat, the recipe and the regional story running side by side in English and Hindi',
+          alt: 'The Moong Daal card laid flat, the recipe and method running side by side in English and Hindi',
           ...PHOTO,
         },
     {
@@ -592,7 +624,7 @@ export const tadkaTrail: ProjectInput = {
 
   seo: {
     description:
-      'Tadka Trail, a cultural food brand for Madhya Pradesh, built on an illustrated jharokha, hand-drawn folk patterns and bilingual story cards that carry each daal\u2019s region and folk story.',
+      'Tadka Trail, a food-brand and packaging concept built on the cooking of Madhya Pradesh: an illustrated jharokha mark, hand-drawn folk patterns and bilingual cards for three daals, made as a printed prototype.',
   },
 
   published: true,

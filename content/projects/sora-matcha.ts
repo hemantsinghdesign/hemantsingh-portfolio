@@ -42,7 +42,7 @@ export const soraMatcha: ProjectInput = {
   },
 
   meta: {
-    client: 'Concept project',
+    client: 'Independent brand concept, not commissioned',
     role: 'Brand strategy, visual identity, packaging, art direction, photography direction, brand guidelines',
     timeframe: '4 weeks',
     scope: 'Mark · wordmark · palette · icon set · packaging · stationery · campaign',
@@ -50,7 +50,7 @@ export const soraMatcha: ProjectInput = {
   },
 
   overview:
-    'Ceremonial matcha in western retail tends to arrive as one of two things: a wellness supplement in a clinical white tub, or an imported curio wrapped in borrowed ornament. Neither describes what the product actually is: a slow, deliberate morning. SORA needed an identity that reads as premium without raising its voice, and that a small team could apply across tins, pouches, cups and cards without a designer in the room.',
+    'SORA is a concept for a ceremonial matcha brand. I wanted the identity to describe what the product is for, a slow and deliberate morning, and to stay calm on a shelf. It also had to be simple enough for a small team to apply across tins, a pouch, cups and cards.',
 
   approach: [
     'Drew the mark from the moment rather than the plant: a sunrise breaking over two leaves. Sora means sky, so the mark reads as dawn before it reads as tea.',
@@ -61,10 +61,10 @@ export const soraMatcha: ProjectInput = {
   ],
 
   outcome:
-    'A complete identity system: mark, wordmark, four-colour palette, a ten-icon set, photography direction, packaging across five formats, full stationery, and retail and gifting collateral. All of it documented in a guidelines book that can be handed to any printer or photographer without a briefing call.',
+    'A concept identity system: mark, wordmark, four-colour palette, a ten-icon set, photography direction, packaging proposed across five formats, stationery, and retail and gifting collateral, documented in a guidelines book. Finishes and stocks such as the deboss and the gold foil are specified as proposals; the work has not yet been tested with a printer.',
 
   metrics: [
-    { label: 'Pack formats', value: '5' },
+    { label: 'Pack formats proposed', value: '5' },
     { label: 'Core colours', value: '4' },
     { label: 'Icons drawn', value: '10' },
   ],
@@ -83,6 +83,10 @@ export const soraMatcha: ProjectInput = {
       },
       caption: 'The morning ritual, in the light the brand specifies',
     },
+    {
+      type: 'note',
+      text: 'SORA is an unproduced concept. Every product image on this page is a visualisation of the proposed packaging, made to judge proportion, finish and light before anything is printed.',
+    },
 
     { type: 'heading', marker: 'A', title: 'The mark', note: 'Sunrise over two leaves' },
     // The deboss macro is the single clearest statement of the mark.
@@ -96,11 +100,11 @@ export const soraMatcha: ProjectInput = {
         alt: 'The SORA sunrise-and-leaves mark blind-debossed into textured uncoated paper',
         ...P,
       },
-      caption: 'Blind deboss on uncoated stock',
+      caption: 'Proposed blind deboss on uncoated stock',
     },
     {
       type: 'note',
-      text: 'The mark is drawn on a single stroke weight so it holds at 6mm on a hang tag and at 300mm on a shopfront. The wordmark never sits closer to it than the height of the sun.',
+      text: 'The mark is drawn on a single stroke weight so that it can work at 6mm on a hang tag and at 300mm on a shopfront. The wordmark never sits closer to it than the height of the sun.',
     },
     {
       type: 'full',
@@ -172,14 +176,8 @@ export const soraMatcha: ProjectInput = {
       captions: ['Gift tin, deep green and gold foil', 'Retail tin, cream and silver lid'],
     },
     {
-      type: 'triptych',
+      type: 'pair',
       images: [
-        {
-          src: `${dir}/tin-green-deboss.jpg`,
-          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgMEBv/EAB4QAAEEAQUAAAAAAAAAAAAAAAEAAgMRIRITUmGh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDOOw0Gsl1Ia6Kskja6tTQaStqPj6iv/9k=',
-          alt: 'Green tin variant with the wordmark debossed rather than foiled',
-          ...P,
-        },
         {
           src: `${dir}/pouch.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIF/8QAIxAAAgECBAcAAAAAAAAAAAAAAQIEAAMFERIhFSMxQVKhwf/EABUBAQEAAAAAAAAAAAAAAAAAAAID/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8ARDsR1w8SLloO2orv33y+0w4XEzPK9msxpbrCFpURU16sgD1qeJSPIVM3/9k=',
@@ -193,7 +191,7 @@ export const soraMatcha: ProjectInput = {
           ...P,
         },
       ],
-      captions: ['Deboss-only variant', '30g resealable pouch', 'Carrier bag'],
+      captions: ['30g resealable pouch', 'Carrier bag'],
     },
     {
       type: 'note',
@@ -225,7 +223,7 @@ export const soraMatcha: ProjectInput = {
         alt: 'The cream SORA tin on a wooden retail shelf between artisanal coffee bags and chocolate bars',
         ...P,
       },
-      caption: 'On shelf, among the category it had to stand apart from',
+      caption: 'Mocked up on a shelf beside coffee and chocolate, to test whether it stands out',
     },
 
     { type: 'heading', marker: 'D', title: 'Gifting', note: 'The ceremonial kit' },
@@ -238,24 +236,6 @@ export const soraMatcha: ProjectInput = {
         ...P,
       },
       caption: 'Kit box: whisk, scoop, bowl, tin',
-    },
-    {
-      type: 'pair',
-      images: [
-        {
-          src: `${dir}/kit-dark.jpg`,
-          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQF/8QAHBABAAICAwEAAAAAAAAAAAAAAQIRACEDIlFB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDC5+SQ9wLdV45JKdSSjTjTkpt+VgUeZR//2Q==',
-          alt: 'Overhead flat lay of the ceremonial kit on charcoal linen with a green tin and gold scoop',
-          ...P,
-        },
-        {
-          src: `${dir}/kit-light.jpg`,
-          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAMF/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIDIQAEERIxQVFS/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AN5NXI2smheFlRNuLhgQ1XXjGV9DBMNpQwJvvK8j7wE//9k=',
-          alt: 'Overhead flat lay of the ceremonial kit on cream linen with the retail tin and gold scoop',
-          ...P,
-        },
-      ],
-      captions: ['Kit, dark set', 'Kit, light set'],
     },
     {
       type: 'note',
@@ -288,19 +268,6 @@ export const soraMatcha: ProjectInput = {
         'Cards, letterhead, stickers, notebook',
         'The same mark at tote and shopfront scale',
       ],
-    },
-    // A dark full-bleed before the black campaign band, so the page
-    // darkens gradually instead of cutting from cream to ink. It also
-    // breaks the pair/full metronome that had run for nine blocks.
-    {
-      type: 'bleed',
-      image: {
-        src: `${dir}/hero-tin-bowl.jpg`,
-        blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgQF/8QAIxAAAgECBAcAAAAAAAAAAAAAAQIDABEEBSExEiIkUWFxkf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AwsT1BQRlbxoqtc21pHDmcKQxqS/KoGi+PdElRd7DerOM9h8o4Sv/2Q==',
-        alt: 'Deep green SORA tin with its lid lying beside it and a stoneware bowl of matcha powder, on a dark wooden table by a shoji screen',
-        ...P,
-      },
-      caption: 'The same system, after dark',
     },
 
     {
@@ -335,12 +302,6 @@ export const soraMatcha: ProjectInput = {
           ...S,
         },
         {
-          src: `${dir}/campaign-pouch.jpg`,
-          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQIE/8QAIxAAAgIBAQkBAAAAAAAAAAAAAQIDEQASBBMhIiMxQYGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AhnWKOPUI2kL6AQPB4fPmaIoUaJC05DFRYDj8wva0aNVVZXrfBaNHv6xKlh6SoCqcosm6HvCv/9k=',
-          alt: 'Poster of the matcha pouch behind repeated SORA lettering',
-          ...P,
-        },
-        {
           src: `${dir}/campaign-cup.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQID/8QAIRAAAgEEAgIDAAAAAAAAAAAAAQIDAAQRIRMUBXESIjH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8APmkaFmMhOQxCFdY1ScHXaCNnu1DFQSOVRg49Vh5VEa3QFQS84jLHOQD+1XDax/Tp2zfHWWj2fdB//9k=',
           alt: 'Poster of a takeaway cup behind repeated SORA lettering',
@@ -350,12 +311,6 @@ export const soraMatcha: ProjectInput = {
           src: `${dir}/campaign-box.jpg`,
           blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAMF/8QAIRABAQABBAEFAQAAAAAAAAAAAQIDAAQREjEhIlGBseH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AAXW03tOWS48FL45+DWvi2vbFDWSymRQf5oOaqLFrszSHaR/TVinCGKWmY9pzTz6feg//2Q==',
           alt: 'Poster of the open ceremonial kit box behind repeated SORA lettering',
-          ...P,
-        },
-        {
-          src: `${dir}/campaign-tin.jpg`,
-          blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAfEAADAAICAgMAAAAAAAAAAAABAgMRIQAEElETMZH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8APW7QeK/HFyX8PL0D63xs5TM0L3IYgZAcaP5yX2g0shaMQ1VGCAcb+xrXLbdt5sUCJhTga4F//9k=',
-          alt: 'Poster of a stacked matcha tin behind repeated SORA lettering',
           ...P,
         },
       ],
@@ -402,7 +357,7 @@ export const soraMatcha: ProjectInput = {
 
   seo: {
     description:
-      'SORA, a ceremonial matcha identity covering mark, packaging across five formats, stationery, photography direction and a black-and-white typographic campaign.',
+      'SORA, an independent ceremonial matcha brand concept: mark, packaging proposed across five formats, stationery, photography direction and a black-and-white typographic campaign.',
   },
 
   published: true,

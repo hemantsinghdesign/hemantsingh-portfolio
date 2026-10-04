@@ -103,7 +103,7 @@ export default async function ProjectPage({
 
       {project.metrics && project.metrics.length > 0 && (
         <Section>
-          <SectionHead marker="G" title="At a glance" note="Scope, not outcome" />
+          <SectionHead marker="G" title="At a glance" note="Scope of the work" />
           <CaseMetrics metrics={project.metrics} />
         </Section>
       )}
