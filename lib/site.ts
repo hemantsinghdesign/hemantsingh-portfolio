@@ -34,6 +34,13 @@ export const profile = {
   working: 'Independent · working remotely',
 } as const;
 
+/**
+ * The contact form's Formspree endpoint (Free plan). Public by design: it
+ * names the form, it is not a secret, and it has to reach the browser for
+ * the form to post to it. See lib/contact.ts and docs/contact-form.md.
+ */
+export const contactFormEndpoint = 'https://formspree.io/f/xbglnnrj';
+
 /** Only rendered when a url is present, so empty entries are safe to leave. */
 export const socials = [
   { label: 'LinkedIn', url: 'https://linkedin.com/in/hemant-singh-15826b152' },

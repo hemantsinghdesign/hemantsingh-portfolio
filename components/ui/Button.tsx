@@ -23,11 +23,14 @@ interface CommonProps {
 
 type ButtonProps = CommonProps &
   (
-    | { href: string; onClick?: never; disabled?: never; type?: never }
+    | { href: string; onClick?: never; disabled?: never; busy?: never; type?: never }
     | {
         href?: never;
         onClick?: () => void;
         disabled?: boolean;
+        /** Locked while work is in progress. Unlike `disabled` it keeps the
+         *  button focusable and announced; the owner ignores presses. */
+        busy?: boolean;
         type?: 'button' | 'submit';
       }
   );
@@ -58,6 +61,8 @@ export function Button({ children, size = 'default', ...rest }: ButtonProps) {
       className={className}
       onClick={rest.onClick}
       disabled={rest.disabled}
+      aria-disabled={rest.busy || undefined}
+      data-busy={rest.busy || undefined}
     >
       {inner}
     </button>

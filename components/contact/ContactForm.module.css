@@ -1,5 +1,5 @@
-/* Contact form. Posts to /api/contact, which sends the email server-side.
-   See the component comment. */
+/* Contact form. Posts to Formspree from the browser. See the component
+   comment and lib/contact.ts. */
 .fields {
   display: grid;
   gap: 18px;
@@ -20,7 +20,7 @@
 .input,
 .textarea {
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--ink);
   background: transparent;
   border: 0;
@@ -84,14 +84,40 @@
   overflow: hidden;
 }
 
-/* Reserves no space when empty, so the button does not shift when a failure
-   is announced. */
+/* Always in the DOM: a live region that is display:none until it has
+   something to say is often never announced at all. Empty, it takes no
+   space, so nothing shifts when a message appears. */
 .status {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.formError {
   color: var(--signal-sm);
 }
 
-.status:empty {
-  display: none;
+/* Persistent, plain-language field errors directly under the field. */
+.error {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--signal-sm);
+}
+
+.hint {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--mute-sm);
+}
+
+.input[aria-invalid],
+.textarea[aria-invalid] {
+  border-bottom-color: var(--signal-sm);
+}
+
+.submit {
+  margin-top: 6px;
+}
+
+.sentTitle:focus {
+  outline: none;
 }

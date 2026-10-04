@@ -9,7 +9,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = pageMetadata({
   title: 'Contact',
   description:
-    'Get in touch about identity, packaging or art direction work. Replies within two working days.',
+    'Contact Hemant Singh about a brand identity, packaging or art direction project, or about a design role.',
   path: '/contact',
 });
 
@@ -20,8 +20,8 @@ export default function ContactPage() {
     <>
       <PageIntro
         kicker="Contact"
-        lines={['Tell me what', 'you are making.']}
-        note="A paragraph is plenty. I reply to everything within two working days."
+        lines={['Tell me about your', 'project or role.']}
+        note="Whether you have a brand to design or a position to fill, a few lines is plenty. I aim to reply within two working days."
       />
 
       <Section>

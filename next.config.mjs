@@ -4,6 +4,10 @@
  * Content Security Policy.
  * `unsafe-inline` on style-src is required by Next's inlined critical CSS.
  * `unsafe-eval` is dev-only (React Refresh); it is dropped in production.
+ *
+ * formspree.io appears twice, both for the contact form: in connect-src for
+ * the JavaScript submission, and in form-action for the no-JavaScript
+ * fallback, where the browser posts the form to Formspree directly.
  */
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -21,14 +25,14 @@ const isHttps = (
 const csp = [
   "default-src 'self'",
   "base-uri 'self'",
-  "form-action 'self'",
+  "form-action 'self' https://formspree.io",
   "frame-ancestors 'none'",
   "object-src 'none'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://va.vercel-scripts.com`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://www.googletagmanager.com",
   "font-src 'self' data:",
-  "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://vitals.vercel-insights.com",
+  "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://vitals.vercel-insights.com https://formspree.io",
   "manifest-src 'self'",
   ...(isHttps ? ['upgrade-insecure-requests'] : []),
 ].join('; ');

@@ -15,8 +15,8 @@ npm run dev
 
 Open **http://localhost:3000**
 
-That is the real thing — every route, the poster wipe between pages, the
-cursor coordinate readout, hover states and scroll reveals.
+That is the real thing — every route, the poster wipe between pages, hover
+states and scroll reveals.
 
 ## Routes to try
 
@@ -79,8 +79,11 @@ deployment predates it.
 
 - `socials` in `lib/site.ts` — Instagram and Behance URLs are empty, so those
   links stay hidden until they are filled in
-- `RESEND_API_KEY` — see `docs/contact-form.md`. Without it the contact form
-  falls back to opening the visitor's mail app instead of sending
+- The contact form posts to Formspree and needs no setup in Vercel. After any
+  change, send a labelled test enquiry from the preview and confirm it
+  arrives — see `docs/contact-form.md`
+- The home page work image is a stand-in; see `content/site/home.ts` for how
+  to replace it
 
 ## Checks
 
