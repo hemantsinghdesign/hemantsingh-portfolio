@@ -1,0 +1,5 @@
+/* The /work index: one project card per row. */
+.list {
+  display: grid;
+  gap: clamp(48px, 7vw, 96px);
+}

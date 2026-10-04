@@ -25,9 +25,9 @@ export const hsbcOnboarding: ProjectInput = {
     'How might HSBC make international students feel welcomed, before asking them to become customers?',
 
   thumbnail: {
-    src: `${dir}/tote-light.jpg`,
-    blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgMEBf/EAB8QAAIBAwUBAAAAAAAAAAAAAAECAwARIQQSEyIxUf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAMAwEAAhEDEQA/ANZ0lbaY3VV2kkN5iouXd2+5FI1k8qxMvISLWF7YzRy9WAHgAojsky//2Q==',
-    alt: 'White HSBC tote bag with a red Warli peacock mark, resting on a wooden chair in soft daylight',
+    src: `${dir}/tote-held.jpg`,
+    blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAgEAACAgEDBQAAAAAAAAAAAAABAwIRAAQSITFhcoHh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AKK9OWqMrAF1d9rwEk88PaB5fMssRCKwsXtu/eAamMJAAnphJ//Z',
+    alt: 'A hand holding out a white HSBC tote bag printed with a red Warli-inspired peacock',
     width: 1600,
     height: 1600,
   },

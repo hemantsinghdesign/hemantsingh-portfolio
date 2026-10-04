@@ -1,0 +1,117 @@
+/* A project card. 'row' is the /work index entry, 'tile' the home grid. */
+.card {
+  display: grid;
+  gap: clamp(16px, 2.4vw, 32px);
+  text-decoration: none;
+  color: inherit;
+  border-top: 1px solid var(--ink);
+  padding-top: clamp(16px, 2vw, 24px);
+}
+
+.card:focus-visible {
+  outline-offset: 6px;
+}
+
+/* Image beside text, image first. Collapses to a stack on narrow screens. */
+.row {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  align-items: start;
+}
+
+.tile {
+  grid-template-rows: auto 1fr;
+  /* On the home page the section heading already draws the rule above. */
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* A fixed 4:5 frame, so a column of mixed portrait, square and landscape
+   source images still reads as one set. Each image's `focus` decides the
+   crop. Paper underneath, so nothing flashes while it loads. */
+.media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--rule);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 900ms var(--ease);
+}
+
+.card:hover .image {
+  transform: scale(1.025);
+}
+
+.index {
+  color: var(--signal-sm);
+}
+
+.title {
+  font-size: clamp(36px, 5.6vw, 76px);
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  margin: 8px 0 12px;
+}
+
+.tile .title {
+  font-size: clamp(30px, 3.4vw, 48px);
+}
+
+.discipline {
+  color: var(--mute-sm);
+  line-height: 1.6;
+}
+
+.summary {
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.5;
+  margin-top: 14px;
+  max-width: 44ch;
+}
+
+.tile .summary {
+  font-size: 16px;
+}
+
+/* The link is always visible, not something hover reveals. */
+.go {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 20px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid currentColor;
+}
+
+.go i {
+  font-style: normal;
+  transition: transform var(--dur-hover) var(--ease);
+}
+
+.card:hover .go,
+.card:focus-visible .go {
+  color: var(--signal-sm);
+}
+
+.card:hover .go i,
+.card:focus-visible .go i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 760px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .go i {
+    transition: none;
+  }
+
+  .card:hover .image {
+    transform: none;
+  }
+}

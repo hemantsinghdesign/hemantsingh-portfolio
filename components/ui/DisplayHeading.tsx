@@ -14,6 +14,7 @@ import styles from './DisplayHeading.module.css';
 
 const VARIANT_CLASS = {
   default: '',
+  hero: 'displayHero',
   page: 'displayPage',
   case: 'displayCase',
   cta: 'displayCta',

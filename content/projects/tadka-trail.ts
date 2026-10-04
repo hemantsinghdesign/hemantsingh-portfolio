@@ -40,12 +40,15 @@ export const tadkaTrail: ProjectInput = {
   summary:
     'A food brand for international students from Madhya Pradesh, built so that a meal arrives with the story of where it comes from.',
 
+  // A photograph of the printed prototype rather than the illustration on its
+  // own: the card is where a visitor decides whether to open the case, and
+  // the physical pack is the stronger evidence of what the project made.
   thumbnail: {
-    src: `${dir}/jharokha-hero.png`,
-    blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAgDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAHxAAAQMDBQAAAAAAAAAAAAAAAQAREgMxQQIEExQj/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABYRAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEQMRAD8AxSag2QqxHEdFsO1kU8vODButLN0QzCr/2Q==',
-    alt: 'Illustrated jharokha window with a tribal woman of Madhya Pradesh cooking inside it, a heritage fort behind her',
-    width: 1104,
-    height: 1704,
+    src: `${dir}/photo-pair.jpg`,
+    blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAfEAACAQQCAwAAAAAAAAAAAAABAgMABAUREmEhMVH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABYRAQEBAAAAAAAAAAAAAAAAAAARIf/aAAwDAQACEQMRAD8Aoz0ctuFhtoikLAaKAksfh6qnHWWShs41VkG/PF/a9UpUzS//2Q==',
+    alt: 'The green Moong Daal pack of the Tadka Trail prototype opened flat, illustrated front and daal-bowl back side by side, lentils scattered around',
+    ...PHOTO,
+    focus: '50% 50%',
   },
 
   /* The drawing opens the case. Nothing in front of it — a jharokha is a

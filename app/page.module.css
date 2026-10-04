@@ -1,17 +1,150 @@
-/* Home hero only. Everything else on this page uses shared primitives. */
+/* Home page. Shared primitives handle everything except the introduction
+   with its work image, the project grid and the compact capabilities. */
+
+/* ---- introduction + work image ------------------------------------- */
 .hero {
-  padding: clamp(48px, 9vw, 120px) 0 clamp(32px, 5vw, 56px);
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: end;
+  padding: clamp(32px, 5vw, 72px) 0 clamp(32px, 4vw, 56px);
 }
 
 .eyebrow {
-  margin-bottom: clamp(24px, 5vw, 52px);
+  margin-bottom: clamp(18px, 2.6vw, 32px);
 }
 
-.heroFoot {
+.lede {
+  margin-top: clamp(22px, 2.6vw, 34px);
+  /* Body copy, so full ink rather than the muted grey of a caption. */
+  color: var(--ink);
+  max-width: 46ch;
+}
+
+.actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 28px;
-  margin-top: clamp(32px, 5vw, 64px);
+  align-items: center;
+  gap: 18px 28px;
+  margin-top: clamp(24px, 3vw, 36px);
+}
+
+/* The work image. A 4:5 poster frame; the content file's `focus` sets the
+   crop. Capped in height on wide screens so it never pushes the
+   introduction off the first screen. */
+.poster {
+  margin: 0;
+}
+
+.posterLink {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  max-height: min(78vh, 760px);
+  margin-left: auto;
+  overflow: hidden;
+  background: var(--rule);
+}
+
+.posterImage {
+  object-fit: cover;
+}
+
+.credit {
+  margin-top: 10px;
+  color: var(--mute-sm);
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .posterLink {
+    max-height: none;
+  }
+
+  .credit {
+    text-align: left;
+  }
+}
+
+/* ---- selected work -------------------------------------------------- */
+
+/* The section's own heading sits under the sticky header when the "See the
+   work" link jumps here, so the anchor is offset by the header's height. */
+.anchor {
+  position: relative;
+  top: -96px;
+  height: 0;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 3vw, 44px);
+}
+
+@media (max-width: 900px) {
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
+
+/* ---- what I do ------------------------------------------------------ */
+.capabilities {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+  margin-bottom: 32px;
+}
+
+.capability {
+  border-top: 1px solid var(--ink);
+  padding-top: 14px;
+}
+
+.marker {
+  color: var(--signal-sm);
+}
+
+.capabilityTitle {
+  font-size: clamp(19px, 1.7vw, 23px);
+  letter-spacing: -0.02em;
+  margin: 8px 0 8px;
+}
+
+.capabilityBody {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.seen {
+  margin-top: 14px;
+  color: var(--mute-sm);
+  line-height: 1.7;
+}
+
+.seen a {
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+
+.seen a:hover {
+  color: var(--signal-sm);
+}
+
+@media (max-width: 1000px) {
+  .capabilities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .capabilities {
+    grid-template-columns: 1fr;
+  }
 }

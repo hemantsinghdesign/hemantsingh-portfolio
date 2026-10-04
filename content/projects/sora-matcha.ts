@@ -31,10 +31,13 @@ export const soraMatcha: ProjectInput = {
   summary:
     'A ceremonial matcha brand built on one idea: the packaging should be as still as the ritual it belongs to.',
 
+  // The packaging system, not a mood shot: the previous thumbnail was the
+  // dark tin-and-bowl still life, where the pack is a small shape in a large
+  // room and the identity cannot be read at card size.
   thumbnail: {
-    src: `${dir}/hero-tin-bowl.jpg`,
-    blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgQF/8QAIxAAAgECBAcAAAAAAAAAAAAAAQIDABEEBSExEiIkUWFxkf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AwsT1BQRlbxoqtc21pHDmcKQxqS/KoGi+PdElRd7DerOM9h8o4Sv/2Q==',
-    alt: 'SORA ceremonial matcha tin beside a stoneware bowl in low winter light',
+    src: `${dir}/kit-box.jpg`,
+    blurDataURL: 'data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIEBf/EACAQAAIBAwQDAAAAAAAAAAAAAAECAwAEEQUhMVESE3H/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANi9ktyhPsUP319qZbOQqDmPcUY4lu4nSUZwORzTJptsEUeBOANyTUzf/9k=',
+    alt: 'Open SORA ceremonial kit box holding a bamboo whisk, scoop, stoneware bowl and matcha tin',
     ...P,
   },
 
