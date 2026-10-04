@@ -1,23 +1,46 @@
-/* Endless horizontal marquee of disciplines. Decorative. */
+/* Endless horizontal marquee of disciplines. Decorative.
+   See Ticker.tsx for why the track is max-content and why each group
+   repeats the words several times. */
 .ticker {
+  position: relative;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
   overflow: hidden;
   padding: 12px 0;
 }
 
-.row {
+.track {
   display: flex;
+  width: max-content;
   white-space: nowrap;
   font-size: clamp(18px, 2.4vw, 30px);
   letter-spacing: -0.03em;
-  animation: ticker-slide 26s linear infinite;
+  /* 30s per set of words. Calm enough to read, and the same speed whatever
+     the number of repetitions. */
+  animation: ticker-slide calc(var(--sets, 1) * 30s) linear infinite;
+  will-change: transform;
+}
+
+.ticker[data-paused] .track {
+  animation-play-state: paused;
 }
 
 @keyframes ticker-slide {
+  from {
+    transform: translateX(0);
+  }
   to {
     transform: translateX(-50%);
   }
+}
+
+/* Groups and items never shrink, so a group is always exactly its words and
+   the two groups are always exactly the same width. */
+.group,
+.item {
+  display: flex;
+  flex: none;
+  align-items: center;
 }
 
 .diamond {
@@ -26,8 +49,34 @@
   padding: 0 14px;
 }
 
+/* Sits over the right end of the band on a paper chip so it is legible on
+   top of the moving words. 44px tall to meet the touch-target size. */
+.toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: var(--paper);
+  color: var(--ink);
+  border-left: 1px solid var(--rule);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.toggle:hover {
+  color: var(--signal-sm);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .row {
+  .track {
     animation: none;
+  }
+
+  .toggle {
+    display: none;
   }
 }
