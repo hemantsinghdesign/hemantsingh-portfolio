@@ -107,7 +107,7 @@
 .motifLabel {
   color: var(--mute-sm);
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 @keyframes rise {

@@ -7,11 +7,15 @@
    ============================================================ */
 
 @layer base {
-  /* ---- utility labels ---- */
+  /* ---- utility labels ----
+     12px, not 11. Uppercase monospace with wide tracking is already the
+     hardest-to-read text on the page; at 11px it was decoration first and
+     label second. The extra pixel is the difference between a caption a
+     visitor reads and one they skip. */
   .mono {
     font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
+    font-size: 12px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 
@@ -34,6 +38,13 @@
 
   .displayPage {
     font-size: clamp(40px, 8.4vw, 118px);
+  }
+
+  /* Home introduction. Smaller than the default display size on purpose:
+     the statement shares the first screen with the work image, so the
+     work is visible without scrolling instead of a full viewport later. */
+  .displayHero {
+    font-size: clamp(38px, 5.4vw, 80px);
   }
 
   .displayCase {

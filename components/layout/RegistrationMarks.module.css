@@ -43,10 +43,10 @@
 
 .bottomLeft {
   left: 10px;
-  bottom: calc(var(--spec-h) + 10px);
+  bottom: 10px;
 }
 
 .bottomRight {
   right: 10px;
-  bottom: calc(var(--spec-h) + 10px);
+  bottom: 10px;
 }

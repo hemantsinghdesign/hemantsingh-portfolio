@@ -50,7 +50,7 @@
    length — and this is the line that tells a visitor what I actually do. */
 .role {
   color: var(--mute-sm);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 /* ---- nav ---- */

@@ -40,7 +40,7 @@
      own value. Sits within the project's existing warm range. */
   --signal-on-tone: #FA7A33;
 
-  /* Ink-on-dark surfaces (poster band, spec bar) */
+  /* Ink-on-dark surfaces (poster band, campaign gallery) */
   --surface-dark: #14140F;
   --surface-dark-2: #1C1C17;
 
@@ -51,7 +51,6 @@
   /* ---- layout ---- */
   --pad: clamp(18px, 4vw, 56px);
   --grid-cols: 12;
-  --spec-h: 44px;
 
   /* ---- motion ---- */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);

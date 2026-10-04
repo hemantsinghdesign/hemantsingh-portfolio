@@ -1,25 +1,24 @@
-import { Cursor } from '@/components/layout/Cursor';
 import { GridOverlay } from '@/components/layout/GridOverlay';
-import { PointerProvider } from '@/components/layout/PointerProvider';
 import { RegistrationMarks } from '@/components/layout/RegistrationMarks';
 import { SiteFooter } from '@/components/layout/SiteFooter';
 import { SiteHeader } from '@/components/layout/SiteHeader';
-import { SpecBar } from '@/components/layout/SpecBar';
 import styles from './SiteChrome.module.css';
 
 /**
  * Purpose: the persistent frame around every route — grid, crop marks,
- *   header, footer, cursor and spec bar.
+ *   header and footer.
  * Props: `children` — the route's content.
  * Used in: the root layout, wrapping all routes.
  * Reusable: no — one per document, by definition.
  *
- * Server component. Only the four pieces that genuinely need the browser
- * (header menu, cursor, spec bar) are client components, so the page HTML
- * a crawler receives is complete.
+ * Server component. Only the header's mobile menu needs the browser, so the
+ * page HTML a crawler receives is complete.
  *
- * PointerProvider deliberately wraps only Cursor and SpecBar: a pointer move
- * that crosses a grid line then re-renders two tiny leaves, never the page.
+ * There used to be a custom cursor with a grid-coordinate readout and a
+ * fixed bottom bar carrying the route name, the coordinates and a clock.
+ * None of it told a visitor anything they needed, it covered the foot of
+ * every page, and the clock re-rendered once a second forever. The route
+ * name is already the active nav item, so nothing was lost by removing it.
  */
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   return (
@@ -36,11 +35,6 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
       </main>
 
       <SiteFooter />
-
-      <PointerProvider>
-        <Cursor />
-        <SpecBar />
-      </PointerProvider>
     </div>
   );
 }

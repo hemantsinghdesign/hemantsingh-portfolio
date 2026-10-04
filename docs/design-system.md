@@ -56,16 +56,22 @@ additions:
 ## Motion
 
 Only `transform` and `opacity` are animated, so everything stays on the
-compositor. The pointer position is written to `--pointer-x` / `--pointer-y`
-as CSS custom properties inside a `requestAnimationFrame` — React never
-re-renders on mouse move.
+compositor. There is no custom cursor and no pointer tracking; both were
+removed along with the fixed bottom status bar.
+
+The home ticker loops by translating a `max-content` track of two identical
+groups by exactly `-50%`, so the seam is exact at any width and survives late
+font loading. It has a pause button and does not move under reduced motion.
+See the comment in `components/ui/Ticker.tsx` before changing it.
 
 ## Component conventions
 
 Every reusable component carries a header comment stating its purpose, props,
 where it is used, and whether it is meant to stay reusable. Components are
-server components unless they need browser APIs; `'use client'` appears in
-five files only: the header, menu, cursor, spec bar and reveal wrapper.
+server components unless they need browser APIs. `'use client'` is limited
+to the pieces that need state or the DOM: the header and menu, the page
+transition, the reveal wrapper, the ticker's pause control and the contact
+form.
 
 
 ## Contrast rules to keep

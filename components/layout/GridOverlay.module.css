@@ -1,4 +1,9 @@
-/* Twelve hairline columns, fixed behind everything. Decorative. */
+/* Twelve hairline columns, fixed behind everything. Decorative.
+
+   Kept as the site's signature, but turned down. At 0.5 the lines read as
+   ruled paper and crossed through every heading and photograph; at this
+   strength they are visible on empty paper and disappear behind content,
+   which is the job of a construction grid. */
 .overlay {
   position: fixed;
   inset: 0;
@@ -11,7 +16,7 @@
 
 .column {
   border-left: 1px solid var(--rule);
-  opacity: 0.5;
+  opacity: 0.22;
 }
 
 .column:first-child {
