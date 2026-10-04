@@ -139,6 +139,7 @@ export function CaseBlocks({
                   width={block.image.width}
                   height={block.image.height}
                   priority={index === 0}
+                  fetchPriority={index === 0 ? 'high' : undefined}
                   sizes="100vw"
                   quality={IMAGE_QUALITY}
                   placeholder={block.image.blurDataURL ? 'blur' : 'empty'}

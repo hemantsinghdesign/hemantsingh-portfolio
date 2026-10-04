@@ -33,10 +33,13 @@
   resize: vertical;
 }
 
+/* Focus thickens the underline to 2px in signal red. A 1px colour change
+   alone was the only cue before, which is easy to miss. */
 .input:focus,
 .textarea:focus {
   outline: none;
   border-bottom-color: var(--signal);
+  box-shadow: 0 1px 0 0 var(--signal);
 }
 
 .input::placeholder,

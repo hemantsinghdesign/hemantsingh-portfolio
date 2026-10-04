@@ -7,7 +7,7 @@ import { useRouteTransition } from '@/components/layout/PageTransition';
  * Purpose: an internal link that plays the poster wipe before navigating.
  * Props: same as next/link's `href`, `className`, `children`, plus anything
  *   an anchor accepts.
- * Used in: ProjectRows, FeatureProject and CaseNext — the links into and
+ * Used in: ProjectCard, the home work image and CaseNext — the links into and
  *   between case studies. The header, footer, mobile menu, Button and
  *   TextLink use a plain next/link on purpose: the wipe marks entering a
  *   piece of work, and firing it on every utility link would spend the

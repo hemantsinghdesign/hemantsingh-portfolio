@@ -35,6 +35,7 @@ export function CaseHero({ hero }: { hero: NonNullable<Project['hero']> }) {
           width={hero.image.width}
           height={hero.image.height}
           priority
+          fetchPriority="high"
           sizes="(max-width: 700px) 78vw, 40vw"
           quality={IMAGE_QUALITY}
           placeholder={hero.image.blurDataURL ? 'blur' : 'empty'}

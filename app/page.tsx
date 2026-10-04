@@ -61,6 +61,7 @@ export default function HomePage() {
               alt={homeImage.alt}
               fill
               priority
+              fetchPriority="high"
               sizes="(max-width: 900px) 100vw, 42vw"
               quality={IMAGE_QUALITY}
               placeholder={homeImage.blurDataURL ? 'blur' : 'empty'}

@@ -56,6 +56,7 @@ export function ProjectCard({
           }
           quality={THUMBNAIL_QUALITY}
           priority={priority}
+          fetchPriority={priority ? 'high' : undefined}
           placeholder={thumbnail.blurDataURL ? 'blur' : 'empty'}
           blurDataURL={thumbnail.blurDataURL}
           style={{ objectPosition: thumbnail.focus ?? '50% 50%' }}
