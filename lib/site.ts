@@ -21,7 +21,7 @@ export const siteConfig = {
   role: 'Graphic & brand designer',
   title: 'Hemant Singh, Graphic & Brand Designer',
   description:
-    'Graphic and brand designer working in identity, packaging and art direction. I build systems with fewer parts, documented well enough to run without me.',
+    'Graphic designer working across brand identity, packaging and art direction. Case studies include SORA, an HSBC welcome experience concept and Tadka Trail.',
   locale: 'en_GB',
   lang: 'en-GB',
 } as const;
